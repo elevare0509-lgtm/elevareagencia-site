@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { MetalButton, LiquidButton } from "@/components/ui/liquid-glass-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -83,21 +83,26 @@ export default function Home() {
       <p className="text-offwhite/70 text-lg md:text-xl text-center max-w-xl">
         A Elevare transforma negócios locais em referências online.
       </p>
-      <div className="flex flex-wrap justify-center gap-4">
-        <MetalButton
-          variant="gold"
+      <div className="flex flex-wrap justify-center gap-4 items-center">
+        <ShinyButton
           onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
+          style={{
+            "--shiny-cta-bg": "#0B1628",
+            "--shiny-cta-highlight": "#C4A35A",
+            "--shiny-cta-highlight-subtle": "#e8c97a",
+            "--shiny-cta-fg": "#F2EDE4",
+          } as React.CSSProperties}
         >
           Falar no WhatsApp
-        </MetalButton>
-        <LiquidButton
-          className="text-offwhite"
+        </ShinyButton>
+        <button
           onClick={() =>
             document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
           }
+          className="border border-offwhite/50 text-offwhite font-medium px-8 py-4 rounded-full hover:bg-offwhite/10 transition-all text-lg"
         >
           Ver serviços
-        </LiquidButton>
+        </button>
       </div>
     </div>
   );
