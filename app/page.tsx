@@ -60,7 +60,7 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-5 pb-16 md:-mt-[120px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10 md:py-12">
+    <div className="flex flex-col items-center gap-5 pb-20 md:-mt-[220px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10 md:py-12">
       <span className="text-gold/80 text-xs font-semibold tracking-[0.2em] uppercase">
         Agência de presença digital
       </span>
