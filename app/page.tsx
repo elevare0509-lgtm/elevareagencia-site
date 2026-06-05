@@ -206,9 +206,9 @@ export default function Home() {
             variants={fadeInUp}
             className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed"
           >
-            Quando seu cliente busca no Google, ou ele te encontra — ou encontra o concorrente.
-            A maioria dos negócios locais não aparece, ou aparece mal.
-            Sem presença profissional, você perde a venda antes da conversa começar.
+            Não é sobre estar na internet. É sobre passar confiança quando alguém te encontra.
+            Negócio sem presença profissional parece amador — e cliente que se sente inseguro
+            não fala contigo. Ele fecha com quem parece mais sério.
           </motion.p>
         </motion.div>
       </section>
