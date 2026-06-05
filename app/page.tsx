@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { FallingPattern } from "@/components/ui/falling-pattern";
+import ShaderBackground from "@/components/ui/shader-background";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -104,11 +104,7 @@ export default function Home() {
     <>
       {/* SEÇÃO 1 — HERO */}
       <div className="bg-navy relative overflow-hidden">
-        <FallingPattern
-          color="#C4A35A"
-          backgroundColor="#0B1628"
-          className="absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#0B1628)]"
-        />
+        <ShaderBackground />
         <div className="relative z-10">
           <ContainerScroll titleComponent={titleComponent}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
