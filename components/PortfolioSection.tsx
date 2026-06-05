@@ -29,12 +29,10 @@ function NotebookMockup({
   desktopImage,
   mobileImage,
   name,
-  category,
 }: {
   desktopImage: string;
   mobileImage: string;
   name: string;
-  category: string;
 }) {
   return (
     <div className="relative select-none">
@@ -194,7 +192,6 @@ export default function PortfolioSection() {
                   desktopImage={project.desktopImage}
                   mobileImage={project.mobileImage}
                   name={project.name}
-                  category={project.category}
                 />
               </motion.div>
             </AnimatePresence>
