@@ -60,16 +60,18 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-4 pb-16 md:-mt-[120px]">
-      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-tight max-w-2xl">
-        Seu negócio é bom.{" "}
-        O problema é que{" "}
-        <span className="text-gold">ninguém sabe disso.</span>
+    <div className="flex flex-col items-center gap-5 pb-16 md:-mt-[120px]">
+      <span className="text-gold/80 text-xs font-semibold tracking-[0.2em] uppercase">
+        Agência de presença digital
+      </span>
+      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
+        Presença digital que faz o seu negócio{" "}
+        <span className="text-gold">ser levado a sério.</span>
       </h1>
-      <p className="text-offwhite/60 text-sm md:text-base text-center max-w-md">
-        Sites, landing pages e design que fazem o cliente te encontrar — e te escolher.
+      <p className="text-offwhite/50 text-sm md:text-base text-center max-w-md leading-relaxed">
+        Criamos sites, landing pages e design para negócios locais que querem crescer — e aparecer online.
       </p>
-      <div className="flex flex-wrap justify-center gap-4 items-center">
+      <div className="flex flex-wrap justify-center gap-3 items-center mt-1">
         <ShinyButton
           onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
           style={{
@@ -80,15 +82,15 @@ export default function Home() {
             "--shiny-cta-fg": "#0B1628",
           } as React.CSSProperties}
         >
-          Quero mais clientes
+          Falar com a Elevare
         </ShinyButton>
         <button
           onClick={() =>
-            document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
+            document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
           }
-          className="border border-[#F2EDE4] text-[#F2EDE4] bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 transition-all text-lg"
+          className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
         >
-          Ver como funciona
+          Ver nosso trabalho
         </button>
       </div>
     </div>
@@ -206,7 +208,9 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 5 — PORTFÓLIO */}
-      <PortfolioSection />
+      <div id="portfolio">
+        <PortfolioSection />
+      </div>
 
       {/* SEÇÃO 6 — COMO FUNCIONA */}
       <section className="bg-offwhite py-24 px-6">
