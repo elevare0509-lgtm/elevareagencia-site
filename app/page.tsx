@@ -5,6 +5,7 @@ import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { Typewriter } from "@/components/ui/typewriter";
 import PortfolioSection from "@/components/PortfolioSection";
 
 const fadeInUp: Variants = {
@@ -66,7 +67,16 @@ export default function Home() {
       </span>
       <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
         Presença digital que faz o seu negócio{" "}
-        <span className="text-gold">ser levado a sério.</span>
+        <Typewriter
+          text="ser levado a sério."
+          speed={70}
+          initialDelay={400}
+          loop={false}
+          showCursor={true}
+          cursorChar="|"
+          className="text-[#C4A35A] font-bold"
+          cursorClassName="text-[#C4A35A] ml-0.5"
+        />
       </h1>
     </div>
   );
