@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -30,8 +31,8 @@ export default function Navbar() {
             : "bg-[#0B1628]/60 backdrop-blur-md border border-white/5"
         }`}
       >
-        <Link href="/" className="text-gold text-2xl font-extrabold tracking-wide">
-          Elevare
+        <Link href="/" className="flex items-center">
+          <Image src="/logo-elevare.png" alt="Elevare" height={32} width={32} className="h-8 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}
