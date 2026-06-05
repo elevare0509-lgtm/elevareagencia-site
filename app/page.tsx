@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import PortfolioSection from "@/components/PortfolioSection";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,30 +20,22 @@ const stagger: Variants = {
 const servicos = [
   {
     title: "Menu Digital",
-    desc: "Seu cardápio no celular do cliente. Sem app, sem complicação.",
-    cta: "Falar no WhatsApp",
-    ctaStyle: "gold",
+    desc: "Seu cardápio no celular do cliente. Sem app, sem confusão, sem perder pedido.",
     href: "https://wa.me/5511950274038",
   },
   {
     title: "Landing Page",
-    desc: "Uma página focada em converter visitante em cliente.",
-    cta: "Agendar conversa",
-    ctaStyle: "outline",
+    desc: "Uma página que trabalha 24h trazendo cliente enquanto você trabalha.",
     href: "https://wa.me/5511950274038",
   },
   {
     title: "Design Instagram",
-    desc: "Perfil que passa credibilidade antes de abrir a conversa.",
-    cta: "Falar no WhatsApp",
-    ctaStyle: "gold",
+    desc: "Perfil que faz o cliente confiar antes de mandar mensagem.",
     href: "https://wa.me/5511950274038",
   },
   {
     title: "Site Institucional",
-    desc: "Sua empresa no digital do jeito que merece.",
-    cta: "Agendar conversa",
-    ctaStyle: "outline",
+    desc: "Seu negócio encontrado no Google, com cara de quem é sério.",
     href: "https://wa.me/5511950274038",
   },
 ];
@@ -50,38 +43,31 @@ const servicos = [
 const passos = [
   {
     Icon: MessageCircle,
-    title: "Você me conta sobre seu negócio",
-    desc: "Uma conversa rápida pelo WhatsApp — entendo seu público, objetivo e o que tá travando hoje.",
+    title: "Você me conta sobre o negócio",
+    desc: "Uma conversa rápida pelo WhatsApp. Entendo seu público e o que tá travando hoje.",
   },
   {
     Icon: Palette,
-    title: "Crio as peças personalizadas",
-    desc: "Desenvolvo o design alinhado à sua marca, com foco em atrair e converter o cliente certo.",
+    title: "Monto a estratégia e desenvolvo",
+    desc: "Crio tudo alinhado à sua marca, com foco em atrair e converter o cliente certo.",
   },
   {
     Icon: Rocket,
-    title: "Entrego em até 5 dias úteis",
-    desc: "Você recebe tudo pronto, revisado e ajustado. Sem demora, sem enrolação.",
+    title: "Você recebe em até 5 dias úteis",
+    desc: "Pronto pra usar, revisado e ajustado.",
   },
 ];
 
-const depoimentos = [
-  { nome: "Ana Lima", segmento: "Restaurante", texto: "Depoimento em breve." },
-  { nome: "Carlos Mendes", segmento: "Barbearia", texto: "Depoimento em breve." },
-  { nome: "Mariana Souza", segmento: "Clínica de Estética", texto: "Depoimento em breve." },
-];
-
 export default function Home() {
-  const [sliderValue, setSliderValue] = useState(5);
-
   const titleComponent = (
     <div className="flex flex-col items-center gap-6 pb-8">
       <h1 className="text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
-        Sua presença digital precisa{" "}
-        <span className="text-gold">trabalhar</span> por você.
+        Seu negócio{" "}
+        <span className="text-gold">perde cliente</span>{" "}
+        todo dia sem aparecer online.
       </h1>
       <p className="text-offwhite/70 text-lg md:text-xl text-center max-w-xl">
-        A Elevare transforma negócios locais em referências online.
+        A Elevare constrói a presença digital que transforma visitante em cliente pagante.
       </p>
       <div className="flex flex-wrap justify-center gap-4 items-center">
         <ShinyButton
@@ -93,7 +79,7 @@ export default function Home() {
             "--shiny-cta-fg": "#F2EDE4",
           } as React.CSSProperties}
         >
-          Falar no WhatsApp
+          Quero mais clientes
         </ShinyButton>
         <button
           onClick={() =>
@@ -101,7 +87,7 @@ export default function Home() {
           }
           className="border border-[#F2EDE4] text-[#F2EDE4] bg-transparent font-medium px-8 py-4 rounded-full hover:bg-[#F2EDE4]/10 transition-all text-lg"
         >
-          Ver serviços
+          Ver como funciona
         </button>
       </div>
     </div>
@@ -112,16 +98,23 @@ export default function Home() {
       {/* SEÇÃO 1 — HERO */}
       <div className="relative">
         <ContainerScroll titleComponent={titleComponent}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80"
-            alt="Dashboard profissional Elevare"
-            className="w-full h-full object-cover object-top rounded-2xl"
-          />
+          <div
+            className="w-full h-full rounded-2xl flex items-center justify-center"
+            style={{ background: "linear-gradient(135deg, #0B1628 0%, #0d1f3c 60%, #0B1628 100%)" }}
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full border border-gold/20 mx-auto mb-4 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-gold/10" />
+              </div>
+              <p className="text-offwhite/20 text-xs tracking-widest uppercase">
+                preview em breve
+              </p>
+            </div>
+          </div>
         </ContainerScroll>
       </div>
 
-      {/* SEÇÃO 2 — POSICIONAMENTO */}
+      {/* SEÇÃO 2 — PROBLEMA */}
       <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -130,21 +123,44 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy leading-tight">
+            O problema não é falta de cliente.
+          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gold leading-tight mt-1">
+            É falta de presença.
+          </h2>
+          <p className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed">
+            A maioria dos negócios locais ou não aparece online, ou aparece mal.
+            Sem uma presença profissional, você perde pro concorrente antes da
+            conversa começar.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* SEÇÃO 3 — MANIFESTO */}
+      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+        <motion.div
+          className="max-w-3xl mx-auto text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-offwhite leading-tight">
             A Elevare não vende design.
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-gold leading-tight mt-1">
             Vende crescimento.
           </h2>
-          <p className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed">
-            Design sem estratégia não gera cliente. Cada entrega da Elevare é
-            pensada para converter visitante em cliente pagante.
+          <p className="mt-6 text-offwhite/60 text-lg max-w-xl mx-auto leading-relaxed">
+            Design sem estratégia não traz cliente. Cada entrega é feita pra
+            converter, não só pra impressionar.
           </p>
         </motion.div>
       </section>
 
-      {/* SEÇÃO 3 — SERVIÇOS */}
-      <section id="servicos" className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+      {/* SEÇÃO 4 — SERVIÇOS */}
+      <section id="servicos" className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -152,38 +168,35 @@ export default function Home() {
           viewport={{ once: true }}
           variants={stagger}
         >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
-          >
-            O que a Elevare faz
-          </motion.h2>
+          <motion.div variants={fadeInUp} className="text-center mb-12">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Serviços
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
+              O que a Elevare faz
+            </h2>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {servicos.map((s, i) => (
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                whileHover={{
-                  y: -8,
-                  boxShadow: "0 12px 40px rgba(196,163,90,0.18)",
-                }}
+                whileHover={{ y: -6, boxShadow: "0 12px 40px rgba(11,22,40,0.12)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="border border-gold rounded-2xl p-6 flex flex-col gap-4 bg-[#0f1e35]/70 backdrop-blur-sm"
+                className="border border-navy/10 rounded-2xl p-6 flex flex-col gap-4 bg-white shadow-sm"
               >
-                <h3 className="text-offwhite font-bold text-lg">{s.title}</h3>
-                <p className="text-offwhite/60 text-sm flex-1 leading-relaxed">
+                <h3 className="text-navy font-bold text-lg">{s.title}</h3>
+                <p className="text-navy/60 text-sm flex-1 leading-relaxed">
                   {s.desc}
                 </p>
                 <a
                   href={s.href}
-                  className={
-                    s.ctaStyle === "gold"
-                      ? "bg-gold text-navy text-sm font-semibold py-2 px-4 rounded-full text-center hover:brightness-110 transition-all"
-                      : "border border-gold text-gold text-sm font-semibold py-2 px-4 rounded-full text-center hover:bg-gold/10 transition-all"
-                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gold text-navy text-sm font-semibold py-2 px-4 rounded-full text-center hover:brightness-110 transition-all"
                 >
-                  {s.cta}
+                  Falar no WhatsApp
                 </a>
               </motion.div>
             ))}
@@ -191,7 +204,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SEÇÃO 4 — COMO FUNCIONA */}
+      {/* SEÇÃO 5 — PORTFÓLIO */}
+      <PortfolioSection />
+
+      {/* SEÇÃO 6 — COMO FUNCIONA */}
       <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-4xl mx-auto"
@@ -208,12 +224,11 @@ export default function Home() {
               Como funciona
             </h2>
             <p className="text-navy/60 mt-3 text-lg">
-              Sem reunião demorada, sem burocracia. A gente resolve.
+              Sem reunião demorada, sem burocracia.
             </p>
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-start gap-0 relative">
-            {/* linha conectora — desktop */}
             <div className="hidden md:block absolute top-8 left-[16.666%] right-[16.666%] h-px bg-gold/30" />
 
             {passos.map((p, i) => (
@@ -237,90 +252,12 @@ export default function Home() {
                 </h3>
                 <p className="text-navy/60 text-sm leading-relaxed">{p.desc}</p>
 
-                {/* separador vertical mobile */}
                 {i < passos.length - 1 && (
                   <div className="md:hidden w-px h-10 bg-gold/30 my-6" />
                 )}
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </section>
-
-      {/* SEÇÃO 5 — PROVA SOCIAL */}
-      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
-        <motion.div
-          className="max-w-5xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
-          >
-            O que dizem sobre a Elevare
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {depoimentos.map((d, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="border border-gold rounded-2xl p-6 bg-[#0f1e35] flex flex-col gap-3"
-              >
-                <span className="text-gold text-6xl font-serif leading-none select-none">
-                  &ldquo;
-                </span>
-                <p className="text-offwhite/50 text-sm italic leading-relaxed flex-1">
-                  {d.texto}
-                </p>
-                <div className="pt-2 border-t border-gold/20">
-                  <p className="text-offwhite font-semibold text-sm">{d.nome}</p>
-                  <p className="text-gold text-xs mt-0.5">{d.segmento}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* SEÇÃO 6 — LEAD MAGNET */}
-      <section className="bg-offwhite py-24 px-6">
-        <motion.div
-          className="max-w-xl mx-auto text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8 leading-snug">
-            Qual a prioridade do visual do seu negócio hoje?
-          </h2>
-
-          <div className="mb-1 flex justify-between text-xs text-navy/50 font-medium px-1">
-            <span>Baixa prioridade</span>
-            <span className="text-gold font-bold text-base">{sliderValue}</span>
-            <span>Alta prioridade</span>
-          </div>
-          <input
-            type="range"
-            min={0}
-            max={10}
-            value={sliderValue}
-            onChange={(e) => setSliderValue(Number(e.target.value))}
-            className="w-full accent-gold mb-8 cursor-pointer"
-          />
-
-          <input
-            type="email"
-            placeholder="Digite seu email para receber uma condição especial"
-            className="w-full border border-navy/20 rounded-full px-5 py-3 text-sm text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold mb-4 bg-white transition-colors"
-          />
-          <button className="w-full bg-navy text-offwhite font-semibold py-3 rounded-full hover:brightness-125 transition-all">
-            Quero minha condição especial
-          </button>
         </motion.div>
       </section>
 
@@ -334,13 +271,15 @@ export default function Home() {
           variants={fadeInUp}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
-            Pronto pra ter uma presença digital que realmente funciona?
+            Quer saber quanto você tá perdendo sem presença profissional?
           </h2>
           <a
             href="https://wa.me/5511950274038"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-navy text-offwhite font-bold text-lg px-10 py-4 rounded-full hover:brightness-125 transition-all"
           >
-            Falar no WhatsApp
+            Fala comigo agora
           </a>
         </motion.div>
       </section>

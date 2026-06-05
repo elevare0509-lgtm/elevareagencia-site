@@ -8,8 +8,9 @@ import ShaderBg from "@/components/ShaderBg";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Elevare",
-  description: "Elevare — Design & Marketing Digital",
+  title: "Elevare — Presença digital para negócios locais",
+  description:
+    "Sites, landing pages e menu digital que transformam visitante em cliente. A Elevare cuida da presença digital do seu negócio local.",
 };
 
 export default function RootLayout({
