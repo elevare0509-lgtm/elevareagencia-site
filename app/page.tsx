@@ -181,14 +181,18 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <a
-                href={WA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gold text-navy font-bold px-7 py-3 rounded-full hover:brightness-110 transition-all text-sm"
+              <ShinyButton
+                onClick={() => window.open(WA, "_blank")}
+                style={{
+                  "--shiny-cta-bg": "#C4A35A",
+                  "--shiny-cta-bg-subtle": "#a88748",
+                  "--shiny-cta-highlight": "#ffffff",
+                  "--shiny-cta-highlight-subtle": "#f5e6c0",
+                  "--shiny-cta-fg": "#0B1628",
+                } as React.CSSProperties}
               >
-                Falar com a Elevare
-              </a>
+                Quero mais clientes
+              </ShinyButton>
               <button
                 onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
                 className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
