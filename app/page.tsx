@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Typewriter } from "@/components/ui/typewriter";
 import PortfolioSection from "@/components/PortfolioSection";
 
@@ -81,75 +82,121 @@ const depoimentos = [
 ];
 
 export default function Home() {
+  const titleComponent = (
+    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
+      <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
+        Agência de presença digital
+      </span>
+      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
+        Presença digital que faz o seu negócio{" "}
+        <Typewriter
+          text="ser levado a sério."
+          speed={70}
+          initialDelay={400}
+          loop={true}
+          waitTime={2500}
+          deleteSpeed={40}
+          showCursor={true}
+          cursorChar="|"
+          className="text-[#C4A35A] font-bold"
+          cursorClassName="text-[#C4A35A] ml-0.5"
+        />
+      </h1>
+      <p className="text-offwhite/60 text-sm md:text-base leading-relaxed max-w-lg text-center">
+        A Elevare cria sites, landing pages e design de Instagram pra negócios locais
+        aparecerem no Google, passarem confiança e transformarem visita em cliente.
+      </p>
+      <div className="flex flex-wrap justify-center gap-3 items-center">
+        <a
+          href={WA}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gold text-navy font-bold px-7 py-3 rounded-full hover:brightness-110 transition-all text-sm"
+        >
+          Quero mais clientes
+        </a>
+        <a
+          href="#portfolio"
+          className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
+        >
+          Ver trabalhos
+        </a>
+      </div>
+      <p className="text-offwhite/30 text-xs tracking-wide">
+        Atende Cotia, Granja Viana e região.
+      </p>
+    </div>
+  );
+
   return (
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-24">
-        <motion.div
-          className="flex flex-col items-center gap-6 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12 max-w-2xl w-full text-center"
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-        >
-          <motion.span
-            variants={fadeInUp}
-            className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase"
+      <div className="relative">
+        <ContainerScroll titleComponent={titleComponent}>
+          <div
+            className="w-full h-full rounded-2xl flex flex-col justify-between px-8 md:px-16 pt-10 pb-10"
+            style={{ background: "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)" }}
           >
-            Agência de presença digital
-          </motion.span>
-
-          <motion.h1
-            variants={fadeInUp}
-            className="text-3xl md:text-5xl font-bold text-offwhite leading-snug"
-          >
-            Presença digital que faz o seu negócio{" "}
-            <Typewriter
-              text="ser levado a sério."
-              speed={70}
-              initialDelay={400}
-              loop={true}
-              waitTime={2500}
-              deleteSpeed={40}
-              showCursor={true}
-              cursorChar="|"
-              className="text-[#C4A35A] font-bold"
-              cursorClassName="text-[#C4A35A] ml-0.5"
-            />
-          </motion.h1>
-
-          <motion.p
-            variants={fadeInUp}
-            className="text-offwhite/60 text-base md:text-lg leading-relaxed max-w-lg"
-          >
-            A Elevare cria sites, landing pages e design de Instagram pra negócios locais
-            aparecerem no Google, passarem confiança e transformarem visita em cliente.
-          </motion.p>
-
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-3 items-center"
-          >
-            <a
-              href={WA}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all text-sm"
+            {/* Gancho */}
+            <motion.div
+              className="flex flex-col items-center gap-3 text-center"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
-              Quero mais clientes
-            </a>
-            <a
-              href="#portfolio"
-              className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 font-medium px-6 py-3.5 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
-            >
-              Ver trabalhos
-            </a>
-          </motion.div>
+              <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
+                Para negócios locais
+              </span>
+              <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
+                Quando seu próximo cliente buscar no Google,{" "}
+                ele vai te encontrar —{" "}
+                <span className="text-gold">ou ao concorrente?</span>
+              </p>
+            </motion.div>
 
-          <motion.p variants={fadeInUp} className="text-offwhite/30 text-xs tracking-wide">
-            Atende Cotia, Granja Viana e região.
-          </motion.p>
-        </motion.div>
-      </section>
+            {/* Copy SEO */}
+            <motion.div
+              className="flex flex-col items-center gap-2 text-center"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <p className="text-offwhite/60 text-base md:text-lg leading-relaxed max-w-lg">
+                A Elevare cria <strong className="text-offwhite/80 font-medium">sites profissionais</strong>,{" "}
+                <strong className="text-offwhite/80 font-medium">landing pages</strong> e{" "}
+                <strong className="text-offwhite/80 font-medium">design de Instagram</strong> para negócios locais
+                aparecerem no Google, ganharem autoridade e converterem visitante em cliente pagante.
+              </p>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gold text-navy font-bold px-7 py-3 rounded-full hover:brightness-110 transition-all text-sm"
+              >
+                Falar com a Elevare
+              </a>
+              <button
+                onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
+              >
+                Ver nosso trabalho
+              </button>
+            </motion.div>
+          </div>
+        </ContainerScroll>
+      </div>
 
       {/* ── SEÇÃO 2 — PROBLEMA (fusão) ── */}
       <section className="bg-offwhite py-24 px-6">
