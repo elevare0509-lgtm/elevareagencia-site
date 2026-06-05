@@ -127,9 +127,6 @@ export default function Home() {
           Ver trabalhos
         </a>
       </div>
-      <p className="text-offwhite/30 text-xs tracking-wide">
-        Atende Cotia, Granja Viana e região.
-      </p>
     </div>
   );
 
