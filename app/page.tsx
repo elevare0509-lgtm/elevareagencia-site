@@ -263,7 +263,7 @@ export default function Home() {
                 className="border border-gold rounded-2xl p-6 bg-[#0f1e35] flex flex-col gap-3"
               >
                 <span className="text-gold text-6xl font-serif leading-none select-none">
-                  "
+                  &ldquo;
                 </span>
                 <p className="text-offwhite/50 text-sm italic leading-relaxed flex-1">
                   {d.texto}
