@@ -23,13 +23,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full px-6 md:px-10 py-4 flex items-center justify-between transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full px-6 md:px-10 py-2.5 flex items-center justify-between transition-all duration-300 ${
         scrolled
           ? "bg-[#0B1628] backdrop-blur-md shadow-[0_1px_0_rgba(196,163,90,0.1)]"
           : "bg-[#0B1628]/30 backdrop-blur-sm"
       }`}
     >
-      <Link href="/" className="text-gold text-3xl font-extrabold tracking-wide">
+      <Link href="/" className="text-gold text-2xl font-extrabold tracking-wide">
         Elevare
       </Link>
 
@@ -39,7 +39,7 @@ export default function Navbar() {
           <li key={href}>
             <Link
               href={href}
-              className="text-offwhite hover:text-gold transition-colors text-sm font-semibold"
+              className="text-offwhite hover:text-gold transition-colors text-xs font-semibold"
             >
               {label}
             </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
         href="https://wa.me/5511950274038"
         target="_blank"
         rel="noopener noreferrer"
-        className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110 transition-all"
+        className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-xs font-bold px-4 py-2 rounded-[9999px] hover:brightness-110 transition-all"
       >
         Falar no WhatsApp
       </a>
