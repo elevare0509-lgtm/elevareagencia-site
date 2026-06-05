@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -13,26 +13,49 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-navy/80 backdrop-blur-md w-full px-6 md:px-8 py-4 flex items-center justify-between relative z-50">
-      <Link href="/" className="text-gold text-2xl font-bold tracking-wide">
+    <nav
+      className={`sticky top-0 z-50 w-full px-6 md:px-10 py-4 flex items-center justify-between transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0B1628] backdrop-blur-md shadow-[0_1px_0_rgba(196,163,90,0.1)]"
+          : "bg-[#0B1628]/30 backdrop-blur-sm"
+      }`}
+    >
+      <Link href="/" className="text-gold text-3xl font-extrabold tracking-wide">
         Elevare
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden md:flex gap-6">
+      <ul className="hidden md:flex gap-10 items-center">
         {links.map(({ href, label }) => (
           <li key={href}>
             <Link
               href={href}
-              className="text-offwhite hover:text-gold transition-colors text-sm font-medium"
+              className="text-offwhite hover:text-gold transition-colors text-sm font-semibold"
             >
               {label}
             </Link>
           </li>
         ))}
       </ul>
+
+      {/* CTA desktop */}
+      <a
+        href="https://wa.me/5511950274038"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110 transition-all"
+      >
+        Falar no WhatsApp
+      </a>
 
       {/* Mobile hamburger */}
       <button
@@ -45,19 +68,29 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="absolute top-full left-0 right-0 bg-navy/95 backdrop-blur-md border-t border-gold/10 md:hidden">
+        <div className="absolute top-full left-0 right-0 bg-[#0B1628]/95 backdrop-blur-md border-t border-gold/10 md:hidden">
           <ul className="flex flex-col py-4">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="block px-6 py-3 text-offwhite hover:text-gold hover:bg-white/5 transition-colors text-sm font-medium"
+                  className="block px-6 py-3 text-offwhite hover:text-gold hover:bg-white/5 transition-colors text-sm font-semibold"
                 >
                   {label}
                 </Link>
               </li>
             ))}
+            <li className="px-6 pt-3 pb-1">
+              <a
+                href="https://wa.me/5511950274038"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110 transition-all"
+              >
+                Falar no WhatsApp
+              </a>
+            </li>
           </ul>
         </div>
       )}
