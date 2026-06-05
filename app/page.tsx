@@ -77,34 +77,49 @@ export default function Home() {
       <div className="relative">
         <ContainerScroll titleComponent={titleComponent}>
           <div
-            className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-8 px-8 py-10"
-            style={{ background: "linear-gradient(135deg, #0B1628 0%, #0d1f3c 60%, #0B1628 100%)" }}
+            className="w-full h-full rounded-2xl flex flex-col justify-between px-8 md:px-16 pt-10 pb-10"
+            style={{ background: "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)" }}
           >
+            {/* Gancho — visível primeiro */}
             <motion.div
-              className="flex flex-col items-center gap-4 text-center max-w-lg"
-              initial={{ opacity: 0, y: 24 }}
+              className="flex flex-col items-center gap-3 text-center"
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <span className="text-gold/60 text-xs tracking-widest uppercase font-semibold">
-                Para negócios que querem crescer
+              <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
+                Para negócios locais
               </span>
-              <p className="text-offwhite text-xl md:text-3xl font-bold leading-snug">
-                Todo dia sem presença profissional,{" "}
-                um cliente foi pro{" "}
-                <span className="text-gold">concorrente.</span>
-              </p>
-              <p className="text-offwhite/55 text-sm md:text-base leading-relaxed">
-                A Elevare constrói sites, landing pages e design que trabalham por você — e trazem cliente enquanto você dorme.
+              <p className="text-offwhite text-xl md:text-2xl font-bold leading-snug max-w-md">
+                9 em cada 10 clientes pesquisam online{" "}
+                antes de comprar.{" "}
+                <span className="text-gold">O seu negócio aparece?</span>
               </p>
             </motion.div>
 
+            {/* Copy SEO — meio */}
+            <motion.div
+              className="flex flex-col items-center gap-2 text-center"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <p className="text-offwhite/60 text-sm md:text-base leading-relaxed max-w-lg">
+                A Elevare cria <strong className="text-offwhite/80 font-medium">sites profissionais</strong>,{" "}
+                <strong className="text-offwhite/80 font-medium">landing pages</strong> e{" "}
+                <strong className="text-offwhite/80 font-medium">design de Instagram</strong> para negócios locais
+                aparecerem no Google, ganharem autoridade e converterem visitante em cliente pagante.
+              </p>
+            </motion.div>
+
+            {/* CTA — revelado por último */}
             <motion.div
               className="flex flex-wrap justify-center gap-3 items-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <ShinyButton
