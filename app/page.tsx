@@ -4,6 +4,7 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
 import PortfolioSection from "@/components/PortfolioSection";
 
@@ -107,14 +108,18 @@ export default function Home() {
         aparecerem no Google, passarem confiança e transformarem visita em cliente.
       </p>
       <div className="flex flex-wrap justify-center gap-3 items-center">
-        <a
-          href={WA}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gold text-navy font-bold px-7 py-3 rounded-full hover:brightness-110 transition-all text-sm"
+        <ShinyButton
+          onClick={() => window.open(WA, "_blank")}
+          style={{
+            "--shiny-cta-bg": "#C4A35A",
+            "--shiny-cta-bg-subtle": "#a88748",
+            "--shiny-cta-highlight": "#ffffff",
+            "--shiny-cta-highlight-subtle": "#f5e6c0",
+            "--shiny-cta-fg": "#0B1628",
+          } as React.CSSProperties}
         >
           Quero mais clientes
-        </a>
+        </ShinyButton>
         <a
           href="#portfolio"
           className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
