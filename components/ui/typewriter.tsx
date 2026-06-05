@@ -77,7 +77,7 @@ const Typewriter = ({
             setDisplayText((prev) => prev + currentText[currentIndex])
             setCurrentIndex((prev) => prev + 1)
           }, speed)
-        } else if (texts.length > 1) {
+        } else if (loop || texts.length > 1) {
           timeout = setTimeout(() => {
             setIsDeleting(true)
           }, waitTime)
