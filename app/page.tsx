@@ -76,7 +76,7 @@ export default function Home() {
 
   const titleComponent = (
     <div className="flex flex-col items-center gap-6 pb-8">
-      <h1 className="font-heading text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
+      <h1 className="text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
         Sua presença digital precisa{" "}
         <span className="text-gold">trabalhar</span> por você.
       </h1>
@@ -130,10 +130,10 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-navy leading-tight">
             A Elevare não vende design.
           </h2>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-gold leading-tight mt-1">
+          <h2 className="text-4xl md:text-5xl font-bold text-gold leading-tight mt-1">
             Vende crescimento.
           </h2>
           <p className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed">
@@ -154,7 +154,7 @@ export default function Home() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
+            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
           >
             O que a Elevare faz
           </motion.h2>
@@ -171,7 +171,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="border border-gold rounded-2xl p-6 flex flex-col gap-4 bg-[#0f1e35]/70 backdrop-blur-sm"
               >
-                <h3 className="font-heading text-offwhite font-bold text-lg">{s.title}</h3>
+                <h3 className="text-offwhite font-bold text-lg">{s.title}</h3>
                 <p className="text-offwhite/60 text-sm flex-1 leading-relaxed">
                   {s.desc}
                 </p>
@@ -204,7 +204,7 @@ export default function Home() {
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
               Processo
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mt-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
               Como funciona
             </h2>
             <p className="text-navy/60 mt-3 text-lg">
@@ -258,7 +258,7 @@ export default function Home() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="font-heading text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
+            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
           >
             O que dizem sobre a Elevare
           </motion.h2>
@@ -295,7 +295,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-8 leading-snug">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8 leading-snug">
             Qual a prioridade do visual do seu negócio hoje?
           </h2>
 
@@ -333,7 +333,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
             Pronto pra ter uma presença digital que realmente funciona?
           </h2>
           <a
