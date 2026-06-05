@@ -5,6 +5,7 @@ import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -95,14 +96,12 @@ export default function Home() {
         >
           Falar no WhatsApp
         </ShinyButton>
-        <button
+        <LiquidMetalButton
+          label="Ver serviços"
           onClick={() =>
             document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
           }
-          className="border border-offwhite/50 text-offwhite font-medium px-8 py-4 rounded-full hover:bg-offwhite/10 transition-all text-lg"
-        >
-          Ver serviços
-        </button>
+        />
       </div>
     </div>
   );
