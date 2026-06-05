@@ -47,6 +47,10 @@ const config: Config = {
         offwhite: "#F2EDE4",
         gold: "#C4A35A",
       },
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "Georgia", "serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

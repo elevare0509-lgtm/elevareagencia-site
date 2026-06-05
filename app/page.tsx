@@ -5,7 +5,6 @@ import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -77,7 +76,7 @@ export default function Home() {
 
   const titleComponent = (
     <div className="flex flex-col items-center gap-6 pb-8">
-      <h1 className="text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
+      <h1 className="font-heading text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
         Sua presença digital precisa{" "}
         <span className="text-gold">trabalhar</span> por você.
       </h1>
@@ -96,12 +95,14 @@ export default function Home() {
         >
           Falar no WhatsApp
         </ShinyButton>
-        <LiquidMetalButton
-          label="Ver serviços"
+        <button
           onClick={() =>
             document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
           }
-        />
+          className="border border-[#F2EDE4] text-[#F2EDE4] bg-transparent font-medium px-8 py-4 rounded-full hover:bg-[#F2EDE4]/10 transition-all text-lg"
+        >
+          Ver serviços
+        </button>
       </div>
     </div>
   );
@@ -113,7 +114,7 @@ export default function Home() {
         <ContainerScroll titleComponent={titleComponent}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1400&q=75"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80"
             alt="Dashboard profissional Elevare"
             className="w-full h-full object-cover object-top rounded-2xl"
           />
@@ -121,7 +122,7 @@ export default function Home() {
       </div>
 
       {/* SEÇÃO 2 — POSICIONAMENTO */}
-      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
+      <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="hidden"
@@ -129,10 +130,10 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-navy leading-tight">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy leading-tight">
             A Elevare não vende design.
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold text-gold leading-tight mt-1">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-gold leading-tight mt-1">
             Vende crescimento.
           </h2>
           <p className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed">
@@ -153,7 +154,7 @@ export default function Home() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
+            className="font-heading text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
           >
             O que a Elevare faz
           </motion.h2>
@@ -170,7 +171,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="border border-gold rounded-2xl p-6 flex flex-col gap-4 bg-[#0f1e35]/70 backdrop-blur-sm"
               >
-                <h3 className="text-offwhite font-bold text-lg">{s.title}</h3>
+                <h3 className="font-heading text-offwhite font-bold text-lg">{s.title}</h3>
                 <p className="text-offwhite/60 text-sm flex-1 leading-relaxed">
                   {s.desc}
                 </p>
@@ -191,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 4 — COMO FUNCIONA */}
-      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
+      <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-4xl mx-auto"
           initial="hidden"
@@ -203,7 +204,7 @@ export default function Home() {
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
               Processo
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mt-2">
               Como funciona
             </h2>
             <p className="text-navy/60 mt-3 text-lg">
@@ -257,7 +258,7 @@ export default function Home() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
+            className="font-heading text-3xl md:text-4xl font-bold text-offwhite text-center mb-12"
           >
             O que dizem sobre a Elevare
           </motion.h2>
@@ -286,7 +287,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 6 — LEAD MAGNET */}
-      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
+      <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-xl mx-auto text-center"
           initial="hidden"
@@ -294,7 +295,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8 leading-snug">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-8 leading-snug">
             Qual a prioridade do visual do seu negócio hoje?
           </h2>
 
@@ -315,7 +316,7 @@ export default function Home() {
           <input
             type="email"
             placeholder="Digite seu email para receber uma condição especial"
-            className="w-full border border-navy/20 rounded-full px-5 py-3 text-sm text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold mb-4 bg-white/70 backdrop-blur-sm transition-colors"
+            className="w-full border border-navy/20 rounded-full px-5 py-3 text-sm text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold mb-4 bg-white transition-colors"
           />
           <button className="w-full bg-navy text-offwhite font-semibold py-3 rounded-full hover:brightness-125 transition-all">
             Quero minha condição especial
@@ -332,7 +333,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
             Pronto pra ter uma presença digital que realmente funciona?
           </h2>
           <a
