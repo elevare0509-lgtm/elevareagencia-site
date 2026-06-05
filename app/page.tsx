@@ -60,23 +60,24 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-6 pb-8">
+    <div className="flex flex-col items-center gap-6 pb-8 md:-mt-[50px]">
       <h1 className="text-4xl md:text-6xl font-bold text-offwhite text-center leading-tight max-w-3xl">
         Seu negócio{" "}
         <span className="text-gold">perde cliente</span>{" "}
         todo dia sem aparecer online.
       </h1>
-      <p className="text-offwhite/70 text-lg md:text-xl text-center max-w-xl">
+      <p className="text-offwhite/70 text-xl md:text-2xl text-center max-w-xl">
         A Elevare constrói a presença digital que transforma visitante em cliente pagante.
       </p>
       <div className="flex flex-wrap justify-center gap-4 items-center">
         <ShinyButton
           onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
           style={{
-            "--shiny-cta-bg": "#0B1628",
-            "--shiny-cta-highlight": "#C4A35A",
-            "--shiny-cta-highlight-subtle": "#e8c97a",
-            "--shiny-cta-fg": "#F2EDE4",
+            "--shiny-cta-bg": "#C4A35A",
+            "--shiny-cta-bg-subtle": "#a88748",
+            "--shiny-cta-highlight": "#ffffff",
+            "--shiny-cta-highlight-subtle": "#f5e6c0",
+            "--shiny-cta-fg": "#0B1628",
           } as React.CSSProperties}
         >
           Quero mais clientes
@@ -85,7 +86,7 @@ export default function Home() {
           onClick={() =>
             document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
           }
-          className="border border-[#F2EDE4] text-[#F2EDE4] bg-transparent font-medium px-8 py-4 rounded-full hover:bg-[#F2EDE4]/10 transition-all text-lg"
+          className="border border-[#F2EDE4] text-[#F2EDE4] bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 transition-all text-lg"
         >
           Ver como funciona
         </button>
