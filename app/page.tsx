@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { MetalButton, LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -83,18 +84,20 @@ export default function Home() {
         A Elevare transforma negócios locais em referências online.
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        <a
-          href="https://wa.me/5511950274038"
-          className="bg-gold text-navy font-semibold px-7 py-3 rounded-full hover:brightness-110 transition-all"
+        <MetalButton
+          variant="gold"
+          onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
         >
           Falar no WhatsApp
-        </a>
-        <a
-          href="#servicos"
-          className="border border-offwhite/50 text-offwhite font-semibold px-7 py-3 rounded-full hover:bg-offwhite/10 transition-all"
+        </MetalButton>
+        <LiquidButton
+          className="text-offwhite"
+          onClick={() =>
+            document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })
+          }
         >
           Ver serviços
-        </a>
+        </LiquidButton>
       </div>
     </div>
   );
