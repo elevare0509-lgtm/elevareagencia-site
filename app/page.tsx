@@ -60,7 +60,7 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-4 mb-48 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
+    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
       <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Agência de presença digital
       </span>
@@ -91,10 +91,10 @@ export default function Home() {
               <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
                 Para negócios locais
               </span>
-              <p className="text-offwhite text-xl md:text-2xl font-bold leading-snug max-w-md">
-                9 em cada 10 clientes pesquisam online{" "}
-                antes de comprar.{" "}
-                <span className="text-gold">O seu negócio aparece?</span>
+              <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
+                Quando seu próximo cliente buscar no Google,{" "}
+                ele vai te encontrar —{" "}
+                <span className="text-gold">ou ao concorrente?</span>
               </p>
             </motion.div>
 
@@ -106,7 +106,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <p className="text-offwhite/60 text-sm md:text-base leading-relaxed max-w-lg">
+              <p className="text-offwhite/60 text-base md:text-lg leading-relaxed max-w-lg">
                 A Elevare cria <strong className="text-offwhite/80 font-medium">sites profissionais</strong>,{" "}
                 <strong className="text-offwhite/80 font-medium">landing pages</strong> e{" "}
                 <strong className="text-offwhite/80 font-medium">design de Instagram</strong> para negócios locais
