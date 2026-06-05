@@ -60,12 +60,13 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-5 pb-8 md:-mt-[50px]">
-      <h1 className="text-4xl md:text-7xl font-bold text-offwhite text-center leading-tight max-w-2xl">
+    <div className="flex flex-col items-center gap-4 pb-16 md:-mt-[120px]">
+      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-tight max-w-2xl">
         Seu negócio é bom.{" "}
-        <span className="text-gold">O problema é que ninguém sabe disso.</span>
+        O problema é que{" "}
+        <span className="text-gold">ninguém sabe disso.</span>
       </h1>
-      <p className="text-offwhite/60 text-base md:text-lg text-center max-w-lg">
+      <p className="text-offwhite/60 text-sm md:text-base text-center max-w-md">
         Sites, landing pages e design que fazem o cliente te encontrar — e te escolher.
       </p>
       <div className="flex flex-wrap justify-center gap-4 items-center">
