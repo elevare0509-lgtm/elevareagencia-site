@@ -60,7 +60,7 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-4 md:-translate-y-[60px]">
+    <div className="flex flex-col items-center gap-4 mb-12 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
       <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Agência de presença digital
       </span>
@@ -77,13 +77,36 @@ export default function Home() {
       <div className="relative">
         <ContainerScroll titleComponent={titleComponent}>
           <div
-            className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-6 px-8 py-10"
+            className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-8 px-8 py-10"
             style={{ background: "linear-gradient(135deg, #0B1628 0%, #0d1f3c 60%, #0B1628 100%)" }}
           >
-            <p className="text-offwhite/70 text-base md:text-xl text-center max-w-lg leading-relaxed">
-              Criamos sites, landing pages e design para negócios locais que querem crescer — e aparecer online.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 items-center">
+            <motion.div
+              className="flex flex-col items-center gap-4 text-center max-w-lg"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gold/60 text-xs tracking-widest uppercase font-semibold">
+                Para negócios que querem crescer
+              </span>
+              <p className="text-offwhite text-xl md:text-3xl font-bold leading-snug">
+                Todo dia sem presença profissional,{" "}
+                um cliente foi pro{" "}
+                <span className="text-gold">concorrente.</span>
+              </p>
+              <p className="text-offwhite/55 text-sm md:text-base leading-relaxed">
+                A Elevare constrói sites, landing pages e design que trabalham por você — e trazem cliente enquanto você dorme.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
               <ShinyButton
                 onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
                 style={{
@@ -104,7 +127,7 @@ export default function Home() {
               >
                 Ver nosso trabalho
               </button>
-            </div>
+            </motion.div>
           </div>
         </ContainerScroll>
       </div>
