@@ -103,30 +103,6 @@ export default function Home() {
           cursorClassName="text-[#C4A35A] ml-0.5"
         />
       </h1>
-      <p className="text-offwhite/60 text-sm md:text-base leading-relaxed max-w-lg text-center">
-        A Elevare cria sites, landing pages e design de Instagram pra negócios locais
-        aparecerem no Google, passarem confiança e transformarem visita em cliente.
-      </p>
-      <div className="flex flex-wrap justify-center gap-3 items-center">
-        <ShinyButton
-          onClick={() => window.open(WA, "_blank")}
-          style={{
-            "--shiny-cta-bg": "#C4A35A",
-            "--shiny-cta-bg-subtle": "#a88748",
-            "--shiny-cta-highlight": "#ffffff",
-            "--shiny-cta-highlight-subtle": "#f5e6c0",
-            "--shiny-cta-fg": "#0B1628",
-          } as React.CSSProperties}
-        >
-          Quero mais clientes
-        </ShinyButton>
-        <a
-          href="#portfolio"
-          className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
-        >
-          Ver trabalhos
-        </a>
-      </div>
     </div>
   );
 
