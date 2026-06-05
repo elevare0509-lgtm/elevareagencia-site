@@ -60,39 +60,14 @@ const passos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-5 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10 md:py-12 md:-translate-y-[100px]">
-      <span className="text-gold/80 text-xs font-semibold tracking-[0.2em] uppercase">
+    <div className="flex flex-col items-center gap-4 md:-translate-y-[60px]">
+      <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Agência de presença digital
       </span>
       <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
         Presença digital que faz o seu negócio{" "}
         <span className="text-gold">ser levado a sério.</span>
       </h1>
-      <p className="text-offwhite/50 text-sm md:text-base text-center max-w-md leading-relaxed">
-        Criamos sites, landing pages e design para negócios locais que querem crescer — e aparecer online.
-      </p>
-      <div className="flex flex-wrap justify-center gap-3 items-center mt-1">
-        <ShinyButton
-          onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
-          style={{
-            "--shiny-cta-bg": "#C4A35A",
-            "--shiny-cta-bg-subtle": "#a88748",
-            "--shiny-cta-highlight": "#ffffff",
-            "--shiny-cta-highlight-subtle": "#f5e6c0",
-            "--shiny-cta-fg": "#0B1628",
-          } as React.CSSProperties}
-        >
-          Falar com a Elevare
-        </ShinyButton>
-        <button
-          onClick={() =>
-            document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
-          }
-          className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
-        >
-          Ver nosso trabalho
-        </button>
-      </div>
     </div>
   );
 
@@ -102,16 +77,33 @@ export default function Home() {
       <div className="relative">
         <ContainerScroll titleComponent={titleComponent}>
           <div
-            className="w-full h-full rounded-2xl flex items-center justify-center"
+            className="w-full h-full rounded-2xl flex flex-col items-center justify-center gap-6 px-8 py-10"
             style={{ background: "linear-gradient(135deg, #0B1628 0%, #0d1f3c 60%, #0B1628 100%)" }}
           >
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full border border-gold/20 mx-auto mb-4 flex items-center justify-center">
-                <div className="w-8 h-8 rounded-full bg-gold/10" />
-              </div>
-              <p className="text-offwhite/20 text-xs tracking-widest uppercase">
-                preview em breve
-              </p>
+            <p className="text-offwhite/70 text-base md:text-xl text-center max-w-lg leading-relaxed">
+              Criamos sites, landing pages e design para negócios locais que querem crescer — e aparecer online.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 items-center">
+              <ShinyButton
+                onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
+                style={{
+                  "--shiny-cta-bg": "#C4A35A",
+                  "--shiny-cta-bg-subtle": "#a88748",
+                  "--shiny-cta-highlight": "#ffffff",
+                  "--shiny-cta-highlight-subtle": "#f5e6c0",
+                  "--shiny-cta-fg": "#0B1628",
+                } as React.CSSProperties}
+              >
+                Falar com a Elevare
+              </ShinyButton>
+              <button
+                onClick={() =>
+                  document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
+              >
+                Ver nosso trabalho
+              </button>
             </div>
           </div>
         </ContainerScroll>
