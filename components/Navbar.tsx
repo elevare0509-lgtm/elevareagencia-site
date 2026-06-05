@@ -11,7 +11,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-navy w-full px-8 py-4 flex items-center justify-between">
+    <nav className="bg-navy/80 backdrop-blur-md w-full px-8 py-4 flex items-center justify-between">
       <Link href="/" className="text-gold text-2xl font-bold tracking-wide">
         Elevare
       </Link>

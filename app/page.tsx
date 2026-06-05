@@ -114,7 +114,7 @@ export default function Home() {
       </div>
 
       {/* SEÇÃO 2 — POSICIONAMENTO */}
-      <section className="bg-offwhite py-24 px-6">
+      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="hidden"
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 3 — SERVIÇOS */}
-      <section id="servicos" className="bg-navy py-24 px-6">
+      <section id="servicos" className="bg-navy/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -161,7 +161,7 @@ export default function Home() {
                   boxShadow: "0 12px 40px rgba(196,163,90,0.18)",
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="border border-gold rounded-2xl p-6 flex flex-col gap-4 bg-[#0f1e35]"
+                className="border border-gold rounded-2xl p-6 flex flex-col gap-4 bg-[#0f1e35]/70 backdrop-blur-sm"
               >
                 <h3 className="text-offwhite font-bold text-lg">{s.title}</h3>
                 <p className="text-offwhite/60 text-sm flex-1 leading-relaxed">
@@ -184,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 4 — COMO FUNCIONA */}
-      <section className="bg-offwhite py-24 px-6">
+      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-4xl mx-auto"
           initial="hidden"
@@ -240,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 5 — PROVA SOCIAL */}
-      <section className="bg-navy py-24 px-6">
+      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -279,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 6 — LEAD MAGNET */}
-      <section className="bg-offwhite py-24 px-6">
+      <section className="bg-offwhite/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-xl mx-auto text-center"
           initial="hidden"
@@ -308,7 +308,7 @@ export default function Home() {
           <input
             type="email"
             placeholder="Digite seu email para receber uma condição especial"
-            className="w-full border border-navy/20 rounded-full px-5 py-3 text-sm text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold mb-4 bg-white transition-colors"
+            className="w-full border border-navy/20 rounded-full px-5 py-3 text-sm text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold mb-4 bg-white/70 backdrop-blur-sm transition-colors"
           />
           <button className="w-full bg-navy text-offwhite font-semibold py-3 rounded-full hover:brightness-125 transition-all">
             Quero minha condição especial
@@ -317,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO 7 — CTA FINAL */}
-      <section className="bg-gold py-24 px-6">
+      <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-2xl mx-auto text-center"
           initial="hidden"
