@@ -71,7 +71,9 @@ export default function Home() {
           text="ser levado a sério."
           speed={70}
           initialDelay={400}
-          loop={false}
+          loop={true}
+          waitTime={2500}
+          deleteSpeed={40}
           showCursor={true}
           cursorChar="|"
           className="text-[#C4A35A] font-bold"
