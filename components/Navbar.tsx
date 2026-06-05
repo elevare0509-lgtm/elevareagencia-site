@@ -32,7 +32,7 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center">
-          <Image src="/logo-elevare.png" alt="Elevare" height={32} width={32} className="h-8 w-auto" priority />
+          <Image src="/logo-elevare.png" alt="Elevare" height={40} width={40} className="h-10 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}
