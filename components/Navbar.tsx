@@ -6,9 +6,9 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/design-instagram", label: "Design Instagram" },
   { href: "/menu-digital", label: "Menu Digital" },
-  { href: "/landing-pages", label: "Landing Pages" },
+  { href: "/landing-pages", label: "Landing Page" },
+  { href: "/design-instagram", label: "Design Instagram" },
   { href: "/sites", label: "Sites" },
 ];
 

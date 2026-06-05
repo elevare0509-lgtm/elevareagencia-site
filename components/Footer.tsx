@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <span className="text-gold text-2xl font-bold tracking-wide">Elevare</span>
           <p className="text-offwhite/50 text-sm leading-relaxed max-w-[220px]">
-            Design e desenvolvimento que{" "}
-            <span className="text-gold font-semibold">elevam</span> a presença
-            digital do seu negócio.
+            Mais clientes para negócios locais.{" "}
+            Presença digital que{" "}
+            <span className="text-gold font-semibold">passa confiança</span> e vende.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/landing-pages" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Landing Pages
+                Landing Page
               </Link>
             </li>
             <li>
@@ -84,7 +84,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/sites" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Sites
+                Site Institucional
               </Link>
             </li>
           </ul>

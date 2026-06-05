@@ -3,10 +3,10 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
 import PortfolioSection from "@/components/PortfolioSection";
+
+const WA = "https://wa.me/5511950274038";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -22,22 +22,22 @@ const servicos = [
   {
     title: "Menu Digital",
     desc: "Seu cardápio no celular do cliente. Sem app, sem confusão, sem perder pedido.",
-    href: "https://wa.me/5511950274038",
+    href: "/menu-digital",
   },
   {
     title: "Landing Page",
     desc: "Uma página que trabalha 24h trazendo cliente enquanto você trabalha.",
-    href: "https://wa.me/5511950274038",
+    href: "/landing-pages",
   },
   {
     title: "Design Instagram",
     desc: "Perfil que faz o cliente confiar antes de mandar mensagem.",
-    href: "https://wa.me/5511950274038",
+    href: "/design-instagram",
   },
   {
     title: "Site Institucional",
     desc: "Seu negócio encontrado no Google, com cara de quem é sério.",
-    href: "https://wa.me/5511950274038",
+    href: "/sites",
   },
 ];
 
@@ -59,130 +59,132 @@ const passos = [
   },
 ];
 
-export default function Home() {
-  const titleComponent = (
-    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
-      <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
-        Agência de presença digital
-      </span>
-      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
-        Presença digital que faz o seu negócio{" "}
-        <Typewriter
-          text="ser levado a sério."
-          speed={70}
-          initialDelay={400}
-          loop={true}
-          waitTime={2500}
-          deleteSpeed={40}
-          showCursor={true}
-          cursorChar="|"
-          className="text-[#C4A35A] font-bold"
-          cursorClassName="text-[#C4A35A] ml-0.5"
-        />
-      </h1>
-    </div>
-  );
+const depoimentos = [
+  {
+    // TROCAR por depoimento real
+    text: "Antes eu dependia só de indicação. Agora chega cliente que me achou no Google.",
+    name: "Nome",
+    business: "Negócio — Cotia",
+  },
+  {
+    // TROCAR por depoimento real
+    text: "Ficou com cara de empresa séria. O cliente confia antes mesmo de falar comigo.",
+    name: "Nome",
+    business: "Negócio — Granja Viana",
+  },
+  {
+    // TROCAR por depoimento real
+    text: "Em menos de uma semana estava no ar. Resultado limpo e profissional do jeito que eu queria.",
+    name: "Nome",
+    business: "Negócio — Vargem Grande Paulista",
+  },
+];
 
+export default function Home() {
   return (
     <>
-      {/* SEÇÃO 1 — HERO */}
-      <div className="relative">
-        <ContainerScroll titleComponent={titleComponent}>
-          <div
-            className="w-full h-full rounded-2xl flex flex-col justify-between px-8 md:px-16 pt-10 pb-10"
-            style={{ background: "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)" }}
+      {/* ── SEÇÃO 1 — HERO ── */}
+      <section className="min-h-screen flex items-center justify-center px-6 py-24">
+        <motion.div
+          className="flex flex-col items-center gap-6 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12 max-w-2xl w-full text-center"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+        >
+          <motion.span
+            variants={fadeInUp}
+            className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase"
           >
-            {/* Gancho — visível primeiro */}
-            <motion.div
-              className="flex flex-col items-center gap-3 text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
-                Para negócios locais
-              </span>
-              <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
-                Quando seu próximo cliente buscar no Google,{" "}
-                ele vai te encontrar —{" "}
-                <span className="text-gold">ou ao concorrente?</span>
-              </p>
-            </motion.div>
+            Agência de presença digital
+          </motion.span>
 
-            {/* Copy SEO — meio */}
-            <motion.div
-              className="flex flex-col items-center gap-2 text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <p className="text-offwhite/60 text-base md:text-lg leading-relaxed max-w-lg">
-                A Elevare cria <strong className="text-offwhite/80 font-medium">sites profissionais</strong>,{" "}
-                <strong className="text-offwhite/80 font-medium">landing pages</strong> e{" "}
-                <strong className="text-offwhite/80 font-medium">design de Instagram</strong> para negócios locais
-                aparecerem no Google, ganharem autoridade e converterem visitante em cliente pagante.
-              </p>
-            </motion.div>
+          <motion.h1
+            variants={fadeInUp}
+            className="text-3xl md:text-5xl font-bold text-offwhite leading-snug"
+          >
+            Presença digital que faz o seu negócio{" "}
+            <Typewriter
+              text="ser levado a sério."
+              speed={70}
+              initialDelay={400}
+              loop={true}
+              waitTime={2500}
+              deleteSpeed={40}
+              showCursor={true}
+              cursorChar="|"
+              className="text-[#C4A35A] font-bold"
+              cursorClassName="text-[#C4A35A] ml-0.5"
+            />
+          </motion.h1>
 
-            {/* CTA — revelado por último */}
-            <motion.div
-              className="flex flex-wrap justify-center gap-3 items-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <ShinyButton
-                onClick={() => window.open("https://wa.me/5511950274038", "_blank")}
-                style={{
-                  "--shiny-cta-bg": "#C4A35A",
-                  "--shiny-cta-bg-subtle": "#a88748",
-                  "--shiny-cta-highlight": "#ffffff",
-                  "--shiny-cta-highlight-subtle": "#f5e6c0",
-                  "--shiny-cta-fg": "#0B1628",
-                } as React.CSSProperties}
-              >
-                Falar com a Elevare
-              </ShinyButton>
-              <button
-                onClick={() =>
-                  document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 bg-transparent font-medium px-6 py-3 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
-              >
-                Ver nosso trabalho
-              </button>
-            </motion.div>
-          </div>
-        </ContainerScroll>
-      </div>
+          <motion.p
+            variants={fadeInUp}
+            className="text-offwhite/60 text-base md:text-lg leading-relaxed max-w-lg"
+          >
+            A Elevare cria sites, landing pages e design de Instagram pra negócios locais
+            aparecerem no Google, passarem confiança e transformarem visita em cliente.
+          </motion.p>
 
-      {/* SEÇÃO 2 — PROBLEMA */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-wrap justify-center gap-3 items-center"
+          >
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all text-sm"
+            >
+              Quero mais clientes
+            </a>
+            <a
+              href="#portfolio"
+              className="border border-[#F2EDE4]/40 text-[#F2EDE4]/70 font-medium px-6 py-3.5 rounded-full hover:bg-[#F2EDE4]/10 hover:border-[#F2EDE4]/70 hover:text-[#F2EDE4] transition-all text-sm"
+            >
+              Ver trabalhos
+            </a>
+          </motion.div>
+
+          <motion.p variants={fadeInUp} className="text-offwhite/30 text-xs tracking-wide">
+            Atende Cotia, Granja Viana e região.
+          </motion.p>
+        </motion.div>
+      </section>
+
+      {/* ── SEÇÃO 2 — PROBLEMA (fusão) ── */}
       <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeInUp}
+          variants={stagger}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy leading-tight">
-            O problema não é falta de cliente.
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-bold text-gold leading-tight mt-1">
-            É falta de presença.
-          </h2>
-          <p className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed">
-            A maioria dos negócios locais ou não aparece online, ou aparece mal.
-            Sem uma presença profissional, você perde pro concorrente antes da
-            conversa começar.
-          </p>
+          <motion.span
+            variants={fadeInUp}
+            className="text-gold text-xs font-bold tracking-widest uppercase"
+          >
+            O Problema
+          </motion.span>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl font-bold text-navy leading-tight mt-3"
+          >
+            O problema não é falta de cliente.{" "}
+            <span className="text-gold">É falta de presença.</span>
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 text-navy/60 text-lg max-w-xl mx-auto leading-relaxed"
+          >
+            Quando seu cliente busca no Google, ou ele te encontra — ou encontra o concorrente.
+            A maioria dos negócios locais não aparece, ou aparece mal.
+            Sem presença profissional, você perde a venda antes da conversa começar.
+          </motion.p>
         </motion.div>
       </section>
 
-      {/* SEÇÃO 3 — MANIFESTO */}
+      {/* ── SEÇÃO 3 — MANIFESTO (NÃO MEXER) ── */}
       <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -204,7 +206,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SEÇÃO 4 — SERVIÇOS */}
+      {/* ── SEÇÃO 4 — SERVIÇOS ── */}
       <section id="servicos" className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
@@ -232,29 +234,77 @@ export default function Home() {
                 className="border border-navy/10 rounded-2xl p-6 flex flex-col gap-4 bg-white shadow-sm"
               >
                 <h3 className="text-navy font-bold text-lg">{s.title}</h3>
-                <p className="text-navy/60 text-sm flex-1 leading-relaxed">
-                  {s.desc}
-                </p>
+                <p className="text-navy/60 text-sm flex-1 leading-relaxed">{s.desc}</p>
                 <a
                   href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gold text-navy text-sm font-semibold py-2 px-4 rounded-full text-center hover:brightness-110 transition-all"
+                  className="border border-navy/20 text-navy text-sm font-semibold py-2 px-4 rounded-full text-center hover:bg-navy hover:text-offwhite transition-all"
                 >
-                  Falar no WhatsApp
+                  Ver detalhes →
                 </a>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div variants={fadeInUp} className="text-center mt-10">
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all text-sm"
+            >
+              Quer ajuda pra escolher? Fala comigo no WhatsApp
+            </a>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ── SEÇÃO 5 — PORTFÓLIO ── */}
+      <div id="portfolio">
+        <PortfolioSection />
+      </div>
+
+      {/* ── SEÇÃO 6 — DEPOIMENTOS ── */}
+      <section className="bg-navy py-24 px-6">
+        <motion.div
+          className="max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeInUp} className="text-center mb-12">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Depoimentos
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2">
+              O que dizem sobre a Elevare
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {depoimentos.map((d, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="border border-white/8 rounded-2xl p-6 bg-white/5 backdrop-blur-sm flex flex-col gap-4"
+              >
+                <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center shrink-0">
+                  <span className="text-gold font-bold text-sm">{d.name[0]}</span>
+                </div>
+                <p className="text-offwhite/70 text-sm leading-relaxed flex-1">
+                  &ldquo;{d.text}&rdquo;
+                </p>
+                <div>
+                  <p className="text-offwhite font-semibold text-sm">{d.name}</p>
+                  <p className="text-offwhite/40 text-xs">{d.business}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </section>
 
-      {/* SEÇÃO 5 — PORTFÓLIO */}
-      <div id="portfolio">
-        <PortfolioSection />
-      </div>
-
-      {/* SEÇÃO 6 — COMO FUNCIONA */}
+      {/* ── SEÇÃO 7 — COMO FUNCIONA (NÃO MEXER) ── */}
       <section className="bg-offwhite py-24 px-6">
         <motion.div
           className="max-w-4xl mx-auto"
@@ -308,7 +358,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SEÇÃO 7 — CTA FINAL */}
+      {/* ── SEÇÃO 8 — CTA FINAL (NÃO MEXER) ── */}
       <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-2xl mx-auto text-center"
@@ -321,7 +371,7 @@ export default function Home() {
             Quer saber quanto você tá perdendo sem presença profissional?
           </h2>
           <a
-            href="https://wa.me/5511950274038"
+            href={WA}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-navy text-offwhite font-bold text-lg px-10 py-4 rounded-full hover:brightness-125 transition-all"
