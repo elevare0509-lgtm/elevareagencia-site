@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ShaderBg from "@/components/ShaderBg";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -18,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <body className="font-sans antialiased flex flex-col min-h-screen bg-offwhite">
+      <body className="font-sans antialiased flex flex-col min-h-screen">
+        <ShaderBg />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Palette, Rocket } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import ShaderBackground from "@/components/ui/shader-background";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -103,18 +102,15 @@ export default function Home() {
   return (
     <>
       {/* SEÇÃO 1 — HERO */}
-      <div className="bg-navy relative overflow-hidden">
-        <ShaderBackground />
-        <div className="relative z-10">
-          <ContainerScroll titleComponent={titleComponent}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1400&q=75"
-              alt="Dashboard profissional Elevare"
-              className="w-full h-full object-cover object-top rounded-2xl"
-            />
-          </ContainerScroll>
-        </div>
+      <div className="relative">
+        <ContainerScroll titleComponent={titleComponent}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1400&q=75"
+            alt="Dashboard profissional Elevare"
+            className="w-full h-full object-cover object-top rounded-2xl"
+          />
+        </ContainerScroll>
       </div>
 
       {/* SEÇÃO 2 — POSICIONAMENTO */}
