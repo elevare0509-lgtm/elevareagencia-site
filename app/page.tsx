@@ -84,7 +84,7 @@ const depoimentos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[80px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
+    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[30px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
       <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Agência de presença digital
       </span>
