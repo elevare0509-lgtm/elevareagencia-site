@@ -10,9 +10,11 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <span className="text-gold text-2xl font-bold tracking-wide">Elevare</span>
           <p className="text-offwhite/50 text-sm leading-relaxed max-w-[220px]">
-            Mais clientes para negócios locais.{" "}
-            Presença digital que{" "}
-            <span className="text-gold font-semibold">passa confiança</span> e vende.
+            Automação inteligente para negócios locais.{" "}
+            <span className="text-gold font-semibold">Atendimento 24h</span> no WhatsApp com IA.
+          </p>
+          <p className="text-offwhite/30 text-xs leading-relaxed max-w-[220px]">
+            Também criamos sites profissionais e landing pages para negócios locais.
           </p>
         </div>
 
@@ -63,28 +65,23 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <Link href="/#servicos" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Serviços
+              <Link href="#como-funciona" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+                Como Funciona
               </Link>
             </li>
             <li>
-              <Link href="/menu-digital" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Menu Digital
+              <Link href="#solucoes" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+                Soluções
               </Link>
             </li>
             <li>
-              <Link href="/landing-pages" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Landing Page
+              <Link href="#resultados" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+                Resultados
               </Link>
             </li>
             <li>
-              <Link href="/design-instagram" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Design Instagram
-              </Link>
-            </li>
-            <li>
-              <Link href="/sites" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
-                Site Institucional
+              <Link href="#sobre" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+                Sobre
               </Link>
             </li>
           </ul>
@@ -99,7 +96,7 @@ export default function Footer() {
             © 2026 Elevare. Todos os direitos reservados.
           </span>
           <span className="text-gold/50 text-xs">
-            Elevare — Mais clientes para negócios locais.
+            Elevare — Automação inteligente para negócios locais.
           </span>
         </div>
       </div>

@@ -6,10 +6,10 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/menu-digital", label: "Menu Digital" },
-  { href: "/landing-pages", label: "Landing Page" },
-  { href: "/design-instagram", label: "Design Instagram" },
-  { href: "/sites", label: "Sites" },
+  { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#solucoes", label: "Soluções" },
+  { href: "#resultados", label: "Resultados" },
+  { href: "#sobre", label: "Sobre" },
 ];
 
 export default function Navbar() {
