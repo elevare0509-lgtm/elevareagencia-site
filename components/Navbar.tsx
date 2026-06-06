@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-50 flex justify-center px-4 pt-3 pointer-events-none">
       <nav
-        className={`pointer-events-auto w-full max-w-4xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between transition-all duration-300 ${
+        className={`pointer-events-auto w-full max-w-6xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between transition-all duration-300 ${
           scrolled
             ? "bg-[#0B1628] backdrop-blur-md shadow-lg border border-white/10"
             : "bg-[#0B1628]/60 backdrop-blur-md border border-white/5"
