@@ -13,9 +13,6 @@ export default function Footer() {
             Automação inteligente para negócios locais.{" "}
             <span className="text-gold font-semibold">Atendimento 24h</span> no WhatsApp com IA.
           </p>
-          <p className="text-offwhite/30 text-xs leading-relaxed max-w-[220px]">
-            Também criamos sites profissionais e landing pages para negócios locais.
-          </p>
         </div>
 
         {/* Col 2 — Contato */}

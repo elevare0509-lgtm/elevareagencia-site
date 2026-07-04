@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { MessageCircle, Settings, Bot } from "lucide-react";
+import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
@@ -61,12 +61,12 @@ const passos = [
 ];
 
 const nichos = [
-  "Clínicas de estética",
-  "Consultórios odontológicos",
-  "Dermatologistas",
-  "Salões de beleza",
-  "Barbearias",
-  "Fisioterapeutas",
+  { Icon: Sparkles,     name: "Clínicas de estética",         dor: "Procedimento caro não pode ficar sem resposta." },
+  { Icon: Smile,        name: "Consultórios odontológicos",    dor: "Cada avaliação perdida é um tratamento a menos." },
+  { Icon: Stethoscope,  name: "Dermatologistas",               dor: "Agenda cheia sem você parar pra responder mensagem." },
+  { Icon: Scissors,     name: "Salões de beleza",              dor: "Horário de pico é quando mais chega mensagem — e some." },
+  { Icon: User,         name: "Barbearias",                    dor: "Encaixe de sábado não pode esperar você ver o WhatsApp." },
+  { Icon: Activity,     name: "Fisioterapeutas",               dor: "Sessão remarcada sozinha, sem buraco na agenda." },
 ];
 
 const depoimentos = [
@@ -111,6 +111,26 @@ export default function Home() {
           cursorClassName="text-[#C4A35A] ml-0.5"
         />
       </h1>
+      <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+        Atendente virtual com IA que responde, agenda e lembra seus clientes no WhatsApp —
+        24 horas por dia, todos os dias.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3 mt-2">
+        <a
+          href={WA}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all text-sm text-center"
+        >
+          Quero ver funcionando
+        </a>
+        <a
+          href="#como-funciona"
+          className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 transition-all text-sm text-center"
+        >
+          Como funciona
+        </a>
+      </div>
     </div>
   );
 
@@ -288,32 +308,38 @@ export default function Home() {
       {/* ── SEÇÃO 4 — PRA QUEM É ── */}
       <section id="sobre" className="bg-offwhite py-24 px-6">
         <motion.div
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-5xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
         >
-          <motion.span variants={fadeInUp} className="text-gold text-xs font-bold tracking-widest uppercase">
-            Pra quem é
-          </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-navy mt-3 leading-tight">
-            Feito pra quem depende de agendamento
-          </motion.h2>
+          <motion.div variants={fadeInUp} className="text-center mb-12">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Pra quem é
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3 leading-tight">
+              Feito pra quem depende de agendamento
+            </h2>
+          </motion.div>
+
           <motion.div
             variants={fadeInUp}
-            className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
-            {nichos.map((n) => (
+            {nichos.map(({ Icon, name, dor }) => (
               <div
-                key={n}
-                className="border border-navy/10 rounded-xl px-4 py-3 bg-white text-navy text-sm font-medium shadow-sm"
+                key={name}
+                className="border border-navy/10 rounded-2xl px-6 py-5 bg-white shadow-sm flex flex-col gap-3"
               >
-                {n}
+                <Icon className="w-6 h-6 text-gold" />
+                <h3 className="text-navy font-bold text-base leading-snug">{name}</h3>
+                <p className="text-navy/55 text-sm leading-relaxed">{dor}</p>
               </div>
             ))}
           </motion.div>
-          <motion.p variants={fadeInUp} className="mt-8 text-navy/60 text-base leading-relaxed max-w-xl mx-auto">
+
+          <motion.p variants={fadeInUp} className="mt-10 text-navy/60 text-base leading-relaxed max-w-xl mx-auto text-center">
             Se seu negócio depende de agendamento e atendimento por WhatsApp, a Elevare é pra você.
           </motion.p>
         </motion.div>
