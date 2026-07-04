@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity } from "lucide-react";
+import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity, Check } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
@@ -386,7 +386,73 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── SEÇÃO 6 — CTA FINAL ── */}
+      {/* ── SEÇÃO 6 — INVESTIMENTO ── */}
+      <section id="investimento" className="bg-offwhite py-24 px-6">
+        <motion.div
+          className="max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeInUp} className="text-center mb-10">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Investimento
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
+              Simples e transparente
+            </h2>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="mx-auto max-w-[480px]">
+            <div className="bg-navy border border-gold/25 rounded-3xl px-8 py-10 flex flex-col gap-8">
+              {/* Valores */}
+              <div className="flex flex-col gap-3">
+                <div className="flex items-baseline justify-between">
+                  <span className="text-offwhite/70 text-sm">Setup único</span>
+                  <span className="text-gold text-2xl font-bold">R$ 697</span>
+                </div>
+                <div className="border-t border-white/8" />
+                <div className="flex items-baseline justify-between">
+                  <span className="text-offwhite/70 text-sm">Mensalidade</span>
+                  <span className="text-gold text-2xl font-bold">R$ 297<span className="text-base font-medium">/mês</span></span>
+                </div>
+              </div>
+
+              {/* Incluso */}
+              <ul className="flex flex-col gap-3">
+                {[
+                  "Atendente virtual configurado pro seu negócio",
+                  "Respostas, agendamento e lembretes automáticos",
+                  "Funcionamento 24h no seu WhatsApp",
+                  "Ajustes e suporte contínuos",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                    <span className="text-offwhite/80 text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all text-sm"
+              >
+                Quero começar
+              </a>
+            </div>
+
+            <p className="text-center text-navy/40 text-xs mt-5">
+              Sem fidelidade. Cancele quando quiser.
+            </p>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ── SEÇÃO 7 — CTA FINAL ── */}
       <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
         <motion.div
           className="max-w-2xl mx-auto text-center"
