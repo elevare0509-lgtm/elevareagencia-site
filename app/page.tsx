@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity, Check } from "lucide-react";
+import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity, Check, Zap, CalendarCheck, Bell } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
@@ -21,22 +21,22 @@ const stagger: Variants = {
 
 const solucoes = [
   {
-    emoji: "⚡",
+    Icon: Zap,
     title: "Responde na hora",
     desc: "Seu cliente manda mensagem às 23h de sábado? Respondido em segundos.",
   },
   {
-    emoji: "📅",
+    Icon: CalendarCheck,
     title: "Agenda sozinho",
     desc: "O cliente escolhe o horário e confirma no WhatsApp. A agenda enche enquanto você trabalha.",
   },
   {
-    emoji: "🔔",
+    Icon: Bell,
     title: "Lembra o cliente",
     desc: "24h antes, lembrete automático. Menos faltas, menos buracos na agenda.",
   },
   {
-    emoji: "🤝",
+    Icon: MessageCircle,
     title: "Te chama quando precisa",
     desc: "Caso especial, o agente te avisa. O resto ele resolve sozinho.",
   },
@@ -92,7 +92,7 @@ const depoimentos = [
 
 export default function Home() {
   const titleComponent = (
-    <div className="flex flex-col items-center gap-4 mb-28 md:-translate-y-[30px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
+    <div className="flex flex-col items-center gap-4 mb-16 md:-translate-y-[30px] bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
       <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Automação inteligente para negócios locais
       </span>
@@ -209,7 +209,7 @@ export default function Home() {
       </div>
 
       {/* ── SEÇÃO 2 — SOLUÇÕES ── */}
-      <section id="solucoes" className="bg-offwhite py-24 px-6">
+      <section id="solucoes" className="bg-offwhite py-16 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -238,7 +238,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="border border-navy/10 rounded-2xl p-6 flex flex-col gap-3 bg-white shadow-sm"
               >
-                <span className="text-2xl">{s.emoji}</span>
+                <s.Icon className="w-8 h-8 text-[#C4A35A]" />
                 <h3 className="text-navy font-bold text-lg">{s.title}</h3>
                 <p className="text-navy/60 text-sm flex-1 leading-relaxed">{s.desc}</p>
               </motion.div>
@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 3 — COMO FUNCIONA ── */}
-      <section id="como-funciona" className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+      <section id="como-funciona" className="bg-navy/80 backdrop-blur-sm py-16 px-6">
         <motion.div
           className="max-w-4xl mx-auto"
           initial="hidden"
@@ -306,7 +306,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 4 — PRA QUEM É ── */}
-      <section id="sobre" className="bg-offwhite py-24 px-6">
+      <section id="sobre" className="bg-offwhite py-16 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -346,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 5 — DEPOIMENTOS ── */}
-      <section id="resultados" className="bg-navy py-24 px-6">
+      <section id="resultados" className="bg-navy py-16 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -387,7 +387,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 6 — INVESTIMENTO ── */}
-      <section id="investimento" className="bg-offwhite py-24 px-6">
+      <section id="investimento" className="bg-offwhite py-16 px-6">
         <motion.div
           className="max-w-5xl mx-auto"
           initial="hidden"
@@ -410,7 +410,7 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <div className="flex items-baseline justify-between">
                   <span className="text-offwhite/70 text-sm">Setup único</span>
-                  <span className="text-gold text-2xl font-bold">R$ 697</span>
+                  <span className="text-gold text-2xl font-bold">R$ 497</span>
                 </div>
                 <div className="border-t border-white/8" />
                 <div className="flex items-baseline justify-between">
@@ -453,7 +453,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 7 — CTA FINAL ── */}
-      <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
+      <section className="bg-gold/85 backdrop-blur-sm py-16 px-6">
         <motion.div
           className="max-w-2xl mx-auto text-center"
           initial="hidden"

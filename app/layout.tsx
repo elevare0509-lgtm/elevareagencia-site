@@ -8,9 +8,17 @@ import ShaderBg from "@/components/ShaderBg";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Elevare — Presença digital para negócios locais",
+  title: "Atendente Virtual com IA no WhatsApp para Clínicas e Negócios Locais | Elevare",
   description:
-    "Sites, landing pages e menu digital que transformam visitante em cliente. A Elevare cuida da presença digital do seu negócio local.",
+    "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Agendamento automático, lembretes e atendimento na hora para clínicas, consultórios e negócios locais. Fale com a Elevare.",
+  openGraph: {
+    title: "Atendente Virtual com IA no WhatsApp para Clínicas e Negócios Locais | Elevare",
+    description:
+      "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Agendamento automático, lembretes e atendimento na hora para clínicas, consultórios e negócios locais. Fale com a Elevare.",
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Elevare",
+  },
 };
 
 export default function RootLayout({
