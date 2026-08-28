@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -15,23 +15,10 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="sticky top-0 z-50 flex justify-center px-4 pt-3 pointer-events-none">
-      <nav
-        className={`pointer-events-auto w-full max-w-6xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between transition-all duration-300 ${
-          scrolled
-            ? "bg-[#0B1628] backdrop-blur-md shadow-lg border border-white/10"
-            : "bg-[#0B1628]/60 backdrop-blur-md border border-white/5"
-        }`}
-      >
+      <nav className="pointer-events-auto w-full max-w-6xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between bg-[#0B1628] backdrop-blur-md shadow-lg border border-white/10">
         <Link href="/" className="flex items-center">
           <Image src="/logo-elevare.png" alt="Elevare" height={30} width={30} className="h-[30px] w-auto" priority />
         </Link>
@@ -42,7 +29,7 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-offwhite hover:text-gold transition-colors text-xs font-semibold"
+                className="text-offwhite hover:text-gold text-xs font-semibold"
               >
                 {label}
               </Link>
@@ -55,7 +42,7 @@ export default function Navbar() {
           href="https://wa.me/5511950274038"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-xs font-bold px-4 py-2 rounded-full hover:brightness-110 transition-all"
+          className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-xs font-bold px-4 py-2 rounded-full hover:brightness-110"
         >
           Falar no WhatsApp
         </a>
@@ -78,7 +65,7 @@ export default function Navbar() {
                   <Link
                     href={href}
                     onClick={() => setOpen(false)}
-                    className="block px-6 py-3 text-offwhite hover:text-gold hover:bg-white/5 transition-colors text-sm font-semibold"
+                    className="block px-6 py-3 text-offwhite hover:text-gold hover:bg-white/5 text-sm font-semibold"
                   >
                     {label}
                   </Link>
@@ -89,7 +76,7 @@ export default function Navbar() {
                   href="https://wa.me/5511950274038"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110 transition-all"
+                  className="block text-center bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110"
                 >
                   Falar no WhatsApp
                 </a>

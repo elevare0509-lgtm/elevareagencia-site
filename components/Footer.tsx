@@ -26,7 +26,7 @@ export default function Footer() {
                 href="https://wa.me/5511950274038"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
                 <MessageCircle className="w-4 h-4 text-gold shrink-0" />
                 +55 11 95027-4038
@@ -37,7 +37,7 @@ export default function Footer() {
                 href="https://instagram.com/elevare_on"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
                 <AtSign className="w-4 h-4 text-gold shrink-0" />
                 @elevare_on
@@ -46,7 +46,7 @@ export default function Footer() {
             <li>
               <a
                 href="mailto:elevare0509@gmail.com"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
                 <Mail className="w-4 h-4 text-gold shrink-0" />
                 elevare0509@gmail.com
@@ -62,22 +62,22 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <Link href="#como-funciona" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+              <Link href="#como-funciona" className="text-offwhite/60 text-sm hover:text-gold">
                 Como Funciona
               </Link>
             </li>
             <li>
-              <Link href="#solucoes" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+              <Link href="#solucoes" className="text-offwhite/60 text-sm hover:text-gold">
                 Soluções
               </Link>
             </li>
             <li>
-              <Link href="#resultados" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+              <Link href="#resultados" className="text-offwhite/60 text-sm hover:text-gold">
                 Resultados
               </Link>
             </li>
             <li>
-              <Link href="#sobre" className="text-offwhite/60 text-sm hover:text-gold transition-colors">
+              <Link href="#sobre" className="text-offwhite/60 text-sm hover:text-gold">
                 Sobre
               </Link>
             </li>

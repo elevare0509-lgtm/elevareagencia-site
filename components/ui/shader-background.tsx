@@ -176,10 +176,6 @@ function drawError(gl: WebGL2RenderingContext, msg: string) {
 
 function ShaderCanvas({ fragSource, pixelRatio }: { fragSource: string; pixelRatio?: number }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number>(0);
-  const frameRef = useRef<number>(0);
-  const mouseRef = useRef({ x: 0, y: 0, l: 0, r: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -191,14 +187,8 @@ function ShaderCanvas({ fragSource, pixelRatio }: { fragSource: string; pixelRat
     let vbo: WebGLBuffer | null = null;
     let program: WebGLProgram | null = null;
     let ro: ResizeObserver | null = null;
-    let resizeScheduled = false;
-    const onMove = (e: MouseEvent) => { const rect = canvas.getBoundingClientRect(); mouseRef.current.x = Math.max(0, Math.min(e.clientX - rect.left, rect.width)); mouseRef.current.y = Math.max(0, Math.min(rect.height - (e.clientY - rect.top), rect.height)); };
-    const onDown = (e: MouseEvent) => { if (e.button === 0) mouseRef.current.l = 1; if (e.button === 2) mouseRef.current.r = 1; };
-    const onUp = (e: MouseEvent) => { if (e.button === 0) mouseRef.current.l = 0; if (e.button === 2) mouseRef.current.r = 0; };
-    const onCtxMenu = (e: Event) => e.preventDefault();
     const getDpr = () => Math.max(1, Math.min(2, pixelRatio ?? window.devicePixelRatio ?? 1));
-    function applySize() { resizeScheduled = false; if (disposed) return; const dpr = getDpr(); const w = Math.max(1, Math.floor(canvas.clientWidth * dpr)); const h = Math.max(1, Math.floor(canvas.clientHeight * dpr)); if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); } }
-    function scheduleSize() { if (resizeScheduled) return; resizeScheduled = true; requestAnimationFrame(applySize); }
+    function applySize() { const dpr = getDpr(); const w = Math.max(1, Math.floor(canvas.clientWidth * dpr)); const h = Math.max(1, Math.floor(canvas.clientHeight * dpr)); if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); } }
     vao = gl.createVertexArray(); vbo = gl.createBuffer();
     if (!vao || !vbo) { drawError(gl, "VAO/VBO failed"); return; }
     gl.bindVertexArray(vao); gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
@@ -216,28 +206,23 @@ function ShaderCanvas({ fragSource, pixelRatio }: { fragSource: string; pixelRat
     const uTime = gl.getUniformLocation(program, "iTime");
     const uFrame = gl.getUniformLocation(program, "iFrame");
     const uMouse = gl.getUniformLocation(program, "iMouse");
-    ro = new ResizeObserver(scheduleSize); ro.observe(canvas); scheduleSize();
-    canvas.addEventListener("mousemove", onMove); canvas.addEventListener("mousedown", onDown); canvas.addEventListener("mouseup", onUp); canvas.addEventListener("contextmenu", onCtxMenu);
-    startRef.current = performance.now(); frameRef.current = 0;
-    function tick(now: number) {
+    // Frame único e estático: iTime fixo em 0, sem requestAnimationFrame.
+    function draw() {
       if (disposed) return;
-      const t = (now - startRef.current) / 1000;
-      frameRef.current += 1;
+      applySize();
       gl.useProgram(program!);
-      if (resizeScheduled) applySize();
       const dpr = getDpr();
       if (uResolution) gl.uniform3f(uResolution, canvas.width, canvas.height, dpr);
-      if (uTime) gl.uniform1f(uTime, t);
-      if (uFrame) gl.uniform1i(uFrame, frameRef.current);
-      if (uMouse) { const m = mouseRef.current; gl.uniform4f(uMouse, m.x*dpr, m.y*dpr, m.l, m.r); }
+      if (uTime) gl.uniform1f(uTime, 0);
+      if (uFrame) gl.uniform1i(uFrame, 0);
+      if (uMouse) gl.uniform4f(uMouse, 0, 0, 0, 0);
       gl.bindVertexArray(vao); gl.drawArrays(gl.TRIANGLES, 0, 3);
-      rafRef.current = requestAnimationFrame(tick);
     }
-    rafRef.current = requestAnimationFrame(tick);
+    // Redesenha apenas quando o canvas muda de tamanho, para não distorcer.
+    ro = new ResizeObserver(draw); ro.observe(canvas);
+    draw();
     return () => {
       disposed = true;
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      canvas.removeEventListener("mousemove", onMove); canvas.removeEventListener("mousedown", onDown); canvas.removeEventListener("mouseup", onUp); canvas.removeEventListener("contextmenu", onCtxMenu);
       if (ro) ro.disconnect();
       if (vbo) gl.deleteBuffer(vbo);
       if (vao) gl.deleteVertexArray(vao);
