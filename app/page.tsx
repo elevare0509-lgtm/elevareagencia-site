@@ -1,5 +1,4 @@
 import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity, Check, Zap, CalendarCheck, Bell } from "lucide-react";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 const WA = "https://wa.me/5511950274038";
 
@@ -75,45 +74,45 @@ const depoimentos = [
 ];
 
 export default function Home() {
-  const titleComponent = (
-    <div className="flex flex-col items-center gap-4 mb-12 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-10">
-      <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
-        Automação inteligente para negócios locais
-      </span>
-      <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
-        Nunca mais perca cliente por{" "}
-        <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
-      </h1>
-      <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
-        Atendente virtual com IA que responde, agenda e lembra seus clientes no WhatsApp —
-        24 horas por dia, todos os dias.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-3 mt-2">
-        <a
-          href={WA}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm text-center"
-        >
-          Quero ver funcionando
-        </a>
-        <a
-          href="#como-funciona"
-          className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
-        >
-          Como funciona
-        </a>
-      </div>
-    </div>
-  );
-
   return (
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
-      <div className="relative">
-        <ContainerScroll titleComponent={titleComponent}>
+      <section className="px-6 pt-12 pb-16">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
+          <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
+            Automação inteligente para negócios locais
+          </span>
+          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
+            Nunca mais perca cliente por{" "}
+            <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
+          </h1>
+          <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+            Atendente virtual com IA que responde, agenda e lembra seus clientes no WhatsApp —
+            24 horas por dia, todos os dias.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 mt-2">
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm text-center"
+            >
+              Quero ver funcionando
+            </a>
+            <a
+              href="#como-funciona"
+              className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
+            >
+              Como funciona
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SEÇÃO 1B — A DOR ── */}
+      <section className="px-6 pb-20">
           <div
-            className="w-full h-full rounded-2xl flex flex-col justify-between px-8 md:px-16 pt-10 pb-10"
+            className="max-w-3xl mx-auto rounded-3xl border border-white/5 px-8 md:px-14 py-12 flex flex-col gap-10"
             style={{ background: "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)" }}
           >
             {/* Gancho */}
@@ -156,8 +155,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </ContainerScroll>
-      </div>
+      </section>
 
       {/* ── SEÇÃO 2 — SOLUÇÕES ── */}
       <section id="solucoes" className="bg-offwhite py-24 px-6">
