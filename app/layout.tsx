@@ -10,13 +10,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   // Necessário para o og:image gerado por app/opengraph-image.png virar URL absoluta.
   metadataBase: new URL("https://www.elevareagencia.com"),
-  title: "Atendente Virtual com IA no WhatsApp para Espaços de Eventos e Buffets | Elevare",
+  title: "Atendente Virtual com IA para Eventos | Elevare",
   description:
-    "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Orçamento na hora, agendamento de visitas e lembretes automáticos para espaços de eventos, buffets, casas de festa e cerimonialistas.",
+    "Atendente virtual com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
   openGraph: {
-    title: "Atendente Virtual com IA no WhatsApp para Eventos | Elevare",
+    title: "Atendente Virtual com IA para Eventos | Elevare",
     description:
-      "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Orçamento na hora, agendamento de visitas e lembretes automáticos para espaços de eventos, buffets, casas de festa e cerimonialistas.",
+      "Atendente virtual com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
     type: "website",
     locale: "pt_BR",
     siteName: "Elevare",
