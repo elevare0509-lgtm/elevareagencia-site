@@ -1,4 +1,4 @@
-import { MessageCircle, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import { MessageCircle, MessageSquareReply, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Check, Zap, CalendarCheck, Bell } from "lucide-react";
 
 const WA = "https://wa.me/5511950274038";
 
@@ -17,6 +17,11 @@ const solucoes = [
     Icon: Bell,
     title: "Lembra o cliente",
     desc: "24h antes da visita, lembrete automático. Menos faltas, menos horário perdido.",
+  },
+  {
+    Icon: MessageSquareReply,
+    title: "Faz o follow-up",
+    desc: "Cliente pediu orçamento e sumiu? O agente volta a falar com ele sozinho, no tempo certo.",
   },
   {
     Icon: MessageCircle,
@@ -171,7 +176,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {solucoes.map((s, i) => (
               <div
                 key={i}
