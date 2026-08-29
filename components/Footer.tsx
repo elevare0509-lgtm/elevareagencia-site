@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <span className="text-gold text-2xl font-bold tracking-wide">Elevare</span>
           <p className="text-offwhite/50 text-sm leading-relaxed max-w-[220px]">
-            Automação inteligente para negócios locais.{" "}
+            Automação inteligente para o mercado de eventos.{" "}
             <span className="text-gold font-semibold">Atendimento 24h</span> no WhatsApp com IA.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function Footer() {
             © 2026 Elevare. Todos os direitos reservados.
           </span>
           <span className="text-gold/50 text-xs">
-            Elevare — Automação inteligente para negócios locais.
+            Elevare. Automação inteligente para o mercado de eventos.
           </span>
         </div>
       </div>

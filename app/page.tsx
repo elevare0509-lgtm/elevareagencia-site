@@ -1,4 +1,4 @@
-import { MessageCircle, Settings, Bot, Sparkles, Smile, Stethoscope, Scissors, User, Activity, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import { MessageCircle, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Check, Zap, CalendarCheck, Bell } from "lucide-react";
 
 const WA = "https://wa.me/5511950274038";
 
@@ -6,22 +6,22 @@ const solucoes = [
   {
     Icon: Zap,
     title: "Responde na hora",
-    desc: "Seu cliente manda mensagem às 23h de sábado? Respondido em segundos.",
+    desc: "Seu cliente pede orçamento às 23h de sábado? Respondido em segundos.",
   },
   {
     Icon: CalendarCheck,
-    title: "Agenda sozinho",
-    desc: "O cliente escolhe o horário e confirma no WhatsApp. A agenda enche enquanto você trabalha.",
+    title: "Agenda a visita",
+    desc: "O cliente escolhe o horário e confirma no WhatsApp. Sua agenda de visitas enche enquanto você toca os eventos.",
   },
   {
     Icon: Bell,
     title: "Lembra o cliente",
-    desc: "24h antes, lembrete automático. Menos faltas, menos buracos na agenda.",
+    desc: "24h antes da visita, lembrete automático. Menos faltas, menos horário perdido.",
   },
   {
     Icon: MessageCircle,
     title: "Te chama quando precisa",
-    desc: "Caso especial, o agente te avisa. O resto ele resolve sozinho.",
+    desc: "Evento grande ou pedido fora do padrão, o agente te avisa. O resto ele resolve sozinho.",
   },
 ];
 
@@ -29,7 +29,7 @@ const passos = [
   {
     Icon: MessageCircle,
     title: "Entendemos seu negócio",
-    desc: "Mapeamos seus serviços, preços, horários e as perguntas mais frequentes.",
+    desc: "Mapeamos seus pacotes, valores, capacidade, datas disponíveis e as perguntas mais frequentes.",
   },
   {
     Icon: Settings,
@@ -44,32 +44,31 @@ const passos = [
 ];
 
 const nichos = [
-  { Icon: Sparkles,     name: "Clínicas de estética",         dor: "Procedimento caro não pode ficar sem resposta." },
-  { Icon: Smile,        name: "Consultórios odontológicos",    dor: "Cada avaliação perdida é um tratamento a menos." },
-  { Icon: Stethoscope,  name: "Dermatologistas",               dor: "Agenda cheia sem você parar pra responder mensagem." },
-  { Icon: Scissors,     name: "Salões de beleza",              dor: "Horário de pico é quando mais chega mensagem — e some." },
-  { Icon: User,         name: "Barbearias",                    dor: "Encaixe de sábado não pode esperar você ver o WhatsApp." },
-  { Icon: Activity,     name: "Fisioterapeutas",               dor: "Sessão remarcada sozinha, sem buraco na agenda." },
+  { Icon: Building2,        name: "Espaços de eventos",   dor: "Visita que não é agendada vira data vazia no calendário." },
+  { Icon: UtensilsCrossed,  name: "Buffets",              dor: "Cardápio e valores são pedidos a toda hora, e a resposta não pode demorar." },
+  { Icon: PartyPopper,      name: "Casas de festa",       dor: "O cliente cota várias casas ao mesmo tempo. Fecha com quem responde primeiro." },
+  { Icon: Martini,          name: "Bares de evento",      dor: "Pedido de open bar chega fora do horário comercial, quando ninguém está no WhatsApp." },
+  { Icon: ClipboardList,    name: "Cerimonialistas",      dor: "Muita conversa ao mesmo tempo e pouco tempo pra responder todo mundo." },
 ];
 
 const depoimentos = [
   {
     // TROCAR por depoimento real
-    text: "Antes eu dependia só de indicação. Agora chega cliente que me achou no Google.",
+    text: "Antes a gente respondia orçamento no dia seguinte. Hoje o cliente recebe os valores na hora e já marca a visita.",
     name: "Nome",
-    business: "Negócio — Cotia",
+    business: "Espaço de eventos, Cotia",
   },
   {
     // TROCAR por depoimento real
-    text: "Ficou com cara de empresa séria. O cliente confia antes mesmo de falar comigo.",
+    text: "Sábado à noite é quando mais chega pedido de orçamento, e é justamente quando estamos tocando evento. Agora nada fica sem resposta.",
     name: "Nome",
-    business: "Negócio — Granja Viana",
+    business: "Buffet, Granja Viana",
   },
   {
     // TROCAR por depoimento real
-    text: "Em menos de uma semana estava no ar. Resultado limpo e profissional do jeito que eu queria.",
+    text: "Em menos de uma semana estava no ar. A agenda de visitas encheu sem eu precisar ficar grudado no celular.",
     name: "Nome",
-    business: "Negócio — Vargem Grande Paulista",
+    business: "Casa de festa, Vargem Grande Paulista",
   },
 ];
 
@@ -80,15 +79,15 @@ export default function Home() {
       <section className="px-6 pt-12 pb-16">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
           <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
-            Automação inteligente para negócios locais
+            Automação inteligente para o mercado de eventos
           </span>
           <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
             Nunca mais perca cliente por{" "}
             <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
           </h1>
           <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
-            Atendente virtual com IA que responde, agenda e lembra seus clientes no WhatsApp —
-            24 horas por dia, todos os dias.
+            Atendente virtual com IA que responde, envia orçamento e agenda visitas dos seus
+            clientes no WhatsApp, 24 horas por dia, todos os dias.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
             <a
@@ -118,20 +117,20 @@ export default function Home() {
             {/* Gancho */}
             <div className="flex flex-col items-center gap-3 text-center">
               <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
-                A realidade de todo negócio local
+                A realidade de todo negócio de eventos
               </span>
               <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
-                Enquanto você trabalha,{" "}
-                <span className="text-gold">quantas mensagens ficam sem resposta?</span>
+                Enquanto você toca um evento,{" "}
+                <span className="text-gold">quantos orçamentos ficam sem resposta?</span>
               </p>
             </div>
 
             {/* Dores */}
             <div className="flex flex-col gap-3 max-w-lg mx-auto w-full">
               {[
-                "Clientes mandando mensagem e você não consegue responder porque está em atendimento",
-                "Quando responde, já passou horas e o cliente agendou com o concorrente",
-                "Noite e fim de semana sem atendimento = clientes perdidos",
+                "Clientes pedindo orçamento e você não consegue responder porque está tocando um evento",
+                "Quando responde, já passou horas e o cliente fechou a data com outro espaço",
+                "Noite e fim de semana sem atendimento = justo quando o cliente está pesquisando",
               ].map((dor, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="text-red-400 text-base shrink-0 mt-0.5">✕</span>
@@ -143,7 +142,7 @@ export default function Home() {
             {/* Fechamento + CTA */}
             <div className="flex flex-col items-center gap-4 text-center">
               <p className="text-gold font-semibold text-sm md:text-base">
-                Cada mensagem sem resposta é dinheiro saindo do seu caixa.
+                Cada orçamento sem resposta é uma data que fecha com o concorrente.
               </p>
               <a
                 href={WA}
@@ -168,7 +167,7 @@ export default function Home() {
               O que o seu agente faz por você
             </h2>
             <p className="text-navy/60 mt-3 text-base max-w-xl mx-auto">
-              A Elevare cria atendentes virtuais com inteligência artificial que respondem seus clientes no WhatsApp na hora, agendam horários automaticamente e só te chamam quando realmente precisam de você.
+              A Elevare cria atendentes virtuais com inteligência artificial que respondem seus clientes no WhatsApp na hora, enviam pacotes e valores, agendam visitas ao seu espaço e só te chamam quando realmente precisam de você.
             </p>
           </div>
 
@@ -243,7 +242,7 @@ export default function Home() {
               Pra quem é
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-navy mt-3 leading-tight">
-              Feito pra quem depende de agendamento
+              Feito pra quem vive de fechar data
             </h2>
           </div>
 
@@ -261,7 +260,7 @@ export default function Home() {
           </div>
 
           <p className="mt-10 text-navy/60 text-base leading-relaxed max-w-xl mx-auto text-center">
-            Se seu negócio depende de agendamento e atendimento por WhatsApp, a Elevare é pra você.
+            Se o seu negócio vive de fechar data e depende do WhatsApp pra isso, a Elevare é pra você.
           </p>
         </div>
       </section>
@@ -330,8 +329,8 @@ export default function Home() {
               {/* Incluso */}
               <ul className="flex flex-col gap-3">
                 {[
-                  "Atendente virtual configurado pro seu negócio",
-                  "Respostas, agendamento e lembretes automáticos",
+                  "Atendente virtual configurado pro seu negócio de eventos",
+                  "Respostas, orçamentos, agendamento de visitas e lembretes automáticos",
                   "Funcionamento 24h no seu WhatsApp",
                   "Ajustes e suporte contínuos",
                 ].map((item) => (

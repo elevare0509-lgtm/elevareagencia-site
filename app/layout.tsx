@@ -8,13 +8,13 @@ import ShaderBg from "@/components/ShaderBg";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Atendente Virtual com IA no WhatsApp para Clínicas e Negócios Locais | Elevare",
+  title: "Atendente Virtual com IA no WhatsApp para Espaços de Eventos e Buffets | Elevare",
   description:
-    "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Agendamento automático, lembretes e atendimento na hora para clínicas, consultórios e negócios locais.",
+    "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Orçamento na hora, agendamento de visitas e lembretes automáticos para espaços de eventos, buffets, casas de festa e cerimonialistas.",
   openGraph: {
-    title: "Atendente Virtual com IA no WhatsApp | Elevare",
+    title: "Atendente Virtual com IA no WhatsApp para Eventos | Elevare",
     description:
-      "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Agendamento automático, lembretes e atendimento na hora para clínicas, consultórios e negócios locais.",
+      "Seu WhatsApp respondendo clientes 24h com inteligência artificial. Orçamento na hora, agendamento de visitas e lembretes automáticos para espaços de eventos, buffets, casas de festa e cerimonialistas.",
     type: "website",
     locale: "pt_BR",
     siteName: "Elevare",
