@@ -312,7 +312,7 @@ export default function Home() {
               Investimento
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
-              Menos que um salário mínimo pra atender 24h
+              Atendimento 24h no WhatsApp por uma fração do custo de um funcionário
             </h2>
           </div>
 
