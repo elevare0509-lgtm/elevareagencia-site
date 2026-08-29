@@ -1,6 +1,6 @@
 import { MessageCircle, MessageSquareReply, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Check, Zap, CalendarCheck, Bell } from "lucide-react";
 
-const WA = "https://wa.me/5511950274038";
+const WA = "https://wa.me/5511991572814";
 
 const solucoes = [
   {

@@ -39,7 +39,7 @@ export default function Navbar() {
 
         {/* CTA desktop */}
         <a
-          href="https://wa.me/5511950274038"
+          href="https://wa.me/5511991572814"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-block bg-[#C4A35A] text-[#0B1628] text-xs font-bold px-4 py-2 rounded-full hover:brightness-110"
@@ -73,7 +73,7 @@ export default function Navbar() {
               ))}
               <li className="px-6 pt-3 pb-1">
                 <a
-                  href="https://wa.me/5511950274038"
+                  href="https://wa.me/5511991572814"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center bg-[#C4A35A] text-[#0B1628] text-sm font-bold px-5 py-2.5 rounded-full hover:brightness-110"
