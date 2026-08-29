@@ -56,27 +56,6 @@ const nichos = [
   { Icon: ClipboardList,    name: "Cerimonialistas",      dor: "Muita conversa ao mesmo tempo e pouco tempo pra responder todo mundo." },
 ];
 
-const depoimentos = [
-  {
-    // TROCAR por depoimento real
-    text: "Antes a gente respondia orçamento no dia seguinte. Hoje o cliente recebe os valores na hora e já marca a visita.",
-    name: "Nome",
-    business: "Espaço de eventos, Cotia",
-  },
-  {
-    // TROCAR por depoimento real
-    text: "Sábado à noite é quando mais chega pedido de orçamento, e é justamente quando estamos tocando evento. Agora nada fica sem resposta.",
-    name: "Nome",
-    business: "Buffet, Granja Viana",
-  },
-  {
-    // TROCAR por depoimento real
-    text: "Em menos de uma semana estava no ar. A agenda de visitas encheu sem eu precisar ficar grudado no celular.",
-    name: "Nome",
-    business: "Casa de festa, Vargem Grande Paulista",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -282,25 +261,9 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {depoimentos.map((d, i) => (
-              <div
-                key={i}
-                className="border border-white/8 rounded-2xl p-6 bg-white/5 backdrop-blur-sm flex flex-col gap-4"
-              >
-                <div className="w-10 h-10 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center shrink-0">
-                  <span className="text-gold font-bold text-sm">{d.name[0]}</span>
-                </div>
-                <p className="text-offwhite/70 text-sm leading-relaxed flex-1">
-                  &ldquo;{d.text}&rdquo;
-                </p>
-                <div>
-                  <p className="text-offwhite font-semibold text-sm">{d.name}</p>
-                  <p className="text-offwhite/40 text-xs">{d.business}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="text-center text-offwhite/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Em breve, resultados reais de clientes do mercado de eventos.
+          </p>
         </div>
       </section>
 
