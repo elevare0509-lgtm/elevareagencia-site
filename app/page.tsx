@@ -318,12 +318,12 @@ export default function Home() {
               <div className="flex flex-col gap-3">
                 <div className="flex items-baseline justify-between">
                   <span className="text-offwhite/70 text-sm">Setup único</span>
-                  <span className="text-gold text-2xl font-bold">R$ 497</span>
+                  <span className="text-gold text-2xl font-bold">R$ 897</span>
                 </div>
                 <div className="border-t border-white/8" />
                 <div className="flex items-baseline justify-between">
                   <span className="text-offwhite/70 text-sm">Mensalidade</span>
-                  <span className="text-gold text-2xl font-bold">R$ 297<span className="text-base font-medium">/mês</span></span>
+                  <span className="text-gold text-2xl font-bold">R$ 497<span className="text-base font-medium">/mês</span></span>
                 </div>
               </div>
 
