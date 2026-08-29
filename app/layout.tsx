@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: "Elevare",
   },
+  verification: {
+    google: "mmo8CAE6MrUAheA3gzM68ID8AOCYgGV3Hk_gkyl_X0I",
+  },
 };
 
 export default function RootLayout({
