@@ -129,7 +129,7 @@ export default function Home() {
             <div className="flex flex-col gap-3 max-w-lg mx-auto w-full">
               {[
                 "Clientes pedindo orçamento e você não consegue responder porque está tocando um evento",
-                "Quando responde, já passou horas e o cliente fechou a data com outro espaço",
+                "Quando responde, já passou horas e o cliente fechou a data com seu concorrente",
                 "Noite e fim de semana sem atendimento = justo quando o cliente está pesquisando",
               ].map((dor, i) => (
                 <div key={i} className="flex items-start gap-3">
