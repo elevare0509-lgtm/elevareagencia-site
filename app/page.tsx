@@ -63,7 +63,7 @@ export default function Home() {
       {/* ── SEÇÃO 1 — HERO ── */}
       <section className="px-6 pt-12 pb-16">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
-          <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             Automação inteligente para o mercado de eventos
           </span>
           <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">

@@ -4,19 +4,19 @@ import { MessageCircle, AtSign, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-navy/90 border-t border-gold/15">
-      <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 md:py-16 grid grid-cols-5 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-12">
 
         {/* Col 1 — Brand */}
-        <div className="flex flex-col gap-4">
+        <div className="col-span-5 md:col-span-1 flex flex-col gap-4">
           <span className="text-gold text-2xl font-bold tracking-wide">Elevare</span>
-          <p className="text-offwhite/50 text-sm leading-relaxed max-w-[220px]">
+          <p className="text-offwhite/50 text-sm leading-relaxed max-w-none md:max-w-[220px]">
             Automação inteligente para o mercado de eventos.{" "}
             <span className="text-gold font-semibold">Atendimento 24h</span> no WhatsApp com IA.
           </p>
         </div>
 
         {/* Col 2 — Contato */}
-        <div className="flex flex-col gap-4">
+        <div className="col-span-3 md:col-span-1 flex flex-col gap-4">
           <h4 className="text-offwhite text-sm font-semibold tracking-widest uppercase">
             Contato
           </h4>
@@ -26,10 +26,10 @@ export default function Footer() {
                 href="https://wa.me/5511991572814"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
+                className="flex items-start gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
-                <MessageCircle className="w-4 h-4 text-gold shrink-0" />
-                +55 11 99157-2814
+                <MessageCircle className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                <span className="min-w-0 whitespace-nowrap">+55 11 99157-2814</span>
               </a>
             </li>
             <li>
@@ -37,26 +37,26 @@ export default function Footer() {
                 href="https://instagram.com/elevare_on"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
+                className="flex items-start gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
-                <AtSign className="w-4 h-4 text-gold shrink-0" />
-                @elevare_on
+                <AtSign className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                <span className="min-w-0 whitespace-nowrap">@elevare_on</span>
               </a>
             </li>
             <li>
               <a
                 href="mailto:elevare0509@gmail.com"
-                className="flex items-center gap-3 text-offwhite/60 text-sm hover:text-gold"
+                className="flex items-start gap-3 text-offwhite/60 text-sm hover:text-gold"
               >
-                <Mail className="w-4 h-4 text-gold shrink-0" />
-                elevare0509@gmail.com
+                <Mail className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                <span className="min-w-0">elevare0509@<wbr />gmail.com</span>
               </a>
             </li>
           </ul>
         </div>
 
         {/* Col 3 — Navegação */}
-        <div className="flex flex-col gap-4">
+        <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
           <h4 className="text-offwhite text-sm font-semibold tracking-widest uppercase">
             Navegação
           </h4>
@@ -88,7 +88,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-gold/10">
-        <div className="max-w-6xl mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <span className="text-offwhite/30 text-xs">
             © 2026 Elevare. Todos os direitos reservados.
           </span>
