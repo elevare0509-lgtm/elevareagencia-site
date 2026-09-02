@@ -1,4 +1,4 @@
-import { MessageCircle, MessageSquareReply, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import { MessageCircle, MessageSquareReply, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Cake, Check, Zap, CalendarCheck, Bell } from "lucide-react";
 
 const WA = "https://wa.me/5511991572814";
 
@@ -54,6 +54,7 @@ const nichos = [
   { Icon: PartyPopper,      name: "Casas de festa",       dor: "O cliente cota várias casas ao mesmo tempo. Fecha com quem responde primeiro." },
   { Icon: Martini,          name: "Bares de evento",      dor: "Pedido de open bar chega fora do horário comercial, quando ninguém está no WhatsApp." },
   { Icon: ClipboardList,    name: "Cerimonialistas",      dor: "Muita conversa ao mesmo tempo e pouco tempo pra responder todo mundo." },
+  { Icon: Cake,             name: "Confeiteiras",         dor: "Encomendas de última hora chegam no WhatsApp e precisam de resposta rápida." },
 ];
 
 export default function Home() {
@@ -123,19 +124,11 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Fechamento + CTA */}
+            {/* Fechamento */}
             <div className="flex flex-col items-center gap-4 text-center">
               <p className="text-gold font-semibold text-sm md:text-base">
                 Cada orçamento sem resposta é uma data que fecha com o concorrente.
               </p>
-              <a
-                href={WA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-base text-center"
-              >
-                Quero ver funcionando
-              </a>
             </div>
           </div>
       </section>
@@ -166,17 +159,6 @@ export default function Home() {
                 <p className="text-navy/60 text-sm flex-1 leading-relaxed">{s.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <a
-              href={WA}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm"
-            >
-              Quero meu atendente virtual
-            </a>
           </div>
         </div>
       </section>
@@ -318,10 +300,6 @@ export default function Home() {
               >
                 Quero começar
               </a>
-
-              <p className="text-center text-offwhite/70 text-sm">
-                Sem fidelidade. Cancele quando quiser.
-              </p>
             </div>
           </div>
         </div>

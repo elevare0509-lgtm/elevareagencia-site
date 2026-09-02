@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/menu-digital" },
+};
+
 export default function MenuDigital() {
   return (
     <div className="flex items-center justify-center py-32">

@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/sites" },
+};
+
 export default function Sites() {
   return (
     <div className="flex items-center justify-center py-32">

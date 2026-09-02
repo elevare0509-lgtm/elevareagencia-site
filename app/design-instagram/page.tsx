@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/design-instagram" },
+};
+
 export default function DesignInstagram() {
   return (
     <div className="flex items-center justify-center py-32">
