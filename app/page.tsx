@@ -63,7 +63,6 @@ const planos = [
     destaque: false,
     setup: "R$ 397",
     mensal: "R$ 397",
-    fidelidade: "6 meses",
     incluiLabel: "Inclui:",
     inclui: [
       "IA no WhatsApp 24h respondendo dúvidas sobre pacotes, preços e disponibilidade",
@@ -74,7 +73,6 @@ const planos = [
     destaque: true,
     setup: "R$ 697",
     mensal: "R$ 497",
-    fidelidade: "6 meses",
     incluiLabel: "Tudo do Essencial, mais:",
     inclui: [
       "Qualificação de lead",
@@ -89,7 +87,6 @@ const planos = [
     destaque: false,
     setup: "R$ 997",
     mensal: "R$ 697",
-    fidelidade: "3 meses",
     incluiLabel: "Tudo do Profissional, mais:",
     inclui: [
       "Pós-venda automatizado: lembrete pré-evento, confirmação e pesquisa de satisfação",
@@ -334,17 +331,11 @@ export default function Home() {
                   </p>
 
                   <div className="flex flex-col gap-2 text-sm">
+                    <div className="border-t border-white/8" />
                     <div className="flex items-baseline justify-between gap-2">
                       <span className="text-offwhite/55">Setup único</span>
                       <span className="text-offwhite font-semibold whitespace-nowrap">
                         {p.setup}
-                      </span>
-                    </div>
-                    <div className="border-t border-white/8" />
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-offwhite/55">Fidelidade</span>
-                      <span className="text-offwhite font-semibold whitespace-nowrap">
-                        {p.fidelidade}
                       </span>
                     </div>
                   </div>
