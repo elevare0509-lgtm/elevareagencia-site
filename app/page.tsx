@@ -57,22 +57,22 @@ const nichos = [
   { Icon: Cake,             name: "Confeiteiras",         dor: "Encomendas de última hora chegam no WhatsApp e precisam de resposta rápida." },
 ];
 
+const IA_WHATSAPP =
+  "IA no WhatsApp 24h respondendo dúvidas sobre pacotes, preços e disponibilidade";
+
 const planos = [
   {
     nome: "Essencial",
     destaque: false,
     mensal: "R$ 397",
-    incluiLabel: "Inclui:",
-    inclui: [
-      "IA no WhatsApp 24h respondendo dúvidas sobre pacotes, preços e disponibilidade",
-    ],
+    inclui: [IA_WHATSAPP],
   },
   {
     nome: "Profissional",
     destaque: true,
     mensal: "R$ 497",
-    incluiLabel: "Tudo do Essencial, mais:",
     inclui: [
+      IA_WHATSAPP,
       "Qualificação de lead",
       "Follow-up automático",
       "Agendamento no Google Calendar",
@@ -84,9 +84,12 @@ const planos = [
     nome: "Premium",
     destaque: false,
     mensal: "R$ 697",
-    incluiLabel: "Tudo do Profissional, mais:",
     inclui: [
-      "Pós-venda automatizado: lembrete pré-evento, confirmação e pesquisa de satisfação",
+      "Qualificação de lead",
+      "Follow-up automático",
+      "Agendamento no Google Calendar",
+      "Dashboard em tempo real",
+      "Tom de voz personalizado",
       "Reunião mensal de performance",
     ],
   },
@@ -295,8 +298,7 @@ export default function Home() {
               Atendimento 24h no WhatsApp por uma fração do custo de um funcionário
             </h2>
             <p className="text-navy/60 mt-4 text-base max-w-xl mx-auto leading-relaxed">
-              Três planos, do essencial ao pós-venda completo. Escolha o que acompanha o
-              tamanho da sua operação.
+              Três planos. Escolha o que acompanha o tamanho da sua operação.
             </p>
           </div>
 
@@ -304,10 +306,10 @@ export default function Home() {
             {planos.map((p) => (
               <div
                 key={p.nome}
-                className={`relative bg-navy rounded-3xl px-7 py-9 flex flex-col gap-7 ${
+                className={`relative bg-navy rounded-3xl flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                   p.destaque
-                    ? "border-2 border-gold shadow-xl shadow-navy/25 md:-mt-4"
-                    : "border border-gold/25"
+                    ? "px-7 py-9 gap-7 md:-mt-4 border-2 border-gold shadow-xl shadow-navy/25 hover:shadow-2xl hover:shadow-navy/40"
+                    : "px-6 py-8 gap-6 md:my-3 border border-gold/25 hover:border-gold/60 hover:shadow-xl hover:shadow-navy/25"
                 }`}
               >
                 {p.destaque && (
@@ -322,7 +324,7 @@ export default function Home() {
                     {p.nome}
                   </span>
 
-                  <p className="text-gold text-4xl font-bold">
+                  <p className={`text-gold font-bold ${p.destaque ? "text-4xl" : "text-3xl"}`}>
                     {p.mensal}
                     <span className="text-base font-medium">/mês</span>
                   </p>
@@ -331,7 +333,7 @@ export default function Home() {
                 {/* Incluso */}
                 <div className="flex flex-col gap-3 flex-1">
                   <div className="border-t border-white/8" />
-                  <p className="text-gold/90 text-[13px] font-semibold">{p.incluiLabel}</p>
+                  <p className="text-gold/90 text-[13px] font-semibold">Inclui:</p>
                   <ul className="flex flex-col gap-3">
                     {p.inclui.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
