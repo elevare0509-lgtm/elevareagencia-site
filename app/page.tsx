@@ -57,6 +57,47 @@ const nichos = [
   { Icon: Cake,             name: "Confeiteiras",         dor: "Encomendas de última hora chegam no WhatsApp e precisam de resposta rápida." },
 ];
 
+const planos = [
+  {
+    nome: "Essencial",
+    destaque: false,
+    setup: "R$ 397",
+    mensal: "R$ 397",
+    fidelidade: "6 meses",
+    incluiLabel: "Inclui:",
+    inclui: [
+      "IA no WhatsApp 24h respondendo dúvidas sobre pacotes, preços e disponibilidade",
+    ],
+  },
+  {
+    nome: "Profissional",
+    destaque: true,
+    setup: "R$ 697",
+    mensal: "R$ 497",
+    fidelidade: "6 meses",
+    incluiLabel: "Tudo do Essencial, mais:",
+    inclui: [
+      "Qualificação de lead",
+      "Follow-up automático",
+      "Agendamento no Google Calendar",
+      "Dashboard em tempo real",
+      "Tom de voz personalizado",
+    ],
+  },
+  {
+    nome: "Premium",
+    destaque: false,
+    setup: "R$ 997",
+    mensal: "R$ 697",
+    fidelidade: "3 meses",
+    incluiLabel: "Tudo do Profissional, mais:",
+    inclui: [
+      "Pós-venda automatizado: lembrete pré-evento, confirmação e pesquisa de satisfação",
+      "Reunião mensal de performance",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -251,56 +292,94 @@ export default function Home() {
 
       {/* ── SEÇÃO 6 — INVESTIMENTO ── */}
       <section id="investimento" className="bg-offwhite py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
               Investimento
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2 max-w-3xl mx-auto leading-tight">
               Atendimento 24h no WhatsApp por uma fração do custo de um funcionário
             </h2>
+            <p className="text-navy/60 mt-4 text-base max-w-xl mx-auto leading-relaxed">
+              Três planos, do essencial ao pós-venda completo. Escolha o que acompanha o
+              tamanho da sua operação.
+            </p>
           </div>
 
-          <div className="mx-auto max-w-[480px]">
-            <div className="bg-navy border border-gold/25 rounded-3xl px-8 py-10 flex flex-col gap-8">
-              {/* Valores */}
-              <div className="flex flex-col gap-3">
-                <div className="flex items-baseline justify-between">
-                  <span className="text-offwhite/70 text-sm">Setup único</span>
-                  <span className="text-gold text-2xl font-bold">R$ 897</span>
-                </div>
-                <div className="border-t border-white/8" />
-                <div className="flex items-baseline justify-between">
-                  <span className="text-offwhite/70 text-sm">Mensalidade</span>
-                  <span className="text-gold text-2xl font-bold">R$ 497<span className="text-base font-medium">/mês</span></span>
-                </div>
-              </div>
-
-              {/* Incluso */}
-              <ul className="flex flex-col gap-3">
-                {[
-                  "Atendente virtual configurado pro seu negócio de eventos",
-                  "Respostas, orçamentos, agendamento de visitas e lembretes automáticos",
-                  "Funcionamento 24h no seu WhatsApp",
-                  "Ajustes e suporte contínuos",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                    <span className="text-offwhite/80 text-sm leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href={WA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {planos.map((p) => (
+              <div
+                key={p.nome}
+                className={`relative bg-navy rounded-3xl px-7 py-9 flex flex-col gap-7 ${
+                  p.destaque
+                    ? "border-2 border-gold shadow-xl shadow-navy/25 md:-mt-4"
+                    : "border border-gold/25"
+                }`}
               >
-                Quero começar
-              </a>
-            </div>
+                {p.destaque && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-navy text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full whitespace-nowrap">
+                    Mais popular
+                  </span>
+                )}
+
+                {/* Nome e valores */}
+                <div className="flex flex-col gap-5">
+                  <span className="text-gold text-xs font-bold tracking-[0.2em] uppercase">
+                    {p.nome}
+                  </span>
+
+                  <p className="text-gold text-4xl font-bold">
+                    {p.mensal}
+                    <span className="text-base font-medium">/mês</span>
+                  </p>
+
+                  <div className="flex flex-col gap-2 text-sm">
+                    <div className="flex items-baseline justify-between gap-2">
+                      <span className="text-offwhite/55">Setup único</span>
+                      <span className="text-offwhite font-semibold whitespace-nowrap">
+                        {p.setup}
+                      </span>
+                    </div>
+                    <div className="border-t border-white/8" />
+                    <div className="flex items-baseline justify-between gap-2">
+                      <span className="text-offwhite/55">Fidelidade</span>
+                      <span className="text-offwhite font-semibold whitespace-nowrap">
+                        {p.fidelidade}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Incluso */}
+                <div className="flex flex-col gap-3 flex-1">
+                  <p className="text-gold/90 text-[13px] font-semibold">{p.incluiLabel}</p>
+                  <ul className="flex flex-col gap-3">
+                    {p.inclui.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                        <span className="text-offwhite/80 text-sm leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA */}
+                <a
+                  href={`${WA}?text=${encodeURIComponent(
+                    `Olá! Tenho interesse no plano ${p.nome} da Elevare.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={
+                    p.destaque
+                      ? "block text-center bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm"
+                      : "block text-center border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm"
+                  }
+                >
+                  Quero começar
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
