@@ -11,19 +11,19 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const SITE_URL = "https://www.elevareagencia.com";
 
 const DESCRIPTION =
-  "Agência de automação com inteligência artificial para o mercado de eventos. Atendentes virtuais para WhatsApp que respondem, qualificam leads e agendam visitas 24h.";
+  "Agência de automação com inteligência artificial para o mercado de eventos. Qualificadores de leads para WhatsApp que respondem, qualificam e agendam visitas 24h.";
 
 export const metadata: Metadata = {
   // Necessário para o og:image gerado por app/opengraph-image.png virar URL absoluta.
   metadataBase: new URL(SITE_URL),
   title: "Elevare | Automação com IA para Eventos",
   description:
-    "Atendente virtual com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
+    "Qualificador de leads com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Elevare | Automação com IA para Eventos",
     description:
-      "Atendente virtual com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
+      "Qualificador de leads com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
     type: "website",
     locale: "pt_BR",
     siteName: "Elevare",

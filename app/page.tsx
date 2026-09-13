@@ -39,7 +39,7 @@ const passos = [
   {
     Icon: Settings,
     title: "Configuramos o agente",
-    desc: "Criamos seu atendente virtual personalizado, com a cara do seu negócio.",
+    desc: "Criamos seu qualificador de leads personalizado, com a cara do seu negócio.",
   },
   {
     Icon: Bot,
@@ -109,7 +109,7 @@ export default function Home() {
             <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
           </h1>
           <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
-            Atendente virtual com IA que responde, envia orçamento e agenda visitas dos seus
+            Qualificador de leads com IA que responde, envia orçamento e agenda visitas dos seus
             clientes no WhatsApp, 24 horas por dia, todos os dias.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
@@ -182,7 +182,7 @@ export default function Home() {
               O que o seu agente faz por você
             </h2>
             <p className="text-navy/60 mt-3 text-base max-w-xl mx-auto">
-              A Elevare cria atendentes virtuais com inteligência artificial que respondem seus clientes no WhatsApp na hora, enviam pacotes e valores, agendam visitas ao seu espaço e só te chamam quando realmente precisam de você.
+              A Elevare cria qualificadores de leads com inteligência artificial que respondem seus clientes no WhatsApp na hora, enviam pacotes e valores, agendam visitas ao seu espaço e só te chamam quando realmente precisam de você.
             </p>
           </div>
 
