@@ -61,7 +61,6 @@ const planos = [
   {
     nome: "Essencial",
     destaque: false,
-    setup: "R$ 397",
     mensal: "R$ 397",
     incluiLabel: "Inclui:",
     inclui: [
@@ -71,7 +70,6 @@ const planos = [
   {
     nome: "Profissional",
     destaque: true,
-    setup: "R$ 697",
     mensal: "R$ 497",
     incluiLabel: "Tudo do Essencial, mais:",
     inclui: [
@@ -85,7 +83,6 @@ const planos = [
   {
     nome: "Premium",
     destaque: false,
-    setup: "R$ 997",
     mensal: "R$ 697",
     incluiLabel: "Tudo do Profissional, mais:",
     inclui: [
@@ -319,8 +316,8 @@ export default function Home() {
                   </span>
                 )}
 
-                {/* Nome e valores */}
-                <div className="flex flex-col gap-5">
+                {/* Nome e mensalidade */}
+                <div className="flex flex-col gap-4">
                   <span className="text-gold text-xs font-bold tracking-[0.2em] uppercase">
                     {p.nome}
                   </span>
@@ -329,20 +326,11 @@ export default function Home() {
                     {p.mensal}
                     <span className="text-base font-medium">/mês</span>
                   </p>
-
-                  <div className="flex flex-col gap-2 text-sm">
-                    <div className="border-t border-white/8" />
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-offwhite/55">Setup único</span>
-                      <span className="text-offwhite font-semibold whitespace-nowrap">
-                        {p.setup}
-                      </span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Incluso */}
                 <div className="flex flex-col gap-3 flex-1">
+                  <div className="border-t border-white/8" />
                   <p className="text-gold/90 text-[13px] font-semibold">{p.incluiLabel}</p>
                   <ul className="flex flex-col gap-3">
                     {p.inclui.map((item) => (
