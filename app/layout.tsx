@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const SITE_URL = "https://www.elevareagencia.com";
 
 const DESCRIPTION =
-  "Agência de automação com inteligência artificial para o mercado de eventos. Qualificadores de leads para WhatsApp que respondem, qualificam e agendam visitas 24h.";
+  "Qualificador de leads com IA no WhatsApp para o mercado de eventos. Responde clientes, envia valores e agenda visitas 24h por dia para espaços de eventos, buffets, casas de festa e confeitarias.";
 
 export const metadata: Metadata = {
   // Necessário para o og:image gerado por app/opengraph-image.png virar URL absoluta.
@@ -44,8 +44,40 @@ const jsonLd = {
   description: DESCRIPTION,
   url: SITE_URL,
   telephone: "+5511991572814",
-  areaServed: "BR",
-  sameAs: ["https://instagram.com/elevare_on"],
+  email: "elevare0509@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Cotia",
+    addressRegion: "SP",
+    addressCountry: "BR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -23.6044,
+    longitude: -46.9186,
+  },
+  areaServed: [
+    { "@type": "City", name: "Cotia" },
+    { "@type": "City", name: "São Paulo" },
+    { "@type": "City", name: "Carapicuíba" },
+    { "@type": "City", name: "Itapevi" },
+    { "@type": "City", name: "Vargem Grande Paulista" },
+  ],
+  serviceType: [
+    "Automação de WhatsApp com IA",
+    "Qualificação de leads para eventos",
+    "Agendamento automático de visitas",
+    "Follow-up automático de clientes",
+  ],
+  sameAs: ["https://www.instagram.com/elevare_on"],
+  image: `${SITE_URL}/logo-elevare.png`,
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
 };
 
 export default function RootLayout({

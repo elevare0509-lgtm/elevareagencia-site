@@ -6,11 +6,11 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#como-funciona", label: "Como Funciona" },
-  { href: "#solucoes", label: "Soluções" },
-  { href: "#resultados", label: "Resultados" },
-  { href: "#investimento", label: "Investimento" },
-  { href: "#sobre", label: "Sobre" },
+  { href: "/#como-funciona", label: "Como Funciona" },
+  { href: "/#solucoes", label: "Soluções" },
+  { href: "/#resultados", label: "Resultados" },
+  { href: "/#investimento", label: "Investimento" },
+  { href: "/#sobre", label: "Sobre" },
 ];
 
 export default function Navbar() {

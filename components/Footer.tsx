@@ -62,23 +62,28 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
-              <Link href="#como-funciona" className="text-offwhite/60 text-sm hover:text-gold">
+              <Link href="/#como-funciona" className="text-offwhite/60 text-sm hover:text-gold">
                 Como Funciona
               </Link>
             </li>
             <li>
-              <Link href="#solucoes" className="text-offwhite/60 text-sm hover:text-gold">
+              <Link href="/#solucoes" className="text-offwhite/60 text-sm hover:text-gold">
                 Soluções
               </Link>
             </li>
             <li>
-              <Link href="#resultados" className="text-offwhite/60 text-sm hover:text-gold">
+              <Link href="/#resultados" className="text-offwhite/60 text-sm hover:text-gold">
                 Resultados
               </Link>
             </li>
             <li>
-              <Link href="#sobre" className="text-offwhite/60 text-sm hover:text-gold">
+              <Link href="/#sobre" className="text-offwhite/60 text-sm hover:text-gold">
                 Sobre
+              </Link>
+            </li>
+            <li>
+              <Link href="/cotia" className="text-offwhite/60 text-sm hover:text-gold">
+                Automação em Cotia
               </Link>
             </li>
           </ul>
