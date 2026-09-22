@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { MessageCircle, AtSign, Mail } from "lucide-react";
+import { nichos } from "@/lib/nichos";
 
 export default function Footer() {
   return (
     <footer className="bg-navy/90 border-t border-gold/15">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 md:py-16 grid grid-cols-5 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 md:py-16 grid grid-cols-5 md:grid-cols-4 gap-x-5 gap-y-10 md:gap-12">
 
         {/* Col 1 — Brand */}
         <div className="col-span-5 md:col-span-1 flex flex-col gap-4">
@@ -86,6 +87,25 @@ export default function Footer() {
                 Automação em Cotia
               </Link>
             </li>
+          </ul>
+        </div>
+
+        {/* Col 4, Pra quem é */}
+        <div className="col-span-5 md:col-span-1 flex flex-col gap-4">
+          <h4 className="text-offwhite text-sm font-semibold tracking-widest uppercase">
+            Pra quem é
+          </h4>
+          <ul className="grid grid-cols-2 md:grid-cols-1 gap-3">
+            {nichos.map(({ slug, cardName }) => (
+              <li key={slug}>
+                <Link
+                  href={`/${slug}`}
+                  className="text-offwhite/60 text-sm hover:text-gold"
+                >
+                  {cardName}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

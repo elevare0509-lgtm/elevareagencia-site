@@ -1,4 +1,7 @@
-import { MessageCircle, MessageSquareReply, Settings, Bot, Building2, UtensilsCrossed, PartyPopper, Martini, ClipboardList, Cake, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import Link from "next/link";
+import { MessageCircle, MessageSquareReply, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import ComoFunciona from "@/components/ComoFunciona";
+import { nichos } from "@/lib/nichos";
 
 const WA = "https://wa.me/5511991572814";
 
@@ -28,33 +31,6 @@ const solucoes = [
     title: "Te chama quando precisa",
     desc: "Evento grande ou pedido fora do padrão, o agente te avisa. O resto ele resolve sozinho.",
   },
-];
-
-const passos = [
-  {
-    Icon: MessageCircle,
-    title: "Entendemos seu negócio",
-    desc: "Mapeamos seus pacotes, valores, capacidade, datas disponíveis e as perguntas mais frequentes.",
-  },
-  {
-    Icon: Settings,
-    title: "Configuramos o agente",
-    desc: "Criamos seu qualificador de leads personalizado, com a cara do seu negócio.",
-  },
-  {
-    Icon: Bot,
-    title: "Ligamos no seu WhatsApp",
-    desc: "Seu agente começa a responder e nós ajustamos até ficar perfeito.",
-  },
-];
-
-const nichos = [
-  { Icon: Building2,        name: "Espaços de eventos",   dor: "Visita que não é agendada vira data vazia no calendário." },
-  { Icon: UtensilsCrossed,  name: "Buffets",              dor: "Cardápio e valores são pedidos a toda hora, e a resposta não pode demorar." },
-  { Icon: PartyPopper,      name: "Casas de festa",       dor: "O cliente cota várias casas ao mesmo tempo. Fecha com quem responde primeiro." },
-  { Icon: Martini,          name: "Bares de evento",      dor: "Pedido de open bar chega fora do horário comercial, quando ninguém está no WhatsApp." },
-  { Icon: ClipboardList,    name: "Cerimonialistas",      dor: "Muita conversa ao mesmo tempo e pouco tempo pra responder todo mundo." },
-  { Icon: Cake,             name: "Confeiteiras",         dor: "Encomendas de última hora chegam no WhatsApp e precisam de resposta rápida." },
 ];
 
 const IA_WHATSAPP =
@@ -202,41 +178,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 3 — COMO FUNCIONA ── */}
-      <section id="como-funciona" className="bg-navy/80 backdrop-blur-sm py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-gold text-xs font-bold tracking-widest uppercase">
-              Processo
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2">
-              Como funciona
-            </h2>
-            <p className="text-offwhite/50 mt-3 text-base">
-              Sem reunião demorada, sem burocracia.
-            </p>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-start gap-0 relative">
-            <div className="hidden md:block absolute top-8 left-[16.666%] right-[16.666%] h-px bg-gold/30" />
-
-            {passos.map((p, i) => (
-              <div
-                key={i}
-                className="flex-1 flex flex-col items-center text-center px-6 relative"
-              >
-                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center mb-5 z-10 shrink-0">
-                  <p.Icon className="text-navy w-7 h-7" />
-                </div>
-                <h3 className="text-offwhite font-bold text-base mb-2 leading-snug">{p.title}</h3>
-                <p className="text-offwhite/50 text-sm leading-relaxed">{p.desc}</p>
-                {i < passos.length - 1 && (
-                  <div className="md:hidden w-px h-10 bg-gold/30 my-6" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ComoFunciona id="como-funciona" />
 
       {/* ── SEÇÃO 4 — PRA QUEM É ── */}
       <section id="sobre" className="bg-offwhite py-24 px-6">
@@ -251,15 +193,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {nichos.map(({ Icon, name, dor }) => (
-              <div
-                key={name}
-                className="border border-navy/10 rounded-2xl px-6 py-5 bg-white shadow-sm flex flex-col gap-3"
+            {nichos.map(({ Icon, slug, cardName, cardDor }) => (
+              <Link
+                key={slug}
+                href={`/${slug}`}
+                className="border border-navy/10 rounded-2xl px-6 py-5 bg-white shadow-sm flex flex-col gap-3 transition-all duration-300 hover:shadow-md hover:border-gold/50"
               >
                 <Icon className="w-6 h-6 text-gold" />
-                <h3 className="text-navy font-bold text-base leading-snug">{name}</h3>
-                <p className="text-navy/55 text-sm leading-relaxed">{dor}</p>
-              </div>
+                <h3 className="text-navy font-bold text-base leading-snug">{cardName}</h3>
+                <p className="text-navy/55 text-sm leading-relaxed">{cardDor}</p>
+              </Link>
             ))}
           </div>
 

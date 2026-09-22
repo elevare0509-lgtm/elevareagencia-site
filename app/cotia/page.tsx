@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { nichos } from "@/lib/nichos";
 import {
   MapPin,
   Zap,
@@ -214,26 +216,59 @@ export default function Cotia() {
         </div>
       </section>
 
-      {/* Mercado */}
+      {/* Nichos atendidos na região */}
       <section className="bg-offwhite py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Quem atendemos
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2 leading-tight">
+              Feito pra cada tipo de fornecedor de evento
+            </h2>
+            <p className="text-navy/60 mt-4 text-base max-w-2xl mx-auto leading-relaxed">
+              O agente muda conforme o seu negócio. Um espaço de eventos precisa agendar visita,
+              um buffet precisa enviar cardápio, uma confeitaria precisa coletar sabor e prazo.
+              Veja como funciona no seu caso.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {nichos.map(({ slug, Icon, cardName, cardDor }) => (
+              <Link
+                key={slug}
+                href={`/${slug}`}
+                className="border border-navy/10 rounded-2xl px-6 py-5 bg-white shadow-sm flex flex-col gap-3 transition-all duration-300 hover:shadow-md hover:border-gold/50"
+              >
+                <Icon className="w-6 h-6 text-gold" />
+                <h3 className="text-navy font-bold text-base leading-snug">{cardName}</h3>
+                <p className="text-navy/55 text-sm leading-relaxed">{cardDor}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mercado */}
+      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
               O mercado de eventos
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2 leading-tight">
               Um setor grande, feito de negócios pequenos
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-            <div className="bg-navy rounded-2xl px-7 py-8 flex flex-col gap-2 text-center">
+            <div className="border border-gold/20 bg-white/[0.03] rounded-2xl px-7 py-8 flex flex-col gap-2 text-center">
               <span className="text-gold text-3xl md:text-4xl font-bold">R$ 800 bi</span>
               <span className="text-offwhite/60 text-sm leading-relaxed">
                 faturados pelo mercado de eventos no Brasil em 2024
               </span>
             </div>
-            <div className="bg-navy rounded-2xl px-7 py-8 flex flex-col gap-2 text-center">
+            <div className="border border-gold/20 bg-white/[0.03] rounded-2xl px-7 py-8 flex flex-col gap-2 text-center">
               <span className="text-gold text-3xl md:text-4xl font-bold">96%</span>
               <span className="text-offwhite/60 text-sm leading-relaxed">
                 das empresas do setor são micro ou pequenas empresas
@@ -241,7 +276,7 @@ export default function Cotia() {
             </div>
           </div>
 
-          <p className="text-navy/60 text-base leading-relaxed text-center max-w-2xl mx-auto">
+          <p className="text-offwhite/60 text-base leading-relaxed text-center max-w-2xl mx-auto">
             O mercado de eventos no Brasil faturou mais de R$800 bilhões em 2024 e segue
             crescendo. 96% das empresas do setor são micro ou pequenas empresas, exatamente o
             perfil que mais sofre com WhatsApp desorganizado e perda de leads. A Elevare foi
