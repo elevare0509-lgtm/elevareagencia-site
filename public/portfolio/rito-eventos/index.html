@@ -636,48 +636,9 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
-   6. NA MÍDIA (faixa compacta)
+   6B. FAIXAS
    ============================================================ */
 .secao--faixa{padding:clamp(26px, 4vw, 46px) 0;}
-
-.midia{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  gap:14px 26px;
-}
-.midia__item{
-  position:relative;
-  width:118px;
-  height:80px;
-  overflow:hidden;
-}
-/* A borda tracejada so aparece enquanto o arquivo do logo nao existe. */
-.midia__item[data-placeholder]{border:1px dashed var(--borda);}
-.midia__item::after{
-  content:attr(data-placeholder);
-  white-space:pre-line;
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:8px;
-  font-family:var(--sans);
-  font-size:10px;
-  letter-spacing:.08em;
-  color:rgba(26,26,26,.3);
-  line-height:1.6;
-}
-.midia__item img{
-  position:relative;
-  z-index:1;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
 
 /* ============================================================
    6B. PORTFOLIO (faixa de prova visual, sem texto)
@@ -836,16 +797,25 @@ section{padding:var(--secao) 0;}
 .nota-google{
   text-align:center;
   font-family:var(--sans);
-  font-size:14px;
-  font-weight:400;
-  line-height:1.6;
-  color:var(--texto-2);
+  font-size:17px;
+  line-height:1.4;
   margin:0 0 14px;
 }
 .nota-google__estrelas{
   color:var(--dourado-estrela);
-  letter-spacing:.06em;
-  margin:0 5px;
+  letter-spacing:.14em;
+}
+/* Texto que so o leitor de tela enxerga, para as estrelas nao ficarem mudas. */
+.so-leitor{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
 
 /* ============================================================
@@ -979,9 +949,7 @@ section{padding:var(--secao) 0;}
         imagens/portfolio-noiva.jpg ....... faixa do portfolio, foto 2
         imagens/portfolio-buque.jpg ....... faixa do portfolio, foto 3
                                             (as tres em JPG 900x1125px)
-     5) imagens/midia-1.jpg a midia-6.jpg .. logos das publicacoes
-                                            (PNG ou JPG, 118x80px)
-     6) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
+     5) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
                                             (JPG 1200x630px)
 
      NA PASTA, FORA DE USO (reserva para trocas):
@@ -1212,39 +1180,12 @@ section{padding:var(--secao) 0;}
   </div>
 </section>
 
-<!-- =================== 6. NA MÍDIA (faixa compacta) =================== -->
-<section class="bg-off secao--faixa">
-  <div class="container">
-    <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (logos das publicações) -->
-    <div class="midia" data-anim>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-      <div class="midia__item" data-placeholder="Revista Valoriza">
-        <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ======================= 7. DEPOIMENTOS ======================= -->
 <section class="bg-branco">
   <div class="container">
     <div class="centro">
       <span class="eyebrow" data-anim>Depoimentos</span>
-      <p class="nota-google" data-anim>5,0 <span class="nota-google__estrelas" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> no Google &middot; 18 avaliações</p>
+      <p class="nota-google" data-anim><span class="nota-google__estrelas" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="so-leitor">Avaliação cinco de cinco estrelas</span></p>
       <h2 class="titulo-secao" data-anim>O que nossos casais dizem</h2>
     </div>
 
@@ -1434,7 +1375,7 @@ section{padding:var(--secao) 0;}
   }
 
   /* Remove a moldura de espaço reservado quando a imagem real carrega */
-  Array.prototype.forEach.call(document.querySelectorAll('.foto img, .midia__item img, .portfolio__item img'), function(img){
+  Array.prototype.forEach.call(document.querySelectorAll('.foto img, .portfolio__item img'), function(img){
     function ok(){ img.parentNode.removeAttribute('data-placeholder'); }
     if (img.complete && img.naturalWidth > 0) ok();
     else img.addEventListener('load', ok);
