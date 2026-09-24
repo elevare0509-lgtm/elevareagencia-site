@@ -349,44 +349,7 @@ section{padding:var(--secao) 0;}
   line-height:1.75;
   color:rgba(255,255,255,.88);
   max-width:560px;
-  margin:24px auto 32px;
-}
-
-/* Espaco reservado para o video de apresentacao. Cole o iframe dentro da div. */
-.hero__video{
-  position:relative;
-  width:100%;
-  max-width:560px;
-  margin:0 auto 34px;
-  aspect-ratio:16/9;
-  background:rgba(0,0,0,.3);
-  border:1px solid rgba(255,255,255,.26);
-  overflow:hidden;
-}
-.hero__video::after{
-  content:attr(data-placeholder);
-  white-space:pre-line;
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:16px;
-  font-family:var(--sans);
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  line-height:2;
-  color:rgba(255,255,255,.5);
-}
-.hero__video iframe,.hero__video video{
-  position:relative;
-  z-index:1;
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
+  margin:24px auto 36px;
 }
 
 .hero__scroll{
@@ -998,11 +961,6 @@ section{padding:var(--secao) 0;}
   <div class="hero__conteudo">
     <h1>Seu evento com a leveza que você merece e a excelência que ele exige.</h1>
     <p class="hero__sub">Assessoria e produção de casamentos e eventos em São Paulo. Mais de 500 projetos realizados em 12 anos de experiência.</p>
-    <!-- ====== ESPACO DO VIDEO ======
-         Cole o <iframe> do YouTube ou do Vimeo dentro desta div.
-         O espaco reservado some sozinho quando o iframe entra. -->
-    <div class="hero__video" data-placeholder="Video de apresentacao"></div>
-
     <a class="btn btn--claro" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
       Falar com a Camis no WhatsApp
