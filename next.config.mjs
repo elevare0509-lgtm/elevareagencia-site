@@ -10,17 +10,6 @@ const nextConfig = {
       { source: "/design-instagram", destination: "/", statusCode: 301 },
     ];
   },
-
-  // A LP da Rito Eventos e um HTML estatico em public/portfolio/rito-eventos.
-  // O rewrite deixa a URL limpa, sem o /index.html no final.
-  async rewrites() {
-    return [
-      {
-        source: "/portfolio/rito-eventos",
-        destination: "/portfolio/rito-eventos/index.html",
-      },
-    ];
-  },
 };
 
 export default nextConfig;
