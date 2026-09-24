@@ -251,27 +251,36 @@ section{padding:var(--secao) 0;}
   display:flex;
   flex-direction:column;
   padding:0;
-  /* ====== TROQUE 'imagens/hero-casamento.jpg' PELA FOTO DE CASAMENTO ======
-     Formato sugerido: JPG horizontal, 2000x1300px, até 400kb.
-     O véu vinho por cima é mantido de propósito, para o texto respirar. */
   background-color:var(--vinho-profundo);
-  background-image:
-    linear-gradient(180deg, rgba(38,1,16,.82) 0%, rgba(58,2,24,.70) 42%, rgba(26,0,10,.90) 100%),
-    url('/portfolio/rito-eventos/imagens/hero-casamento.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
   color:var(--branco);
   text-align:center;
+  overflow:hidden;
 }
-/* No celular a foto horizontal sobraria so a faixa do meio, entao entra um corte vertical. */
-@media (max-width:719px){
-  .hero{
-    background-image:
-      linear-gradient(180deg, rgba(38,1,16,.82) 0%, rgba(58,2,24,.70) 42%, rgba(26,0,10,.90) 100%),
-      url('/portfolio/rito-eventos/imagens/hero-casamento-mobile.jpg');
-  }
+/* A foto do hero e uma imagem de verdade, e nao um background, para carregar
+   antes do CSS e melhorar o tempo ate a primeira imagem aparecer. */
+.hero__fundo{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:block;
 }
+.hero__foto{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+/* Veu vinho por cima da foto, para o texto branco ficar legivel. */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:rgba(89, 4, 36, 0.7);
+  pointer-events:none;
+}
+.hero__topo,.hero__conteudo{position:relative;z-index:2;}
 
 .hero__topo{padding:30px 24px 0;}
 .hero__logo{color:var(--branco);}
@@ -371,6 +380,7 @@ section{padding:var(--secao) 0;}
 
 .hero__scroll{
   position:absolute;
+  z-index:2;
   bottom:24px;
   left:50%;
   transform:translateX(-50%);
@@ -914,6 +924,13 @@ section{padding:var(--secao) 0;}
 
 <!-- ============================ 1. HERO ============================ -->
 <header class="hero" id="topo">
+  <picture class="hero__fundo">
+    <source media="(max-width:719px)" srcset="/portfolio/rito-eventos/imagens/hero-casamento-mobile.jpg" width="1100" height="1466">
+    <img class="hero__foto" src="/portfolio/rito-eventos/imagens/hero-casamento.jpg"
+         alt="Noivos se beijando cercados por convidados celebrando em casamento ao ar livre produzido pela Rito Eventos"
+         width="1600" height="1040" fetchpriority="high" decoding="async">
+  </picture>
+
   <div class="hero__topo">
     <div class="hero__logo">
       <img class="hero__logo-img" src="/portfolio/rito-eventos/imagens/logo-rito-branco.png"
@@ -964,7 +981,7 @@ section{padding:var(--secao) 0;}
         <!-- TROQUE POR: imagens/camila-rito-eventos.jpg (foto profissional da Camila, vertical) -->
         <div class="foto" data-placeholder="Foto da Camila&#10;imagens/camila-rito-eventos.jpg">
           <img src="/portfolio/rito-eventos/imagens/camila-rito-eventos.jpg"
-               alt="Camila, cerimonialista e produtora de eventos à frente da Rito Eventos, assessoria de casamento em São Paulo"
+               alt="Camila Lages, assessora de casamentos e produtora de eventos à frente da Rito Eventos em São Paulo"
                loading="lazy" width="900" height="1125"
                onerror="this.style.display='none'">
           <span class="foto__selo">Desde 2014</span>
@@ -1066,13 +1083,13 @@ section{padding:var(--secao) 0;}
   <div class="container">
     <div class="portfolio" data-anim>
       <div class="portfolio__item" data-placeholder="portfolio-1.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
       </div>
       <div class="portfolio__item" data-placeholder="portfolio-2.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
       </div>
-      <div class="portfolio__item" data-placeholder="portfolio-5.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-5.jpg" alt="Casal de noivos com a cerimonialista da Rito Eventos na entrada do casamento à noite" loading="lazy" onerror="this.style.display='none'">
+      <div class="portfolio__item" data-placeholder="portfolio-noiva.jpg">
+        <img src="/portfolio/rito-eventos/imagens/portfolio-noiva.jpg" alt="Noiva com véu ao vento segurando buquê em casamento assessorado pela Rito Eventos" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
@@ -1097,22 +1114,22 @@ section{padding:var(--secao) 0;}
     <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (logos das publicações) -->
     <div class="midia" data-anim>
       <div class="midia__item" data-placeholder="Logo 1">
-        <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
       <div class="midia__item" data-placeholder="Logo 2">
-        <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
       <div class="midia__item" data-placeholder="Logo 3">
-        <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
       <div class="midia__item" data-placeholder="Logo 4">
-        <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
       <div class="midia__item" data-placeholder="Logo 5">
-        <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
       <div class="midia__item" data-placeholder="Logo 6">
-        <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
+        <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
