@@ -276,7 +276,17 @@ section{padding:var(--secao) 0;}
 }
 
 .hero__topo{padding:30px 24px 0;}
-.hero__logo{
+.hero__logo{color:var(--branco);}
+/* Logo em imagem. Enquanto o arquivo nao existir, vale o logo em texto. */
+.hero__logo-img{
+  display:block;
+  width:clamp(88px, 13vw, 124px);
+  height:auto;
+  margin:0 auto;
+}
+.hero__logo--img .hero__logo-texto{display:none;}
+.hero__logo-texto{
+  margin:0;
   font-family:var(--serif);
   font-size:clamp(21px, 3.8vw, 26px);
   font-weight:700;
@@ -284,7 +294,7 @@ section{padding:var(--secao) 0;}
   text-transform:uppercase;
   color:var(--branco);
 }
-.hero__logo span{
+.hero__logo-texto span{
   display:block;
   font-family:var(--sans);
   font-size:10px;
@@ -612,6 +622,52 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
+   6B. PORTFOLIO
+   ============================================================ */
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:48px;
+}
+@media (min-width:720px){
+  .portfolio{grid-template-columns:repeat(4,1fr);gap:20px;}
+}
+.portfolio__item{
+  position:relative;
+  aspect-ratio:3/4;
+  background:var(--off);
+  border:1px solid var(--borda);
+  overflow:hidden;
+}
+.portfolio__item--largo{
+  grid-column:span 2;
+  aspect-ratio:3/2;
+}
+.portfolio__item::after{
+  content:attr(data-placeholder);
+  white-space:pre-line;
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:.08em;
+  color:rgba(26,26,26,.3);
+  line-height:1.8;
+}
+.portfolio__item img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ============================================================
    7. DEPOIMENTOS (carrossel)
    ============================================================ */
 .carrossel{
@@ -823,11 +879,16 @@ section{padding:var(--secao) 0;}
 
      1) imagens/hero-casamento.jpg ......... foto de casamento do topo
                                             (JPG horizontal, 2000x1300px)
-     2) imagens/camila-rito-eventos.jpg .... foto profissional da Camila
+     2) imagens/logo-rito-branco.png ....... logo da Rito em versao clara
+                                            (PNG quadrado com fundo transparente)
+     3) imagens/camila-rito-eventos.jpg .... foto profissional da Camila
                                             (JPG vertical, 900x1125px)
-     3) imagens/midia-1.jpg a midia-6.jpg .. capas ou logos de revistas
+     4) imagens/portfolio-1.jpg ............ foto horizontal (1400x930px)
+        imagens/portfolio-2.jpg a -5.jpg ... fotos verticais (900x1200px)
+        imagens/portfolio-6.jpg ............ foto horizontal (1400x930px)
+     5) imagens/midia-1.jpg a midia-6.jpg .. capas ou logos de revistas
                                             (JPG vertical, 600x800px)
-     4) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
+     6) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
                                             (JPG 1200x630px)
 
      Os nomes precisam ser iguais aos da lista. Enquanto o arquivo não
@@ -839,7 +900,14 @@ section{padding:var(--secao) 0;}
 <!-- ============================ 1. HERO ============================ -->
 <header class="hero" id="topo">
   <div class="hero__topo">
-    <div class="hero__logo">Rito Eventos<span>Assessoria e produção</span></div>
+    <div class="hero__logo">
+      <img class="hero__logo-img" src="imagens/logo-rito-branco.png"
+           alt="Rito Assessoria e Eventos"
+           width="124" height="124"
+           onload="this.parentNode.classList.add('hero__logo--img')"
+           onerror="this.remove()">
+      <p class="hero__logo-texto">Rito Eventos<span>Assessoria e produção</span></p>
+    </div>
   </div>
 
   <div class="hero__conteudo">
@@ -959,6 +1027,39 @@ section{padding:var(--secao) 0;}
         <p>No grande dia, cuidamos de tudo. Você só precisa aproveitar.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 4B. PORTFÓLIO ========================= -->
+<section class="bg-branco">
+  <div class="container">
+    <div class="centro">
+      <span class="eyebrow" data-anim>Portfólio</span>
+      <h2 class="titulo-secao" data-anim>Alguns dos nossos projetos entregues</h2>
+      <p class="texto" style="max-width:620px;margin:0 auto;" data-anim>Casamentos, debutantes e celebrações produzidos do primeiro contato ao último convidado.</p>
+    </div>
+
+    <!-- TROQUE POR: imagens/portfolio-1.jpg até imagens/portfolio-6.jpg -->
+    <div class="portfolio" data-anim>
+      <div class="portfolio__item portfolio__item--largo" data-placeholder="Foto 1 (horizontal)&#10;portfolio-1.jpg">
+        <img src="imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item" data-placeholder="Foto 2 (vertical)&#10;portfolio-2.jpg">
+        <img src="imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item" data-placeholder="Foto 3 (vertical)&#10;portfolio-3.jpg">
+        <img src="imagens/portfolio-3.jpg" alt="Noivos e a assessora da Rito Eventos na escadaria do local da festa de casamento" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item" data-placeholder="Foto 4 (vertical)&#10;portfolio-4.jpg">
+        <img src="imagens/portfolio-4.jpg" alt="Debutante com a produtora da Rito Eventos na decoração da festa de 15 anos" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item" data-placeholder="Foto 5 (vertical)&#10;portfolio-5.jpg">
+        <img src="imagens/portfolio-5.jpg" alt="Casal de noivos com a cerimonialista da Rito Eventos na entrada do casamento à noite" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item portfolio__item--largo" data-placeholder="Foto 6 (horizontal)&#10;portfolio-6.jpg">
+        <img src="imagens/portfolio-6.jpg" alt="Assessora da Rito Eventos entregando o buquê para a noiva antes da cerimônia" loading="lazy" onerror="this.style.display='none'">
+      </div>
     </div>
   </div>
 </section>
@@ -1232,7 +1333,7 @@ section{padding:var(--secao) 0;}
   }
 
   /* Remove a moldura de espaço reservado quando a imagem real carrega */
-  Array.prototype.forEach.call(document.querySelectorAll('.foto img, .midia__item img'), function(img){
+  Array.prototype.forEach.call(document.querySelectorAll('.foto img, .midia__item img, .portfolio__item img'), function(img){
     function ok(){ img.parentNode.removeAttribute('data-placeholder'); }
     if (img.complete && img.naturalWidth > 0) ok();
     else img.addEventListener('load', ok);
