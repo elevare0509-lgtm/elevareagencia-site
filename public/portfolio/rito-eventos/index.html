@@ -112,6 +112,7 @@
   --dourado:#C2A25C;
   --dourado-claro:#D9BE7E;
   --dourado-escuro:#9C7C33;
+  --dourado-estrela:#D4A853;
   --serif:'Cormorant Garamond', Garamond, Georgia, 'Times New Roman', serif;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   /* espaçamento vertical entre blocos: teto de 80px */
@@ -773,6 +774,22 @@ section{padding:var(--secao) 0;}
   .carrossel__seta--prox{right:-76px;}
 }
 
+/* Nota do Google, acima do titulo dos depoimentos */
+.nota-google{
+  text-align:center;
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--texto-2);
+  margin:0 0 14px;
+}
+.nota-google__estrelas{
+  color:var(--dourado-estrela);
+  letter-spacing:.06em;
+  margin:0 5px;
+}
+
 /* ============================================================
    7B. CTA INTERMEDIÁRIO
    ============================================================ */
@@ -1136,6 +1153,7 @@ section{padding:var(--secao) 0;}
   <div class="container">
     <div class="centro">
       <span class="eyebrow" data-anim>Depoimentos</span>
+      <p class="nota-google" data-anim>5,0 <span class="nota-google__estrelas" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> no Google &middot; 18 avaliações</p>
       <h2 class="titulo-secao" data-anim>O que nossos casais dizem</h2>
     </div>
 
@@ -1146,20 +1164,20 @@ section{padding:var(--secao) 0;}
 
           <figure class="depoimento" role="group" aria-roledescription="depoimento" aria-label="1 de 3">
             <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
-            <blockquote>Obrigada pelo dia de ontem, pelo seu profissionalismo, obrigada pela sua equipe maravilhosa. Foi tudo incrível, Deus abençoe, tá tudo lindo.</blockquote>
-            <figcaption>Márcia &amp; Robson</figcaption>
+            <blockquote>A equipe é incrível! Fizeram o nosso dia ser perfeito! A Camila foi um presente! Desde o dia da primeira conversa, sempre muito atenciosa! Ela é 1000/10!</blockquote>
+            <figcaption>Juliana Rusteika</figcaption>
           </figure>
 
           <figure class="depoimento" role="group" aria-roledescription="depoimento" aria-label="2 de 3">
             <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
-            <blockquote>Gostaria muito de agradecer a cada uma de vocês pelo carinho e dedicação para que o evento tenha sido o sucesso que foi. Muito obrigado pela paciência, pelo empenho e pelo profissionalismo.</blockquote>
-            <figcaption>Ana Marina</figcaption>
+            <blockquote>Desde o primeiro dia, já me encantei com o atendimento e a atenção de vocês. Camila, extremamente atenciosa e competente. Me deu todo apoio necessário e me deixou super tranquila, antes e principalmente no dia do evento.</blockquote>
+            <figcaption>Talita Spina</figcaption>
           </figure>
 
           <figure class="depoimento" role="group" aria-roledescription="depoimento" aria-label="3 de 3">
             <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
-            <blockquote>Você simplesmente entregou TUDO! E abrilhantou o nosso evento!</blockquote>
-            <figcaption>Claudio &amp; equipe</figcaption>
+            <blockquote>A Rito Eventos faz um trabalho impecável! A organização, o cuidado com cada detalhe e o carinho com que conduzem cada evento fazem toda a diferença. É uma equipe extremamente comprometida, atenciosa e profissional, que transmite tranquilidade do início ao fim. Recomendo de olhos fechados.</blockquote>
+            <figcaption>Yan Carlos</figcaption>
           </figure>
 
         </div>
