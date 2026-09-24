@@ -82,9 +82,19 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Assessoria personalizada de casamento",
-          "serviceType": "Assessoria, planejamento e produção de casamento",
-          "description": "Do primeiro contato ao último convidado, a Rito organiza, planeja e executa cada detalhe do evento, com o nível de acompanhamento definido em conversa com os noivos.",
+          "name": "Assessoria Final",
+          "serviceType": "Assessoria de casamento nos últimos 60 dias",
+          "description": "Reunião de briefing, estruturação de cronograma, RSVP automático, produção do evento e equipe de recepção.",
+          "areaServed": "São Paulo"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Assessoria Completa",
+          "serviceType": "Planejamento e organização de casamento do início ao fim",
+          "description": "Organização financeira, curadoria de fornecedores, análise de contratos, orientação na lista de convidados e suporte contínuo.",
           "areaServed": "São Paulo"
         }
       }
@@ -561,26 +571,74 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
-   5. SERVIÇOS (bloco único de oferta)
+   5. SERVIÇOS
    ============================================================ */
-.oferta{
-  padding:clamp(10px, 2vw, 20px) clamp(0px, 3vw, 40px);
-  max-width:760px;
-  margin:0 auto;
-  text-align:center;
+.planos{
+  display:grid;
+  gap:22px;
+  margin-top:48px;
 }
-.oferta .texto{
-  max-width:56ch;
-  margin:0 auto 34px;
+@media (min-width:860px){
+  .planos{grid-template-columns:repeat(2,1fr);gap:30px;}
+}
+.plano{
+  background:var(--off);
+  border:1px solid var(--borda);
+  padding:clamp(30px, 4.6vw, 48px) clamp(24px, 4vw, 44px);
+  display:flex;
+  flex-direction:column;
+  transition:border-color .35s ease;
+}
+.plano:hover{border-color:var(--vinho);}
+.plano h3{
+  font-size:clamp(27px, 4.2vw, 35px);
+  margin-bottom:14px;
+}
+.plano__desc{
+  font-size:16px;
+  font-weight:400;
+  color:var(--texto-2);
+  line-height:1.75;
+  padding-bottom:26px;
+  border-bottom:1px solid var(--borda);
+}
+.plano__itens{
+  list-style:none;
+  margin:26px 0 34px;
+  padding:0;
+  flex:1;
+}
+.plano__itens li{
+  position:relative;
+  padding-left:26px;
+  margin-bottom:14px;
+  font-size:15.5px;
+  font-weight:400;
+  color:var(--texto);
+  line-height:1.6;
+}
+.plano__itens li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:11px;
+  width:11px;
+  height:1px;
+  background:var(--vinho);
+}
+.plano__itens li strong{font-weight:600;}
+
+.servicos__extra{
+  margin-top:36px;
+  font-size:15px;
+  font-weight:400;
+  color:var(--texto-2);
 }
 
 /* ============================================================
    6. NA MÍDIA (faixa compacta)
    ============================================================ */
 .secao--faixa{padding:clamp(26px, 4vw, 46px) 0;}
-/* A faixa de midia fica logo abaixo dos servicos, no mesmo off-white.
-   O fio separa as duas sem precisar alternar a cor de fundo. */
-.secao--fio{border-top:1px solid var(--borda);}
 
 .midia{
   display:flex;
@@ -1110,19 +1168,52 @@ section{padding:var(--secao) 0;}
   </div>
 </section>
 
-<!-- ==================== 5. SERVIÇOS (bloco único) ==================== -->
-<section class="bg-off">
+<!-- ========================= 5. SERVIÇOS ========================= -->
+<section class="bg-branco">
   <div class="container">
-    <div class="oferta" data-anim>
-      <h2 class="titulo-secao">Assessoria personalizada para o seu casamento</h2>
-      <p class="texto">Do primeiro contato ao último convidado, a Rito organiza, planeja e executa cada detalhe do seu evento. Você escolhe o nível de acompanhamento ideal na nossa conversa.</p>
-      <a class="btn" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
+    <div class="centro">
+      <h2 class="titulo-secao" data-anim>Escolha o plano ideal para o seu momento</h2>
+    </div>
+
+    <div class="planos">
+
+      <article class="plano" data-anim>
+        <h3>Assessoria Final</h3>
+        <p class="plano__desc">Ideal para quem já tem todos os fornecedores contratados e precisa de apoio nos últimos 60 dias.</p>
+        <ul class="plano__itens">
+          <li>Reunião de briefing</li>
+          <li>Estruturação de cronograma</li>
+          <li>RSVP automático</li>
+          <li>Produção do evento</li>
+          <li>Equipe de recepção</li>
+        </ul>
+        <a class="btn btn--vazado btn--bloco" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Assessoria%20Final!" target="_blank" rel="noopener">Quero saber mais</a>
+      </article>
+
+      <article class="plano" data-anim>
+        <h3>Assessoria Completa</h3>
+        <p class="plano__desc">Perfeito para quem não sabe por onde começar e quer acompanhamento do início ao fim.</p>
+        <ul class="plano__itens">
+          <li><strong>Tudo da Assessoria Final</strong></li>
+          <li>Organização financeira</li>
+          <li>Curadoria de fornecedores</li>
+          <li>Análise de contratos</li>
+          <li>Orientação na lista de convidados</li>
+          <li>Suporte contínuo</li>
+        </ul>
+        <a class="btn btn--bloco" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Assessoria%20Completa!" target="_blank" rel="noopener">Quero saber mais</a>
+      </article>
+
+    </div>
+
+    <div class="centro">
+      <p class="servicos__extra" data-anim>Serviços extras disponíveis: RSVP digital e equipe de recepção.</p>
     </div>
   </div>
 </section>
 
 <!-- =================== 6. NA MÍDIA (faixa compacta) =================== -->
-<section class="bg-off secao--faixa secao--fio">
+<section class="bg-off secao--faixa">
   <div class="container">
     <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (logos das publicações) -->
     <div class="midia" data-anim>
