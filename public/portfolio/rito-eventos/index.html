@@ -599,49 +599,36 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
-   6B. FAIXAS
+   6B. FAIXA DE FOTOS (carrossel automatico)
    ============================================================ */
-.secao--faixa{padding:clamp(26px, 4vw, 46px) 0;}
-
-/* ============================================================
-   6B. PORTFOLIO (faixa de prova visual, sem texto)
-   ============================================================ */
-.portfolio{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-@media (min-width:720px){
-  .portfolio{gap:18px;}
-}
-.portfolio__item{
-  position:relative;
-  aspect-ratio:4/5;
-  background:var(--off);
-  border:1px solid var(--borda);
-  overflow:hidden;
-}
-.portfolio__item::after{
-  content:attr(data-placeholder);
-  white-space:pre-line;
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:16px;
-  text-align:center;
-  font-size:11px;
-  letter-spacing:.08em;
-  color:rgba(26,26,26,.3);
-  line-height:1.8;
-}
-.portfolio__item img{
-  position:relative;
-  z-index:1;
+.faixa-fotos{
   width:100%;
-  height:100%;
+  overflow:hidden;
+  padding:0;
+  background:var(--off);
+}
+.faixa-fotos__trilho{
+  display:flex;
+  width:max-content;
+  animation:desliza 30s linear infinite;
+}
+.faixa-fotos img{
+  display:block;
+  flex:none;
+  height:300px;
+  width:auto;
   object-fit:cover;
+}
+@keyframes desliza{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+@media (max-width:719px){
+  .faixa-fotos img{height:200px;}
+}
+/* Movimento continuo incomoda quem pede menos animacao no sistema. */
+@media (prefers-reduced-motion:reduce){
+  .faixa-fotos__trilho{animation:none;}
 }
 
 /* ============================================================
@@ -920,17 +907,15 @@ section{padding:var(--secao) 0;}
                                             (PNG quadrado, fundo transparente)
      3) imagens/camila-rito-eventos.jpg .... retrato da Camila, secao Sobre
                                             (JPG 900x1125px)
-     4) imagens/portfolio-1.jpg ............ faixa do portfolio, foto 1
-        imagens/portfolio-noiva.jpg ....... faixa do portfolio, foto 2
-        imagens/portfolio-buque.jpg ....... faixa do portfolio, foto 3
-                                            (as tres em JPG 900x1125px)
+     4) a faixa de fotos que desliza usa, nesta ordem:
+        portfolio-1, portfolio-2, portfolio-noiva, portfolio-3,
+        portfolio-4, portfolio-5, portfolio-6 e hero-casamento.
+        Todas aparecem com 300px de altura e largura proporcional.
      5) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
                                             (JPG 1200x630px)
 
      NA PASTA, FORA DE USO (reserva para trocas):
-     portfolio-2.jpg (noiva na escadaria), portfolio-3.jpg, portfolio-4.jpg
-     (debutante), portfolio-5.jpg, portfolio-6.jpg, camila-cafe.jpg e
-     camila-sorrindo.jpg.
+     portfolio-buque.jpg, camila-cafe.jpg e camila-sorrindo.jpg.
 
      Os nomes precisam ser iguais aos da lista. Enquanto o arquivo não
      existir, o site mostra um espaço reservado com borda discreta.
@@ -1089,20 +1074,27 @@ section{padding:var(--secao) 0;}
   </div>
 </section>
 
-<!-- ================== 4B. PORTFÓLIO (faixa visual) ================== -->
-<section class="bg-branco secao--faixa">
-  <div class="container">
-    <div class="portfolio" data-anim>
-      <div class="portfolio__item" data-placeholder="portfolio-1.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
-      </div>
-      <div class="portfolio__item" data-placeholder="portfolio-noiva.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-noiva.jpg" alt="Noiva com véu ao vento segurando buquê em casamento assessorado pela Rito Eventos" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
-      </div>
-      <div class="portfolio__item" data-placeholder="portfolio-buque.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-buque.jpg" alt="Assessora da Rito Eventos entregando o buquê para a noiva antes da cerimônia de casamento" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
-      </div>
-    </div>
+<!-- ============ 4B. FAIXA DE FOTOS (carrossel automático) ============ -->
+<section class="faixa-fotos" aria-label="Casamentos e festas produzidos pela Rito Eventos">
+  <div class="faixa-fotos__trilho">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" width="1400" height="930">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-noiva.jpg" alt="Noiva com véu ao vento segurando buquê em casamento assessorado pela Rito Eventos" loading="lazy" width="900" height="1125">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-3.jpg" alt="Noivos e a assessora da Rito Eventos na escadaria do local da festa de casamento" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-4.jpg" alt="Debutante com a produtora da Rito Eventos na decoração da festa de 15 anos" loading="lazy" width="534" height="800">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-5.jpg" alt="Casal de noivos com a cerimonialista da Rito Eventos na entrada do casamento à noite" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-6.jpg" alt="Assessora da Rito Eventos entregando o buquê para a noiva antes da cerimônia" loading="lazy" width="1400" height="930">
+      <img src="/portfolio/rito-eventos/imagens/hero-casamento.jpg" alt="Noivos saindo da cerimônia entre convidados aplaudindo, em casamento ao ar livre produzido pela Rito Eventos" loading="lazy" width="2000" height="1300">
+
+      <!-- copia do conjunto, para o loop nao ter corte -->
+      <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="" aria-hidden="true" loading="lazy" width="1400" height="930">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="" aria-hidden="true" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-noiva.jpg" alt="" aria-hidden="true" loading="lazy" width="900" height="1125">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-3.jpg" alt="" aria-hidden="true" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-4.jpg" alt="" aria-hidden="true" loading="lazy" width="534" height="800">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-5.jpg" alt="" aria-hidden="true" loading="lazy" width="900" height="1200">
+      <img src="/portfolio/rito-eventos/imagens/portfolio-6.jpg" alt="" aria-hidden="true" loading="lazy" width="1400" height="930">
+      <img src="/portfolio/rito-eventos/imagens/hero-casamento.jpg" alt="" aria-hidden="true" loading="lazy" width="2000" height="1300">
   </div>
 </section>
 
