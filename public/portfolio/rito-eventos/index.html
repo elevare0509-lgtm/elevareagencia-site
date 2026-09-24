@@ -563,9 +563,7 @@ section{padding:var(--secao) 0;}
    5. SERVIÇOS (bloco único de oferta)
    ============================================================ */
 .oferta{
-  background:var(--off);
-  border:1px solid var(--borda);
-  padding:clamp(34px, 5vw, 62px) clamp(24px, 4vw, 56px);
+  padding:clamp(10px, 2vw, 20px) clamp(0px, 3vw, 40px);
   max-width:760px;
   margin:0 auto;
   text-align:center;
@@ -579,14 +577,16 @@ section{padding:var(--secao) 0;}
    6. NA MÍDIA (faixa compacta)
    ============================================================ */
 .secao--faixa{padding:clamp(26px, 4vw, 46px) 0;}
+/* A faixa de midia fica logo abaixo dos servicos, no mesmo off-white.
+   O fio separa as duas sem precisar alternar a cor de fundo. */
+.secao--fio{border-top:1px solid var(--borda);}
 
 .midia__rotulo{
   text-align:center;
   font-family:var(--sans);
-  font-size:11px;
+  font-size:13px;
   font-weight:600;
-  letter-spacing:.2em;
-  text-transform:uppercase;
+  letter-spacing:.04em;
   color:var(--texto-2);
   margin:0 0 22px;
 }
@@ -900,21 +900,28 @@ section{padding:var(--secao) 0;}
      ----------------------------------------------------------------
      Coloque os arquivos dentro da pasta "imagens" com estes nomes:
 
-     1) imagens/hero-casamento.jpg ......... foto de casamento do topo
-                                            (JPG horizontal, 2000x1300px)
+     EM USO NA PAGINA:
+     1) imagens/hero-casamento.jpg ......... beijo dos noivos, topo
+                                            (JPG 1600x1040px)
         imagens/hero-casamento-mobile.jpg . mesma foto cortada em pe
-                                            (JPG vertical, 1200x1600px)
+                                            (JPG 1100x1466px)
      2) imagens/logo-rito-branco.png ....... logo da Rito em versao clara
-                                            (PNG quadrado com fundo transparente)
-     3) imagens/camila-rito-eventos.jpg .... foto profissional da Camila
-                                            (JPG vertical, 900x1125px)
-     4) imagens/portfolio-1.jpg ............ foto horizontal (1400x930px)
-        imagens/portfolio-2.jpg a -5.jpg ... fotos verticais (900x1200px)
-        imagens/portfolio-6.jpg ............ foto horizontal (1400x930px)
-     5) imagens/midia-1.jpg a midia-6.jpg .. capas ou logos de revistas
-                                            (JPG vertical, 600x800px)
+                                            (PNG quadrado, fundo transparente)
+     3) imagens/camila-rito-eventos.jpg .... retrato da Camila, secao Sobre
+                                            (JPG 900x1125px)
+     4) imagens/portfolio-1.jpg ............ faixa do portfolio, foto 1
+        imagens/portfolio-noiva.jpg ....... faixa do portfolio, foto 2
+        imagens/portfolio-buque.jpg ....... faixa do portfolio, foto 3
+                                            (as tres em JPG 900x1125px)
+     5) imagens/midia-1.jpg a midia-6.jpg .. logos das publicacoes
+                                            (PNG ou JPG, 118x80px)
      6) imagens/og-rito-eventos.jpg ........ imagem de compartilhamento
                                             (JPG 1200x630px)
+
+     NA PASTA, FORA DE USO (reserva para trocas):
+     portfolio-2.jpg (noiva na escadaria), portfolio-3.jpg, portfolio-4.jpg
+     (debutante), portfolio-5.jpg, portfolio-6.jpg, camila-cafe.jpg e
+     camila-sorrindo.jpg.
 
      Os nomes precisam ser iguais aos da lista. Enquanto o arquivo não
      existir, o site mostra um espaço reservado com borda discreta.
@@ -1085,18 +1092,18 @@ section{padding:var(--secao) 0;}
       <div class="portfolio__item" data-placeholder="portfolio-1.jpg">
         <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
       </div>
-      <div class="portfolio__item" data-placeholder="portfolio-2.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
-      </div>
       <div class="portfolio__item" data-placeholder="portfolio-noiva.jpg">
         <img src="/portfolio/rito-eventos/imagens/portfolio-noiva.jpg" alt="Noiva com véu ao vento segurando buquê em casamento assessorado pela Rito Eventos" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
+      </div>
+      <div class="portfolio__item" data-placeholder="portfolio-buque.jpg">
+        <img src="/portfolio/rito-eventos/imagens/portfolio-buque.jpg" alt="Assessora da Rito Eventos entregando o buquê para a noiva antes da cerimônia de casamento" loading="lazy" width="900" height="1125" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== 5. SERVIÇOS (bloco único) ==================== -->
-<section class="bg-branco">
+<section class="bg-off">
   <div class="container">
     <div class="oferta" data-anim>
       <h2 class="titulo-secao">Assessoria personalizada para o seu casamento</h2>
@@ -1107,28 +1114,28 @@ section{padding:var(--secao) 0;}
 </section>
 
 <!-- =================== 6. NA MÍDIA (faixa compacta) =================== -->
-<section class="bg-off secao--faixa">
+<section class="bg-off secao--faixa secao--fio">
   <div class="container">
     <p class="midia__rotulo" data-anim>Destaque na mídia desde 2019</p>
 
     <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (logos das publicações) -->
     <div class="midia" data-anim>
-      <div class="midia__item" data-placeholder="Logo 1">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Logo 2">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Logo 3">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Logo 4">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Logo 5">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Logo 6">
+      <div class="midia__item" data-placeholder="Revista Valoriza">
         <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" width="118" height="80" onerror="this.style.display='none'">
       </div>
     </div>
@@ -1197,7 +1204,7 @@ section{padding:var(--secao) 0;}
     <h2 data-anim>Vamos tirar seu evento do papel?</h2>
     <p class="cta-final__sub" data-anim>Agende um bate-papo e descubra como a Rito pode cuidar de cada detalhe do seu grande dia.</p>
 
-    <p class="cta-final__urgencia" data-anim>Agenda limitada para 2025 e 2026. Consulte disponibilidade.</p>
+    <p class="cta-final__urgencia" data-anim>Agenda limitada para 2026 e 2027. Consulte disponibilidade.</p>
 
     <div data-anim>
       <a class="btn btn--claro" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">
