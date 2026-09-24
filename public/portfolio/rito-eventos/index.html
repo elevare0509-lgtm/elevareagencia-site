@@ -82,19 +82,9 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Assessoria Final",
-          "serviceType": "Assessoria de casamento nos últimos 60 dias",
-          "description": "Reunião de briefing, estruturação de cronograma, RSVP automático, produção do evento e equipe de recepção.",
-          "areaServed": "São Paulo"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Assessoria Completa",
-          "serviceType": "Planejamento e organização de casamento do início ao fim",
-          "description": "Organização financeira, curadoria de fornecedores, análise de contratos, orientação na lista de convidados e suporte contínuo.",
+          "name": "Assessoria personalizada de casamento",
+          "serviceType": "Assessoria, planejamento e produção de casamento",
+          "description": "Do primeiro contato ao último convidado, a Rito organiza, planeja e executa cada detalhe do evento, com o nível de acompanhamento definido em conversa com os noivos.",
           "areaServed": "São Paulo"
         }
       }
@@ -339,7 +329,44 @@ section{padding:var(--secao) 0;}
   line-height:1.75;
   color:rgba(255,255,255,.88);
   max-width:560px;
-  margin:24px auto 36px;
+  margin:24px auto 32px;
+}
+
+/* Espaco reservado para o video de apresentacao. Cole o iframe dentro da div. */
+.hero__video{
+  position:relative;
+  width:100%;
+  max-width:560px;
+  margin:0 auto 34px;
+  aspect-ratio:16/9;
+  background:rgba(0,0,0,.3);
+  border:1px solid rgba(255,255,255,.26);
+  overflow:hidden;
+}
+.hero__video::after{
+  content:attr(data-placeholder);
+  white-space:pre-line;
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:16px;
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  line-height:2;
+  color:rgba(255,255,255,.5);
+}
+.hero__video iframe,.hero__video video{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
 }
 
 .hero__scroll{
@@ -523,89 +550,51 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
-   5. SERVIÇOS
+   5. SERVIÇOS (bloco único de oferta)
    ============================================================ */
-.planos{
-  display:grid;
-  gap:22px;
-  margin-top:48px;
-}
-@media (min-width:860px){
-  .planos{grid-template-columns:repeat(2,1fr);gap:30px;}
-}
-.plano{
+.oferta{
   background:var(--off);
   border:1px solid var(--borda);
-  padding:clamp(30px, 4.6vw, 48px) clamp(24px, 4vw, 44px);
-  display:flex;
-  flex-direction:column;
-  transition:border-color .35s ease;
+  padding:clamp(34px, 5vw, 62px) clamp(24px, 4vw, 56px);
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
 }
-.plano:hover{border-color:var(--vinho);}
-.plano h3{
-  font-size:clamp(27px, 4.2vw, 35px);
-  margin-bottom:14px;
-}
-.plano__desc{
-  font-size:16px;
-  font-weight:400;
-  color:var(--texto-2);
-  line-height:1.75;
-  padding-bottom:26px;
-  border-bottom:1px solid var(--borda);
-}
-.plano__itens{
-  list-style:none;
-  margin:26px 0 34px;
-  padding:0;
-  flex:1;
-}
-.plano__itens li{
-  position:relative;
-  padding-left:26px;
-  margin-bottom:14px;
-  font-size:15.5px;
-  font-weight:400;
-  color:var(--texto);
-  line-height:1.6;
-}
-.plano__itens li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:11px;
-  width:11px;
-  height:1px;
-  background:var(--vinho);
-}
-.plano__itens li strong{font-weight:600;}
-
-.servicos__extra{
-  margin-top:36px;
-  font-size:15px;
-  font-weight:400;
-  color:var(--texto-2);
+.oferta .texto{
+  max-width:56ch;
+  margin:0 auto 34px;
 }
 
 /* ============================================================
-   6. NA MÍDIA
+   6. NA MÍDIA (faixa compacta)
    ============================================================ */
-.midia{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  margin-top:48px;
+.secao--faixa{padding:clamp(26px, 4vw, 46px) 0;}
+
+.midia__rotulo{
+  text-align:center;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--texto-2);
+  margin:0 0 22px;
 }
-@media (min-width:720px){
-  .midia{grid-template-columns:repeat(3,1fr);gap:20px;}
+.midia{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:14px 26px;
 }
 .midia__item{
   position:relative;
-  aspect-ratio:3/4;
-  background:var(--branco);
-  border:1px solid var(--borda);
+  width:118px;
+  height:80px;
   overflow:hidden;
 }
+/* A borda tracejada so aparece enquanto o arquivo do logo nao existe. */
+.midia__item[data-placeholder]{border:1px dashed var(--borda);}
 .midia__item::after{
   content:attr(data-placeholder);
   white-space:pre-line;
@@ -614,43 +603,39 @@ section{padding:var(--secao) 0;}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:16px;
   text-align:center;
-  font-size:11px;
+  padding:8px;
+  font-family:var(--sans);
+  font-size:10px;
   letter-spacing:.08em;
   color:rgba(26,26,26,.3);
-  line-height:1.8;
+  line-height:1.6;
 }
 .midia__item img{
   position:relative;
   z-index:1;
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
 }
 
 /* ============================================================
-   6B. PORTFOLIO
+   6B. PORTFOLIO (faixa de prova visual, sem texto)
    ============================================================ */
 .portfolio{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:48px;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 @media (min-width:720px){
-  .portfolio{grid-template-columns:repeat(4,1fr);gap:20px;}
+  .portfolio{gap:18px;}
 }
 .portfolio__item{
   position:relative;
-  aspect-ratio:3/4;
+  aspect-ratio:4/5;
   background:var(--off);
   border:1px solid var(--borda);
   overflow:hidden;
-}
-.portfolio__item--largo{
-  grid-column:span 2;
-  aspect-ratio:3/2;
 }
 .portfolio__item::after{
   content:attr(data-placeholder);
@@ -788,6 +773,15 @@ section{padding:var(--secao) 0;}
 }
 
 /* ============================================================
+   7B. CTA INTERMEDIÁRIO
+   ============================================================ */
+.cta-meio{
+  background:var(--vinho);
+  padding:clamp(30px, 4.6vw, 50px) 0;
+}
+.cta-meio :focus-visible{outline-color:#fff;}
+
+/* ============================================================
    8. CTA FINAL
    ============================================================ */
 .cta-final{
@@ -807,7 +801,18 @@ section{padding:var(--secao) 0;}
   line-height:1.75;
   color:rgba(255,255,255,.86);
   max-width:560px;
-  margin:0 auto 36px;
+  margin:0 auto 24px;
+}
+.cta-final__urgencia{
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  line-height:1.7;
+  color:rgba(255,255,255,.82);
+  max-width:38ch;
+  margin:0 auto 22px;
 }
 .contato{
   margin-top:34px;
@@ -923,6 +928,11 @@ section{padding:var(--secao) 0;}
   <div class="hero__conteudo">
     <h1>Seu evento com a leveza que você merece e a excelência que ele exige.</h1>
     <p class="hero__sub">Assessoria e produção de casamentos e eventos em São Paulo. Mais de 500 projetos realizados em 12 anos de experiência.</p>
+    <!-- ====== ESPACO DO VIDEO ======
+         Cole o <iframe> do YouTube ou do Vimeo dentro desta div.
+         O espaco reservado some sozinho quando o iframe entra. -->
+    <div class="hero__video" data-placeholder="Video de apresentacao"></div>
+
     <a class="btn btn--claro" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
       Falar com a Camis no WhatsApp
@@ -988,6 +998,16 @@ section{padding:var(--secao) 0;}
   </div>
 </section>
 
+<!-- ==================== 3B. CTA INTERMEDIÁRIO ==================== -->
+<section class="cta-meio">
+  <div class="container centro">
+    <a class="btn btn--claro" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener" data-anim>
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
+      Falar com a Camis no WhatsApp
+    </a>
+  </div>
+</section>
+
 <!-- ======================= 4. COMO FUNCIONA ======================= -->
 <section class="bg-off">
   <div class="container">
@@ -1041,111 +1061,58 @@ section{padding:var(--secao) 0;}
   </div>
 </section>
 
-<!-- ========================= 4B. PORTFÓLIO ========================= -->
-<section class="bg-branco">
+<!-- ================== 4B. PORTFÓLIO (faixa visual) ================== -->
+<section class="bg-branco secao--faixa">
   <div class="container">
-    <div class="centro">
-      <span class="eyebrow" data-anim>Portfólio</span>
-      <h2 class="titulo-secao" data-anim>Alguns dos nossos projetos entregues</h2>
-      <p class="texto" style="max-width:620px;margin:0 auto;" data-anim>Casamentos, debutantes e celebrações produzidos do primeiro contato ao último convidado.</p>
-    </div>
-
-    <!-- TROQUE POR: imagens/portfolio-1.jpg até imagens/portfolio-6.jpg -->
     <div class="portfolio" data-anim>
-      <div class="portfolio__item portfolio__item--largo" data-placeholder="Foto 1 (horizontal)&#10;portfolio-1.jpg">
+      <div class="portfolio__item" data-placeholder="portfolio-1.jpg">
         <img src="/portfolio/rito-eventos/imagens/portfolio-1.jpg" alt="Noivos ao lado da cerimonialista da Rito Eventos no jardim, depois da cerimônia de casamento" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="portfolio__item" data-placeholder="Foto 2 (vertical)&#10;portfolio-2.jpg">
+      <div class="portfolio__item" data-placeholder="portfolio-2.jpg">
         <img src="/portfolio/rito-eventos/imagens/portfolio-2.jpg" alt="Noiva com cauda longa na escadaria do salão, em casamento produzido pela Rito Eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="portfolio__item" data-placeholder="Foto 3 (vertical)&#10;portfolio-3.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-3.jpg" alt="Noivos e a assessora da Rito Eventos na escadaria do local da festa de casamento" loading="lazy" onerror="this.style.display='none'">
-      </div>
-      <div class="portfolio__item" data-placeholder="Foto 4 (vertical)&#10;portfolio-4.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-4.jpg" alt="Debutante com a produtora da Rito Eventos na decoração da festa de 15 anos" loading="lazy" onerror="this.style.display='none'">
-      </div>
-      <div class="portfolio__item" data-placeholder="Foto 5 (vertical)&#10;portfolio-5.jpg">
+      <div class="portfolio__item" data-placeholder="portfolio-5.jpg">
         <img src="/portfolio/rito-eventos/imagens/portfolio-5.jpg" alt="Casal de noivos com a cerimonialista da Rito Eventos na entrada do casamento à noite" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="portfolio__item portfolio__item--largo" data-placeholder="Foto 6 (horizontal)&#10;portfolio-6.jpg">
-        <img src="/portfolio/rito-eventos/imagens/portfolio-6.jpg" alt="Assessora da Rito Eventos entregando o buquê para a noiva antes da cerimônia" loading="lazy" onerror="this.style.display='none'">
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ========================= 5. SERVIÇOS ========================= -->
+<!-- ==================== 5. SERVIÇOS (bloco único) ==================== -->
 <section class="bg-branco">
   <div class="container">
-    <div class="centro">
-      <h2 class="titulo-secao" data-anim>Escolha o plano ideal para o seu momento</h2>
-    </div>
-
-    <div class="planos">
-
-      <article class="plano" data-anim>
-        <h3>Assessoria Final</h3>
-        <p class="plano__desc">Ideal para quem já tem todos os fornecedores contratados e precisa de apoio nos últimos 60 dias.</p>
-        <ul class="plano__itens">
-          <li>Reunião de briefing</li>
-          <li>Estruturação de cronograma</li>
-          <li>RSVP automático</li>
-          <li>Produção do evento</li>
-          <li>Equipe de recepção</li>
-        </ul>
-        <a class="btn btn--vazado btn--bloco" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Assessoria%20Final!" target="_blank" rel="noopener">Quero saber mais</a>
-      </article>
-
-      <article class="plano" data-anim>
-        <h3>Assessoria Completa</h3>
-        <p class="plano__desc">Perfeito para quem não sabe por onde começar e quer acompanhamento do início ao fim.</p>
-        <ul class="plano__itens">
-          <li><strong>Tudo da Assessoria Final</strong></li>
-          <li>Organização financeira</li>
-          <li>Curadoria de fornecedores</li>
-          <li>Análise de contratos</li>
-          <li>Orientação na lista de convidados</li>
-          <li>Suporte contínuo</li>
-        </ul>
-        <a class="btn btn--bloco" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Assessoria%20Completa!" target="_blank" rel="noopener">Quero saber mais</a>
-      </article>
-
-    </div>
-
-    <div class="centro">
-      <p class="servicos__extra" data-anim>Serviços extras disponíveis: RSVP digital e equipe de recepção.</p>
+    <div class="oferta" data-anim>
+      <h2 class="titulo-secao">Assessoria personalizada para o seu casamento</h2>
+      <p class="texto">Do primeiro contato ao último convidado, a Rito organiza, planeja e executa cada detalhe do seu evento. Você escolhe o nível de acompanhamento ideal na nossa conversa.</p>
+      <a class="btn" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- ========================= 6. NA MÍDIA ========================= -->
-<section class="bg-off">
+<!-- =================== 6. NA MÍDIA (faixa compacta) =================== -->
+<section class="bg-off secao--faixa">
   <div class="container">
-    <div class="centro">
-      <span class="eyebrow" data-anim>Na mídia</span>
-      <h2 class="titulo-secao" data-anim>Referência no mercado de eventos</h2>
-      <p class="texto" style="max-width:620px;margin:0 auto;" data-anim>Desde 2019, a Rito Eventos é destaque na mídia especializada em casamentos e eventos.</p>
-    </div>
+    <p class="midia__rotulo" data-anim>Destaque na mídia desde 2019</p>
 
-    <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (capas ou logos das publicações) -->
+    <!-- TROQUE POR: imagens/midia-1.jpg até imagens/midia-6.jpg (logos das publicações) -->
     <div class="midia" data-anim>
-      <div class="midia__item" data-placeholder="Capa 1&#10;midia-1.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 1">
+        <img src="/portfolio/rito-eventos/imagens/midia-1.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Capa 2&#10;midia-2.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Matéria sobre assessoria de casamento da Rito Eventos em revista do setor" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 2">
+        <img src="/portfolio/rito-eventos/imagens/midia-2.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Capa 3&#10;midia-3.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Casamento produzido pela Rito Eventos publicado em revista de noivas" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 3">
+        <img src="/portfolio/rito-eventos/imagens/midia-3.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Capa 4&#10;midia-4.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos citada como cerimonialista em São Paulo na imprensa" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 4">
+        <img src="/portfolio/rito-eventos/imagens/midia-4.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Capa 5&#10;midia-5.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Publicação sobre produção de casamento assinada pela Rito Eventos" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 5">
+        <img src="/portfolio/rito-eventos/imagens/midia-5.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <div class="midia__item" data-placeholder="Capa 6&#10;midia-6.jpg">
-        <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Destaque da Rito Eventos na mídia especializada em eventos" loading="lazy" onerror="this.style.display='none'">
+      <div class="midia__item" data-placeholder="Logo 6">
+        <img src="/portfolio/rito-eventos/imagens/midia-6.jpg" alt="Rito Eventos em publicação especializada em casamentos e eventos" loading="lazy" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
@@ -1212,6 +1179,8 @@ section{padding:var(--secao) 0;}
   <div class="container container--estreito">
     <h2 data-anim>Vamos tirar seu evento do papel?</h2>
     <p class="cta-final__sub" data-anim>Agende um bate-papo e descubra como a Rito pode cuidar de cada detalhe do seu grande dia.</p>
+
+    <p class="cta-final__urgencia" data-anim>Agenda limitada para 2025 e 2026. Consulte disponibilidade.</p>
 
     <div data-anim>
       <a class="btn btn--claro" href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener">
