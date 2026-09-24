@@ -274,6 +274,14 @@ section{padding:var(--secao) 0;}
   color:var(--branco);
   text-align:center;
 }
+/* No celular a foto horizontal sobraria so a faixa do meio, entao entra um corte vertical. */
+@media (max-width:719px){
+  .hero{
+    background-image:
+      linear-gradient(180deg, rgba(38,1,16,.82) 0%, rgba(58,2,24,.70) 42%, rgba(26,0,10,.90) 100%),
+      url('imagens/hero-casamento-mobile.jpg');
+  }
+}
 
 .hero__topo{padding:30px 24px 0;}
 .hero__logo{color:var(--branco);}
@@ -879,6 +887,8 @@ section{padding:var(--secao) 0;}
 
      1) imagens/hero-casamento.jpg ......... foto de casamento do topo
                                             (JPG horizontal, 2000x1300px)
+        imagens/hero-casamento-mobile.jpg . mesma foto cortada em pe
+                                            (JPG vertical, 1200x1600px)
      2) imagens/logo-rito-branco.png ....... logo da Rito em versao clara
                                             (PNG quadrado com fundo transparente)
      3) imagens/camila-rito-eventos.jpg .... foto profissional da Camila
