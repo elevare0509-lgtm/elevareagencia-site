@@ -867,7 +867,19 @@ section{padding:var(--secao) 0;}
   color:rgba(255,255,255,.82);
   line-height:2.1;
 }
-.contato span{white-space:nowrap;}
+.contato a{
+  display:inline-block;
+  white-space:nowrap;
+  color:inherit;
+  text-decoration:none;
+  padding:3px 0;
+  border-bottom:1px solid rgba(255,255,255,.3);
+  transition:color .3s ease, border-color .3s ease;
+}
+.contato a:hover,.contato a:focus-visible{
+  color:var(--branco);
+  border-color:var(--branco);
+}
 .contato i{font-style:normal;opacity:.4;margin:0 12px;}
 
 /* ---------- Rodapé (SEO) ---------- */
@@ -1253,7 +1265,7 @@ section{padding:var(--secao) 0;}
     </div>
 
     <p class="contato" data-anim>
-      <span>@ritoeventos</span><i>|</i><span>ritoproducao@gmail.com</span><i>|</i><span>(11) 96394-1865</span>
+      <a href="https://www.instagram.com/ritoeventos" target="_blank" rel="noopener">@ritoeventos</a><i>|</i><a href="mailto:ritoproducao@gmail.com">ritoproducao@gmail.com</a><i>|</i><a href="https://wa.me/5511963941865?text=Oi%20Camis%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20assessoria%20de%20casamento!" target="_blank" rel="noopener" aria-label="Falar no WhatsApp com o telefone 11 96394 1865">(11) 96394-1865</a>
     </p>
   </div>
 </section>
