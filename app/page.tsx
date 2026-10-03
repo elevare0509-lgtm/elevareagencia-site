@@ -76,7 +76,7 @@ export default function Home() {
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628] rounded-3xl border border-white/5 px-8 md:px-14 py-12">
           <span className="text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             Automação inteligente para o mercado de eventos
           </span>
@@ -111,7 +111,7 @@ export default function Home() {
       <section className="px-6 pb-20">
           <div
             className="max-w-3xl mx-auto rounded-3xl border border-white/5 px-8 md:px-14 py-12 flex flex-col gap-10"
-            style={{ background: "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)" }}
+            style={{ background: "#0B1628" }}
           >
             {/* Gancho */}
             <div className="flex flex-col items-center gap-3 text-center">
@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 7 — CTA FINAL ── */}
-      <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
+      <section className="bg-gold py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 leading-tight">
             Quer ver seu WhatsApp respondendo sozinho?

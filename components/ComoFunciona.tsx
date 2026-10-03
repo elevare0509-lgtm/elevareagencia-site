@@ -24,7 +24,7 @@ const passos = [
  */
 export default function ComoFunciona({ id }: { id?: string }) {
   return (
-    <section id={id} className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+    <section id={id} className="bg-navy py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-gold text-xs font-bold tracking-widest uppercase">

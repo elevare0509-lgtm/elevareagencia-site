@@ -4,7 +4,7 @@ import { nichos } from "@/lib/nichos";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy/90 border-t border-gold/15">
+    <footer className="bg-navy border-t border-gold/15">
       <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 md:py-16 grid grid-cols-5 md:grid-cols-4 gap-x-5 gap-y-10 md:gap-12">
 
         {/* Col 1 — Brand */}

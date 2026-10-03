@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 flex justify-center px-4 pt-3 pointer-events-none">
-      <nav className="pointer-events-auto w-full max-w-6xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between bg-[#0B1628]/60 backdrop-blur-md border border-white/5">
+      <nav className="pointer-events-auto w-full max-w-6xl rounded-full px-5 md:px-7 h-[52px] flex items-center justify-between bg-[#0B1628] border border-white/5">
         <Link href="/" className="flex items-center">
           <Image src="/logo-elevare.png" alt="Elevare" height={30} width={30} className="h-[30px] w-auto" priority />
         </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         {open && (
-          <div className="absolute top-full left-0 right-0 mt-2 mx-0 bg-[#0B1628]/95 backdrop-blur-md border border-white/10 rounded-2xl md:hidden overflow-hidden">
+          <div className="absolute top-full left-0 right-0 mt-2 mx-0 bg-[#0B1628] border border-white/10 rounded-2xl md:hidden overflow-hidden">
             <ul className="flex flex-col py-4">
               {links.map(({ href, label }) => (
                 <li key={href}>

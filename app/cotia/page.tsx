@@ -19,14 +19,14 @@ const WA = "https://wa.me/5511991572814";
 export const metadata: Metadata = {
   title: "Automação de WhatsApp com IA em Cotia e Região | Elevare",
   description:
-    "Atendimento automático no WhatsApp com inteligência artificial para espaços de eventos, buffets e fornecedores em Cotia, Granja Viana, Carapicuíba e região de São Paulo.",
+    "Atendimento automático no WhatsApp com IA para espaços de eventos, buffets e fornecedores em Cotia, Granja Viana, Carapicuíba e região de São Paulo.",
   alternates: {
     canonical: `${SITE_URL}/cotia`,
   },
   openGraph: {
     title: "Automação de WhatsApp com IA em Cotia e Região | Elevare",
     description:
-      "Atendimento automático no WhatsApp com inteligência artificial para espaços de eventos, buffets e fornecedores em Cotia, Granja Viana, Carapicuíba e região de São Paulo.",
+      "Atendimento automático no WhatsApp com IA para espaços de eventos, buffets e fornecedores em Cotia, Granja Viana, Carapicuíba e região de São Paulo.",
     type: "website",
     locale: "pt_BR",
     siteName: "Elevare",
@@ -111,7 +111,7 @@ export default function Cotia() {
 
       {/* Hero */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628] rounded-3xl border border-white/5 px-8 md:px-14 py-12">
           <span className="flex items-center gap-2 text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance">
             <MapPin className="w-3.5 h-3.5 shrink-0" />
             Cotia, Granja Viana e região oeste de SP
@@ -190,7 +190,7 @@ export default function Cotia() {
       </section>
 
       {/* O que o agente faz */}
-      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+      <section className="bg-navy py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
@@ -250,7 +250,7 @@ export default function Cotia() {
       </section>
 
       {/* Mercado */}
-      <section className="bg-navy/80 backdrop-blur-sm py-24 px-6">
+      <section className="bg-navy py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
@@ -286,7 +286,7 @@ export default function Cotia() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
+      <section className="bg-gold py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 leading-tight">
             Atende eventos em Cotia e região?

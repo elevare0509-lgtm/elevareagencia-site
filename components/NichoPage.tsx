@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Check, X } from "lucide-react";
 import ComoFunciona from "@/components/ComoFunciona";
-import type { Nicho } from "@/lib/nichos";
+import { nichos, type Nicho } from "@/lib/nichos";
 
 const SITE_URL = "https://www.elevareagencia.com";
 const WA = "https://wa.me/5511991572814";
@@ -25,16 +25,36 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
     url: `${SITE_URL}/${nicho.slug}`,
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Elevare", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: nicho.cardName,
+        item: `${SITE_URL}/${nicho.slug}`,
+      },
+    ],
+  };
+
+  const outrosNichos = nichos.filter((n) => n.slug !== nicho.slug);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
 
       {/* Seção 1: Hero */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628]/60 backdrop-blur-md rounded-3xl border border-white/5 px-8 md:px-14 py-12">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628] rounded-3xl border border-white/5 px-8 md:px-14 py-12">
           <span className="text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             {nicho.tag}
           </span>
@@ -67,10 +87,7 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
       <section className="px-6 pb-20">
         <div
           className="max-w-4xl mx-auto rounded-3xl border border-white/5 px-8 md:px-14 py-12 flex flex-col gap-10"
-          style={{
-            background:
-              "linear-gradient(160deg, #0d1f3c 0%, #0B1628 50%, #091422 100%)",
-          }}
+          style={{ background: "#0B1628" }}
         >
           <div className="flex flex-col items-center gap-3 text-center">
             <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
@@ -94,6 +111,10 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
               </div>
             ))}
           </div>
+
+          <p className="text-offwhite/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center">
+            {nicho.contexto}
+          </p>
 
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-gold font-semibold text-sm md:text-base">
@@ -134,11 +155,105 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
         </div>
       </section>
 
+      {/* Seção 3b: O que o agente pergunta + exemplo de conversa */}
+      <section className="px-6 py-24">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div className="flex flex-col gap-5">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Antes de te chamar
+            </span>
+            <h2 className="text-offwhite text-2xl md:text-3xl font-bold leading-snug">
+              O que o agente pergunta
+            </h2>
+            <ul className="flex flex-col gap-3">
+              {nicho.coleta.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-gold" />
+                  </span>
+                  <span className="text-offwhite/75 text-sm md:text-base leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-[#0B1628] rounded-3xl border border-white/5 p-6 flex flex-col gap-3">
+            <span className="text-gold/60 text-[10px] tracking-[0.25em] uppercase font-semibold">
+              Exemplo de conversa (ilustrativo)
+            </span>
+            {nicho.exemplo.map((m, i) => (
+              <p
+                key={i}
+                className={
+                  m.de === "cliente"
+                    ? "self-start max-w-[85%] bg-white/[0.06] text-offwhite/80 text-sm leading-relaxed rounded-2xl rounded-bl-sm px-4 py-3"
+                    : "self-end max-w-[85%] bg-gold text-navy text-sm leading-relaxed rounded-2xl rounded-br-sm px-4 py-3 font-medium"
+                }
+              >
+                {m.texto}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Seção 4: Como funciona */}
       <ComoFunciona />
 
+      {/* Seção 4b: Perguntas frequentes */}
+      <section className="bg-offwhite py-24 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Dúvidas
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
+              Perguntas frequentes
+            </h2>
+          </div>
+          <div className="flex flex-col gap-3">
+            {nicho.perguntas.map(({ q, a }) => (
+              <details
+                key={q}
+                className="group border border-navy/10 rounded-2xl bg-white px-6 py-4"
+              >
+                <summary className="cursor-pointer list-none text-navy font-bold text-base leading-snug flex items-center justify-between gap-4">
+                  {q}
+                  <span className="text-gold text-xl leading-none group-open:rotate-45 transition-transform">
+                    +
+                  </span>
+                </summary>
+                <p className="text-navy/65 text-sm leading-relaxed mt-3">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 4c: Outros segmentos (links internos) */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-5 text-center">
+          <h2 className="text-offwhite/80 text-lg font-semibold">
+            A Elevare também atende
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {outrosNichos.map((n) => (
+              <Link
+                key={n.slug}
+                href={`/${n.slug}`}
+                className="border border-white/10 text-offwhite/75 text-sm px-5 py-2.5 rounded-full hover:border-gold hover:text-offwhite"
+              >
+                {n.cardName}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Seção 5: CTA final */}
-      <section className="bg-gold/85 backdrop-blur-sm py-24 px-6">
+      <section className="bg-gold py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 leading-tight">
             Quer ver seu WhatsApp respondendo sozinho?
