@@ -76,17 +76,17 @@ export default function Home() {
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-offwhite rounded-3xl shadow-2xl shadow-black/30 px-8 md:px-14 py-12">
-          <span className="text-[#9C7A2E] text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#16294D] border border-white/10 shadow-2xl shadow-black/40 rounded-3xl px-8 md:px-14 py-12">
+          <span className="text-gold/80 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             Automação inteligente para o mercado de eventos
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-navy text-center leading-snug max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
             Nunca mais perca cliente por{" "}
-            <span className="text-[#9C7A2E] font-bold">demorar pra responder.</span>
+            <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
           </h1>
-          <p className="text-navy/70 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
-            Qualificador de leads com IA que responde, envia orçamento e agenda visitas dos seus
-            clientes no WhatsApp, 24 horas por dia, todos os dias.
+          <p className="text-offwhite/80 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+            Um agente de IA no seu WhatsApp que responde, envia orçamento e agenda visitas dos seus
+            clientes, 24 horas por dia, todos os dias. Você só entra quando o cliente está pronto pra fechar.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
             <a
@@ -99,7 +99,7 @@ export default function Home() {
             </a>
             <a
               href="#como-funciona"
-              className="border border-navy/30 text-navy font-semibold px-7 py-3.5 rounded-full hover:bg-navy/5 text-sm text-center"
+              className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
             >
               Como funciona
             </a>
@@ -110,16 +110,16 @@ export default function Home() {
       {/* ── SEÇÃO 1B — A DOR ── */}
       <section className="px-6 pb-20">
           <div
-            className="max-w-3xl mx-auto rounded-3xl bg-offwhite shadow-2xl shadow-black/30 px-8 md:px-14 py-12 flex flex-col gap-10"
+            className="max-w-3xl mx-auto rounded-3xl bg-[#16294D] border border-white/10 shadow-2xl shadow-black/40 px-8 md:px-14 py-12 flex flex-col gap-10"
           >
             {/* Gancho */}
             <div className="flex flex-col items-center gap-3 text-center">
-              <span className="text-[#9C7A2E] text-[10px] tracking-[0.25em] uppercase font-semibold">
+              <span className="text-gold/70 text-[10px] tracking-[0.25em] uppercase font-semibold">
                 A realidade de todo negócio de eventos
               </span>
-              <p className="text-navy text-2xl md:text-3xl font-bold leading-snug max-w-lg">
+              <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
                 Enquanto você toca um evento,{" "}
-                <span className="text-[#9C7A2E]">quantos orçamentos ficam sem resposta?</span>
+                <span className="text-gold">quantos orçamentos ficam sem resposta?</span>
               </p>
             </div>
 
@@ -132,14 +132,14 @@ export default function Home() {
               ].map((dor, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="text-red-400 text-base shrink-0 mt-0.5">✕</span>
-                  <p className="text-navy/70 text-sm leading-relaxed">{dor}</p>
+                  <p className="text-offwhite/70 text-sm leading-relaxed">{dor}</p>
                 </div>
               ))}
             </div>
 
             {/* Fechamento */}
             <div className="flex flex-col items-center gap-4 text-center">
-              <p className="text-[#9C7A2E] font-semibold text-sm md:text-base">
+              <p className="text-gold font-semibold text-sm md:text-base">
                 Cada orçamento sem resposta é uma data que fecha com o concorrente.
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function Home() {
               O que o seu agente faz por você
             </h2>
             <p className="text-navy/60 mt-3 text-base max-w-xl mx-auto">
-              A Elevare cria qualificadores de leads com inteligência artificial que respondem seus clientes no WhatsApp na hora, enviam pacotes e valores, agendam visitas ao seu espaço e só te chamam quando realmente precisam de você.
+              A Elevare cria agentes de inteligência artificial que respondem seus clientes no WhatsApp na hora, enviam pacotes e valores, agendam visitas e só te chamam quando realmente precisam de você.
             </p>
           </div>
 
@@ -178,6 +178,60 @@ export default function Home() {
 
       {/* ── SEÇÃO 3 — COMO FUNCIONA ── */}
       <ComoFunciona id="como-funciona" />
+
+      {/* ── SEÇÃO 3B — DIFERENÇA PARA CHATBOT COMUM ── */}
+      <section className="px-6 py-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              A diferença
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2 leading-tight">
+              Não é chatbot de menu. É um agente que conversa.
+            </h2>
+            <p className="text-offwhite/60 mt-3 text-base max-w-xl mx-auto">
+              A Elevare não troca o seu sistema de gestão. Ela cuida da primeira conversa no
+              WhatsApp e entrega o cliente pronto pra você.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-7 py-8 flex flex-col gap-4">
+              <h3 className="text-offwhite/70 font-bold text-lg">Chatbot comum</h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  'Manda um menu: "digite 1 para orçamento, 2 para cardápio"',
+                  "Trava quando o cliente foge do roteiro",
+                  "Não entende foto nem áudio",
+                  "Você precisa montar e manter os fluxos",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-offwhite/60 text-sm leading-relaxed">
+                    <span className="text-red-400 shrink-0">✕</span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-3xl border-2 border-gold bg-[#16294D] shadow-2xl shadow-black/40 px-7 py-8 flex flex-col gap-4">
+              <h3 className="text-gold font-bold text-lg">Agente da Elevare</h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  "Conversa em linguagem natural, como uma pessoa da sua equipe",
+                  "Entende foto de referência e áudio",
+                  "Coleta data, convidados e orçamento antes de te chamar",
+                  "Nós configuramos e ajustamos com você, sem você montar fluxo",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-offwhite/85 text-sm leading-relaxed">
+                    <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── SEÇÃO 4 — PRA QUEM É ── */}
       <section id="sobre" className="bg-offwhite py-24 px-6">
@@ -219,13 +273,24 @@ export default function Home() {
               Resultados
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2">
-              O que dizem sobre a Elevare
+              Veja funcionando antes de decidir
             </h2>
           </div>
 
-          <p className="text-center text-offwhite/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Em breve, resultados reais de clientes do mercado de eventos.
+          <p className="text-center text-offwhite/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Estamos reunindo os primeiros resultados de clientes. Enquanto isso, mostramos o
+            agente respondendo no cenário do seu negócio, sem compromisso.
           </p>
+          <div className="text-center mt-8">
+            <a
+              href={WA}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gold text-navy font-bold px-8 py-3.5 rounded-full hover:brightness-110 text-sm"
+            >
+              Quero ver no meu negócio
+            </a>
+          </div>
         </div>
       </section>
 

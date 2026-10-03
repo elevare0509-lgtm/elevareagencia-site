@@ -43,7 +43,7 @@ const jsonLd = {
   "@id": `${SITE_URL}/cotia#local`,
   name: "Elevare - Automação com IA para Eventos",
   description:
-    "Qualificador de leads com IA no WhatsApp para fornecedores de eventos em Cotia e região.",
+    "Agente de IA no WhatsApp para fornecedores de eventos em Cotia e região.",
   url: `${SITE_URL}/cotia`,
   telephone: "+5511991572814",
   address: {
@@ -111,20 +111,20 @@ export default function Cotia() {
 
       {/* Hero */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-offwhite rounded-3xl shadow-2xl shadow-black/30 px-8 md:px-14 py-12">
-          <span className="flex items-center gap-2 text-[#9C7A2E] text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#16294D] border border-white/10 shadow-2xl shadow-black/40 rounded-3xl px-8 md:px-14 py-12">
+          <span className="flex items-center gap-2 text-gold/80 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance">
             <MapPin className="w-3.5 h-3.5 shrink-0" />
             Cotia, Granja Viana e região oeste de SP
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-navy text-center leading-snug max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
             Automação de WhatsApp com IA em{" "}
-            <span className="text-[#9C7A2E] font-bold">Cotia e Região</span>
+            <span className="text-[#C4A35A] font-bold">Cotia e Região</span>
           </h1>
-          <p className="text-navy/70 font-medium text-base md:text-lg text-center max-w-[660px] leading-relaxed">
+          <p className="text-offwhite/80 font-medium text-base md:text-lg text-center max-w-[660px] leading-relaxed">
             Se você tem um espaço de eventos, buffet, casa de festa ou confeitaria em Cotia,
             Granja Viana ou região, sabe como é: o WhatsApp não para, os orçamentos chegam a
             qualquer hora e quando você está tocando um evento, ninguém responde. A Elevare
-            resolve isso com um qualificador de leads que funciona 24 horas, responde seus
+            resolve isso com um agente de IA que funciona 24 horas, responde seus
             clientes na hora e agenda visitas sem você precisar parar o que está fazendo.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
@@ -138,15 +138,15 @@ export default function Cotia() {
             </a>
             <a
               href="/#como-funciona"
-              className="border border-navy/30 text-navy font-semibold px-7 py-3.5 rounded-full hover:bg-navy/5 text-sm text-center"
+              className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
             >
               Como funciona
             </a>
           </div>
 
-          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3 mt-6 pt-6 border-t border-navy/10 w-full max-w-xl">
+          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-3 mt-6 pt-6 border-t border-white/10 w-full max-w-xl">
             {negocios.map(({ Icon, name }) => (
-              <li key={name} className="flex items-center gap-2 text-navy/70 text-sm">
+              <li key={name} className="flex items-center gap-2 text-offwhite/60 text-sm">
                 <Icon className="w-4 h-4 text-gold shrink-0" />
                 {name}
               </li>

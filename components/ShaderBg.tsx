@@ -8,7 +8,7 @@ export default function ShaderBg() {
         zIndex: -1,
         pointerEvents: "none",
         background:
-          "radial-gradient(ellipse at 50% 0%, #14284a 0%, #0B1628 55%, #070f1d 100%)",
+          "radial-gradient(ellipse at 50% 0%, #0f1d36 0%, #09111f 55%, #060c17 100%)",
       }}
     />
   );

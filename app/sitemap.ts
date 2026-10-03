@@ -6,7 +6,7 @@ const SITE_URL = "https://www.elevareagencia.com";
 // Data da última mudança real de conteúdo de cada página. Atualizar só quando
 // o texto da página mudar: lastmod igual em tudo (data do build) é ignorado pelo Google.
 const ROUTES: { path: string; priority: number; lastModified: string }[] = [
-  { path: "", priority: 1, lastModified: "2026-09-22" },
+  { path: "", priority: 1, lastModified: "2026-10-03" },
   { path: "/cotia", priority: 0.8, lastModified: "2026-10-03" },
   ...nichos.map((n) => ({
     path: `/${n.slug}`,

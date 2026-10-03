@@ -11,19 +11,19 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const SITE_URL = "https://www.elevareagencia.com";
 
 const DESCRIPTION =
-  "Qualificador de leads com IA no WhatsApp para o mercado de eventos. Responde clientes, envia valores e agenda visitas 24h por dia para espaços de eventos, buffets, casas de festa e confeitarias.";
+  "Agente de IA no WhatsApp para o mercado de eventos. Responde clientes, envia valores e agenda visitas 24h por dia para espaços de eventos, buffets, casas de festa e confeitarias.";
 
 export const metadata: Metadata = {
   // Necessário para o og:image gerado por app/opengraph-image.png virar URL absoluta.
   metadataBase: new URL(SITE_URL),
-  title: "Elevare | Automação com IA para Eventos",
+  title: "Elevare Agência | Atendente com IA no WhatsApp para Eventos",
   description:
-    "Qualificador de leads com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
+    "Elevare Agência (Cotia/SP): agente de IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde, envia valores e agenda visitas 24h por dia.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Elevare | Automação com IA para Eventos",
+    title: "Elevare Agência | Atendente com IA no WhatsApp para Eventos",
     description:
-      "Qualificador de leads com IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde clientes, envia valores e agenda visitas 24h por dia.",
+      "Elevare Agência (Cotia/SP): agente de IA no WhatsApp para espaços de eventos, buffets e casas de festa. Responde, envia valores e agenda visitas 24h por dia.",
     type: "website",
     locale: "pt_BR",
     siteName: "Elevare",
@@ -40,7 +40,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
   "@id": `${SITE_URL}/#elevare`,
-  name: "Elevare",
+  name: "Elevare Agência",
+  alternateName: ["Elevare", "Elevare Agência de Automação com IA"],
   description: DESCRIPTION,
   url: SITE_URL,
   telephone: "+5511991572814",

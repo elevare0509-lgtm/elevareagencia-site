@@ -61,7 +61,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp do seu espaço de eventos: responde orçamento na hora, agenda visita e faz follow-up. Você só fala com quem está pronto pra fechar.",
     h1: "Seu espaço de eventos respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que responde orçamentos, agenda visitas e faz follow-up. Você cuida do evento, o agente cuida do WhatsApp.",
+      "Agente de IA no WhatsApp que responde orçamentos, agenda visitas e faz follow-up. Você cuida do evento, o agente cuida do WhatsApp.",
     realidade: "A realidade de quem aluga espaço para evento",
     dores: [
       "Cliente pede orçamento no sábado à noite e fica sem resposta até segunda",
@@ -145,7 +145,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp do seu buffet: envia cardápio e valores na hora, coleta data e convidados, agenda degustação e faz follow-up. Atende 24h por dia.",
     h1: "Seu buffet respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que envia cardápio, coleta dados do evento e faz follow-up. Você foca na cozinha, o agente cuida do comercial.",
+      "Agente de IA no WhatsApp que envia cardápio, coleta dados do evento e faz follow-up. Você foca na cozinha, o agente cuida do comercial.",
     realidade: "A realidade de quem toca um buffet",
     dores: [
       "Cada orçamento tem dezenas de variáveis (convidados, cardápio, local, extras) e demora pra responder",
@@ -229,7 +229,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp da sua casa de festa: responde na hora, envia fotos e valores, agenda visita e retoma quem sumiu. Quem responde primeiro fecha a data.",
     h1: "Sua casa de festa respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que responde na hora, envia fotos e valores, e agenda visitas. Quem responde primeiro, fecha primeiro.",
+      "Agente de IA no WhatsApp que responde na hora, envia fotos e valores, e agenda visitas. Quem responde primeiro, fecha primeiro.",
     realidade: "A realidade de quem tem casa de festa",
     dores: [
       "O cliente cota várias casas ao mesmo tempo. Fecha com quem responde primeiro.",
@@ -314,7 +314,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp do seu bar de evento: responde pedidos de open bar de madrugada, apresenta opções de pacote e filtra quem tem data marcada.",
     h1: "Seu bar de evento respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que responde pedidos de open bar, envia pacotes e filtra quem tá pronto pra fechar.",
+      "Agente de IA no WhatsApp que responde pedidos de open bar, envia pacotes e filtra quem tá pronto pra fechar.",
     realidade: "A realidade de quem monta bar em evento",
     dores: [
       "Pedido de open bar chega fora do horário comercial, quando ninguém tá no WhatsApp",
@@ -395,7 +395,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp da sua assessoria: responde casais na hora, coleta data, local e estilo e agenda a primeira reunião. Atenção ao casal, sem fila.",
     h1: "Sua assessoria respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que responde casais na hora, coleta informações do evento e agenda sua primeira reunião.",
+      "Agente de IA no WhatsApp que responde casais na hora, coleta informações do evento e agenda sua primeira reunião.",
     realidade: "A realidade de quem assessora casamento",
     dores: [
       "Muita conversa ao mesmo tempo e pouco tempo pra responder todo mundo com a atenção que cada casal merece",
@@ -479,7 +479,7 @@ export const nichos: Nicho[] = [
       "IA no WhatsApp da sua confeitaria: envia cardápio com preços, coleta sabor, tamanho e data da encomenda e avisa o prazo. Entende foto de referência.",
     h1: "Sua confeitaria respondendo 24h no WhatsApp",
     subtitulo:
-      "Qualificador de leads com IA que responde encomendas, envia cardápio e coleta detalhes do pedido. Você foca na produção, o agente cuida do WhatsApp.",
+      "Agente de IA no WhatsApp que responde encomendas, envia cardápio e coleta detalhes do pedido. Você foca na produção, o agente cuida do WhatsApp.",
     realidade: "A realidade de quem vive de encomenda",
     dores: [
       'Cliente manda "bom dia, tem bolo de leite ninho pra sábado?" e espera resposta imediata',
@@ -508,7 +508,7 @@ export const nichos: Nicho[] = [
       },
       {
         titulo: "Entende fotos e áudios",
-        desc: "O cliente manda foto de referência do bolo que quer e a IA interpreta. Isso não é chatbot comum, é inteligência artificial de verdade.",
+        desc: "O cliente manda foto de referência do bolo que quer e a IA interpreta. Diferente de um chatbot de menu, ele entende a conversa.",
       },
     ],
     coleta: [
