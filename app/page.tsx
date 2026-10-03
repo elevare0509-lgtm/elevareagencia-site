@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle, MessageSquareReply, Check, Zap, CalendarCheck, Bell } from "lucide-react";
+import { MessageCircle, MessageSquareReply, Check, Zap, CalendarCheck, Bell, Target, Settings, ShieldCheck } from "lucide-react";
 import ComoFunciona from "@/components/ComoFunciona";
 import { nichos } from "@/lib/nichos";
 
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* ── SEÇÃO 4 — PRA QUEM É ── */}
-      <section id="sobre" className="bg-offwhite py-24 px-6">
+      <section id="pra-quem-e" className="bg-offwhite py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-gold text-xs font-bold tracking-widest uppercase">
@@ -368,6 +368,79 @@ export default function Home() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SEÇÃO 6B — SOBRE ── */}
+      <section id="sobre" className="px-6 py-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-gold text-xs font-bold tracking-widest uppercase">
+              Sobre a Elevare
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-offwhite mt-2 leading-tight max-w-2xl mx-auto">
+              Uma agência feita só para quem vive de eventos
+            </h2>
+            <p className="text-offwhite/70 mt-4 text-base max-w-2xl mx-auto leading-relaxed">
+              A Elevare é uma agência de automação com IA de Cotia, em São Paulo. Criamos agentes
+              que atendem o WhatsApp de espaços de eventos, buffets, casas de festa, bares,
+              cerimonialistas e confeiteiras. Escolhemos esse mercado porque o problema dele é
+              sempre o mesmo: o cliente pergunta na hora errada e fecha com quem responde primeiro.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                Icon: Target,
+                title: "Foco em eventos",
+                desc: "Não atendemos todo tipo de negócio. Conhecemos as perguntas que chegam, o jeito de orçar e o que faz uma visita virar contrato.",
+              },
+              {
+                Icon: Settings,
+                title: "Configurado por nós",
+                desc: "Mapeamos seus pacotes, valores e perguntas frequentes, ligamos no seu WhatsApp e ajustamos com você até ficar certo.",
+              },
+              {
+                Icon: ShieldCheck,
+                title: "Você no controle",
+                desc: "Evento grande ou pedido fora do padrão, o agente te avisa. A decisão final é sempre sua.",
+              },
+            ].map(({ Icon, title, desc }) => (
+              <div
+                key={title}
+                className="rounded-3xl bg-[#16294D] border border-white/10 shadow-2xl shadow-black/40 px-6 py-7 flex flex-col gap-3"
+              >
+                <Icon className="w-7 h-7 text-gold" />
+                <h3 className="text-offwhite font-bold text-lg leading-snug">{title}</h3>
+                <p className="text-offwhite/70 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-3 text-center">
+            <p className="text-offwhite/60 text-sm">
+              Atendimento de segunda a sexta, das 9h às 18h.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={WA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gold text-navy font-bold px-7 py-3.5 rounded-full hover:brightness-110 text-sm text-center"
+              >
+                Falar no WhatsApp
+              </a>
+              <a
+                href="https://instagram.com/elevare_on"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
+              >
+                @elevare_on no Instagram
+              </a>
+            </div>
           </div>
         </div>
       </section>
