@@ -54,14 +54,14 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
 
       {/* Seção 1: Hero */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628] rounded-3xl border border-white/5 px-8 md:px-14 py-12">
-          <span className="text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-offwhite rounded-3xl shadow-2xl shadow-black/30 px-8 md:px-14 py-12">
+          <span className="text-[#9C7A2E] text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             {nicho.tag}
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-navy text-center leading-snug max-w-2xl">
             {nicho.h1}
           </h1>
-          <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+          <p className="text-navy/70 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
             {nicho.subtitulo}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
@@ -75,7 +75,7 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
             </a>
             <Link
               href="/#investimento"
-              className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
+              className="border border-navy/30 text-navy font-semibold px-7 py-3.5 rounded-full hover:bg-navy/5 text-sm text-center"
             >
               Ver planos
             </Link>
@@ -85,15 +85,12 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
 
       {/* Seção 2: A realidade do nicho */}
       <section className="px-6 pb-20">
-        <div
-          className="max-w-4xl mx-auto rounded-3xl border border-white/5 px-8 md:px-14 py-12 flex flex-col gap-10"
-          style={{ background: "#0B1628" }}
-        >
+        <div className="max-w-4xl mx-auto rounded-3xl bg-offwhite shadow-2xl shadow-black/30 px-8 md:px-14 py-12 flex flex-col gap-10">
           <div className="flex flex-col items-center gap-3 text-center">
-            <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
+            <span className="text-[#9C7A2E] text-[10px] tracking-[0.25em] uppercase font-semibold">
               O dia a dia hoje
             </span>
-            <h2 className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-xl">
+            <h2 className="text-navy text-2xl md:text-3xl font-bold leading-snug max-w-xl">
               {nicho.realidade}
             </h2>
           </div>
@@ -102,22 +99,22 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
             {nicho.dores.map((dor) => (
               <div
                 key={dor}
-                className="border border-white/5 rounded-2xl px-6 py-6 bg-white/[0.03] flex flex-col gap-3"
+                className="border border-navy/10 rounded-2xl px-6 py-6 bg-white flex flex-col gap-3"
               >
                 <span className="w-8 h-8 rounded-full bg-red-400/10 flex items-center justify-center shrink-0">
                   <X className="w-4 h-4 text-red-400" />
                 </span>
-                <p className="text-offwhite/60 text-sm leading-relaxed">{dor}</p>
+                <p className="text-navy/70 text-sm leading-relaxed">{dor}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-offwhite/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center">
+          <p className="text-navy/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center">
             {nicho.contexto}
           </p>
 
           <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-gold font-semibold text-sm md:text-base">
+            <p className="text-[#9C7A2E] font-semibold text-sm md:text-base">
               {nicho.fechamento}
             </p>
           </div>
@@ -179,8 +176,8 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
             </ul>
           </div>
 
-          <div className="bg-[#0B1628] rounded-3xl border border-white/5 p-6 flex flex-col gap-3">
-            <span className="text-gold/60 text-[10px] tracking-[0.25em] uppercase font-semibold">
+          <div className="bg-offwhite rounded-3xl shadow-2xl shadow-black/30 p-6 flex flex-col gap-3">
+            <span className="text-[#9C7A2E] text-[10px] tracking-[0.25em] uppercase font-semibold">
               Exemplo de conversa (ilustrativo)
             </span>
             {nicho.exemplo.map((m, i) => (
@@ -188,7 +185,7 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
                 key={i}
                 className={
                   m.de === "cliente"
-                    ? "self-start max-w-[85%] bg-white/[0.06] text-offwhite/80 text-sm leading-relaxed rounded-2xl rounded-bl-sm px-4 py-3"
+                    ? "self-start max-w-[85%] bg-white text-navy/80 border border-navy/10 text-sm leading-relaxed rounded-2xl rounded-bl-sm px-4 py-3"
                     : "self-end max-w-[85%] bg-gold text-navy text-sm leading-relaxed rounded-2xl rounded-br-sm px-4 py-3 font-medium"
                 }
               >

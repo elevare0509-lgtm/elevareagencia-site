@@ -76,15 +76,15 @@ export default function Home() {
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
       <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[#0B1628] rounded-3xl border border-white/5 px-8 md:px-14 py-12">
-          <span className="text-gold/70 text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-offwhite rounded-3xl shadow-2xl shadow-black/30 px-8 md:px-14 py-12">
+          <span className="text-[#9C7A2E] text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             Automação inteligente para o mercado de eventos
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-navy text-center leading-snug max-w-2xl">
             Nunca mais perca cliente por{" "}
-            <span className="text-[#C4A35A] font-bold">demorar pra responder.</span>
+            <span className="text-[#9C7A2E] font-bold">demorar pra responder.</span>
           </h1>
-          <p className="text-offwhite/75 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+          <p className="text-navy/70 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
             Qualificador de leads com IA que responde, envia orçamento e agenda visitas dos seus
             clientes no WhatsApp, 24 horas por dia, todos os dias.
           </p>
@@ -99,7 +99,7 @@ export default function Home() {
             </a>
             <a
               href="#como-funciona"
-              className="border border-gold text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
+              className="border border-navy/30 text-navy font-semibold px-7 py-3.5 rounded-full hover:bg-navy/5 text-sm text-center"
             >
               Como funciona
             </a>
@@ -110,17 +110,16 @@ export default function Home() {
       {/* ── SEÇÃO 1B — A DOR ── */}
       <section className="px-6 pb-20">
           <div
-            className="max-w-3xl mx-auto rounded-3xl border border-white/5 px-8 md:px-14 py-12 flex flex-col gap-10"
-            style={{ background: "#0B1628" }}
+            className="max-w-3xl mx-auto rounded-3xl bg-offwhite shadow-2xl shadow-black/30 px-8 md:px-14 py-12 flex flex-col gap-10"
           >
             {/* Gancho */}
             <div className="flex flex-col items-center gap-3 text-center">
-              <span className="text-gold/50 text-[10px] tracking-[0.25em] uppercase font-semibold">
+              <span className="text-[#9C7A2E] text-[10px] tracking-[0.25em] uppercase font-semibold">
                 A realidade de todo negócio de eventos
               </span>
-              <p className="text-offwhite text-2xl md:text-3xl font-bold leading-snug max-w-lg">
+              <p className="text-navy text-2xl md:text-3xl font-bold leading-snug max-w-lg">
                 Enquanto você toca um evento,{" "}
-                <span className="text-gold">quantos orçamentos ficam sem resposta?</span>
+                <span className="text-[#9C7A2E]">quantos orçamentos ficam sem resposta?</span>
               </p>
             </div>
 
@@ -133,14 +132,14 @@ export default function Home() {
               ].map((dor, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="text-red-400 text-base shrink-0 mt-0.5">✕</span>
-                  <p className="text-offwhite/60 text-sm leading-relaxed">{dor}</p>
+                  <p className="text-navy/70 text-sm leading-relaxed">{dor}</p>
                 </div>
               ))}
             </div>
 
             {/* Fechamento */}
             <div className="flex flex-col items-center gap-4 text-center">
-              <p className="text-gold font-semibold text-sm md:text-base">
+              <p className="text-[#9C7A2E] font-semibold text-sm md:text-base">
                 Cada orçamento sem resposta é uma data que fecha com o concorrente.
               </p>
             </div>
