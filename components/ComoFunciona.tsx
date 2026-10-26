@@ -9,7 +9,7 @@ const passos = [
   {
     Icon: Settings,
     title: "Configuramos o agente",
-    desc: "Criamos seu qualificador de leads personalizado, com a cara do seu negócio.",
+    desc: "Criamos seu Qualificador de Leads personalizado, com a cara do seu negócio.",
   },
   {
     Icon: Bot,

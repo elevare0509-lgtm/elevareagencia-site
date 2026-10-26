@@ -1,6 +1,6 @@
 # Elevare
 
-> Qualificador de leads com IA no WhatsApp para o mercado de eventos. Responde clientes, envia valores, agenda visitas e faz follow-up, 24 horas por dia. Atende de Cotia/SP.
+> Qualificador de Leads com IA no WhatsApp para o mercado de eventos. Responde clientes, envia valores, agenda visitas e faz follow-up, 24 horas por dia. Atende de Cotia/SP.
 
 ## Páginas
 

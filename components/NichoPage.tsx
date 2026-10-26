@@ -214,6 +214,7 @@ export default function NichoPage({ nicho }: { nicho: Nicho }) {
             {nicho.perguntas.map(({ q, a }) => (
               <details
                 key={q}
+                name="faq"
                 className="group border border-navy/10 rounded-2xl bg-white px-6 py-4"
               >
                 <summary className="cursor-pointer list-none text-navy font-bold text-base leading-snug flex items-center justify-between gap-4">

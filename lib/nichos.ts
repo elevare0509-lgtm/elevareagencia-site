@@ -129,7 +129,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. Você vê o que cada um inclui na seção de investimento da página inicial.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. Você vê o que cada um inclui na seção de investimento da página inicial.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Espaços de Eventos",
@@ -213,7 +213,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. Os detalhes de cada um estão na seção de investimento da página inicial.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. Os detalhes de cada um estão na seção de investimento da página inicial.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Buffets",
@@ -297,7 +297,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. A página inicial mostra o que cada plano inclui.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. A página inicial mostra o que cada plano inclui.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Casas de Festa",
@@ -378,7 +378,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. Os detalhes estão na seção de investimento da página inicial.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. Os detalhes estão na seção de investimento da página inicial.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Bares de Evento",
@@ -463,7 +463,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. A página inicial detalha o que cada plano inclui.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. A página inicial detalha o que cada plano inclui.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Cerimonialistas e Assessorias",
@@ -547,7 +547,7 @@ export const nichos: Nicho[] = [
       },
       {
         q: "Quanto custa?",
-        a: "São três planos, de R$ 397 a R$ 697 por mês. A página inicial mostra o que cada plano inclui.",
+        a: "São três planos. A mensalidade é a partir de R$ 397, mais um setup único. A página inicial mostra o que cada plano inclui.",
       },
     ],
     serviceName: "Automação de WhatsApp com IA para Confeiteiras",

@@ -41,12 +41,14 @@ const planos = [
     nome: "Essencial",
     destaque: false,
     mensal: "R$ 397",
+    setup: "R$ 397",
     inclui: [IA_WHATSAPP],
   },
   {
     nome: "Profissional",
     destaque: true,
     mensal: "R$ 497",
+    setup: "R$ 697",
     inclui: [
       IA_WHATSAPP,
       "Qualificação de lead",
@@ -60,6 +62,7 @@ const planos = [
     nome: "Premium",
     destaque: false,
     mensal: "R$ 697",
+    setup: "R$ 997",
     inclui: [
       "Qualificação de lead",
       "Follow-up automático",
@@ -75,16 +78,24 @@ export default function Home() {
   return (
     <>
       {/* ── SEÇÃO 1 — HERO ── */}
-      <section className="px-6 pt-12 pb-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 bg-offwhite rounded-3xl shadow-2xl shadow-black/30 px-8 md:px-14 py-12">
-          <span className="text-[#9C7A2E] text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
+      <section className="relative overflow-hidden px-6 pt-12 pb-16">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 left-1/4 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(196,163,90,0.22),transparent_65%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-24 right-1/4 h-[480px] w-[480px] translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(40,70,120,0.35),transparent_65%)]"
+        />
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-4 bg-[rgba(242,237,228,0.06)] backdrop-blur-[20px] backdrop-saturate-[1.4] border border-[rgba(196,163,90,0.25)] rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] px-8 md:px-14 py-12">
+          <span className="text-gold text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-center text-balance -mr-[0.15em] sm:-mr-[0.2em]">
             Automação inteligente para o mercado de eventos
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-navy text-center leading-snug max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-offwhite text-center leading-snug max-w-2xl">
             Nunca mais perca cliente por{" "}
-            <span className="text-[#9C7A2E] font-bold">demorar pra responder.</span>
+            <span className="text-gold font-bold">demorar pra responder.</span>
           </h1>
-          <p className="text-navy/70 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
+          <p className="text-offwhite/80 font-medium text-base md:text-lg text-center max-w-[640px] leading-relaxed">
             Um agente de IA no seu WhatsApp que responde, envia orçamento e agenda visitas dos seus
             clientes, 24 horas por dia, todos os dias. Você só entra quando o cliente está pronto pra fechar.
           </p>
@@ -99,7 +110,7 @@ export default function Home() {
             </a>
             <a
               href="#como-funciona"
-              className="border border-navy/30 text-navy font-semibold px-7 py-3.5 rounded-full hover:bg-navy/5 text-sm text-center"
+              className="border border-gold/60 text-offwhite font-semibold px-7 py-3.5 rounded-full hover:bg-gold/10 text-sm text-center"
             >
               Como funciona
             </a>
@@ -369,6 +380,10 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <p className="text-center text-navy/60 text-xs mt-8">
+            Setup único e fidelidade combinados na reunião.
+          </p>
         </div>
       </section>
 
